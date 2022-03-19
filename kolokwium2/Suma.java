@@ -6,9 +6,11 @@ public class Suma {
         String[] tablica = { "1", "6", "1" };
        // System.out.println(sum(tablica)); // out: 8
         System.out.println(count(tablica, 1)); // out: 2
+        String[] array = { "0", "6"};
+        int counted = 1;
+        System.out.println(count(array, counted));
     }
-    String[] array = { "0", "6"};
-    int counted = 1;
+
 
     //Nieparzysty komputer
     /** policz ile razy liczba counted występuje w tablicy jako string */
