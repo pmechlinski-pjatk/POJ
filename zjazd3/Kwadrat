@@ -1,0 +1,31 @@
+package com.company;
+
+public class Kwadrat extends Prostokat {
+
+    double bok1;
+    double bok2;
+    private double v;
+
+    public Kwadrat(double bok1, double bok2) {
+        this.bok1 = bok1;
+        this.bok2 = bok1;
+    }
+
+    public Kwadrat(double bok1) {
+        this.bok1 = bok1;
+        this.bok2 = bok1;
+    }
+
+    public double przekatna() {
+        return (Math.sqrt(2) * this.bok1);
+    }
+
+
+    public double przekatna(double v) {
+        int x = (int) (v * (Math.sqrt(2) * bok1));
+        return x;
+    }
+
+
+
+}
