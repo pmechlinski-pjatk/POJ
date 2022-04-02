@@ -1,0 +1,34 @@
+package com.company;
+
+public class Prostokat {
+    double bok1;
+    double bok2;
+
+    public Prostokat(double bok1, double bok2){
+    this.bok1 = bok1;
+    this.bok2 = bok2;
+    }
+
+    public Prostokat() {
+
+    }
+
+
+
+    public double przekatna() {
+        return (Math.sqrt(this.bok1*this.bok1+this.bok2*this.bok2));
+    }
+
+    public double przekatna(double v) {
+        return v*(Math.sqrt(this.bok1*this.bok1+this.bok2*this.bok2));
+    }
+
+@Override
+    public boolean equals(Object p) {
+    var q=(Prostokat)p;
+        if (q.bok1 == this.bok1 && q.bok2 == this.bok2) {
+            return true;
+        }
+        else return false;
+    }
+}
