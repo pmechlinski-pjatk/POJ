@@ -55,10 +55,7 @@ class Buzka implements PrzedstawiaEmocje {
 		}
 		System.out.println(verySmiling);
 	}
- 
-	public Boolean equals(PrzedstawiaEmocje x) {
-		return true;
-	}
+
 
 }
 
@@ -96,14 +93,8 @@ class Usmiech extends Buzka {
 		return this.emoji;
 	}
 
-	public Boolean equals(Rysowalny x) {
-		return true;
+	public void przestanSieUsmiechac() {
 	}
-
-	public Boolean equals(PrzedstawiaEmocje x) {
-		return false;
-	}
-
 }
 
 
