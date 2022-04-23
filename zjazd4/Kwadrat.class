@@ -1,0 +1,7 @@
+public class Kwadrat extends Prostokat {
+
+    public Kwadrat() {
+        this.bokA = 1;
+        this.bokA = this.bokB;
+    }
+}

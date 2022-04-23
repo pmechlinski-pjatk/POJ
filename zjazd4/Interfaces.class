@@ -1,0 +1,18 @@
+package interfaces;
+
+interface MaWlasnosciRownolegloboku {
+    public void pole();
+    public void obwod();
+}
+
+interface MoznaWyznaczycPrzekatna {
+    public void przekatna();
+}
+
+interface MoznaWyznaczycWielokrotnoscPrzekatnej {
+    public void wielokrotnoscPrzekatnej();
+}
+
+interface MoznaWyznaczycWysokosc {
+    public void wysokosc();
+}

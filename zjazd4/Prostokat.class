@@ -1,0 +1,16 @@
+public class Prostokat implements MaWlasnosciRownolegloboku 
+                                  MoznaWyznaczycPrzekatna 
+                                  MoznaWyznaczycWielokrotnoscPrzekatnej 
+                                  MoznaWyznaczycWysokosc {
+
+                                    double bokA, bokB;
+                                    double wysokosc;
+                                    double przekatna;
+
+                                    public Prostokat() {
+                                        this.bokA = 1;
+                                        this.bokB = 1;
+                                        this.wysokosc = 1;
+                                        this.przekatna = sqrt(2);
+                                    }
+}
