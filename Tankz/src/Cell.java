@@ -8,6 +8,29 @@ import javax.swing.JButton;
 @SuppressWarnings("serial")
 public class Cell extends JButton {
 	Cell[][] neibers = new Cell[3][3];
+	public boolean isPlayer () { if (this.objectType == 3) return true; return false; };
+	public Cell movable (int kierunek) // TODO: Change into probably enum with used keys
+	{
+		Cell movable;
+		switch (kierunek) {
+			case 1: //góra
+				movable = neibers[2][1];
+				break;
+			case 2: //dół
+				movable = neibers[2][3];
+				break;
+			case 3: //lewo
+				movable = neibers[1][2];
+				break;
+			case 4: //prawo
+				movable = neibers[3][2];
+				break;
+			default:
+				movable = neibers[2][2];
+				break;
+		}
+		return movable;
+	}
 	private int objectType; // { 1:Wall, 2:Base, 3:Player, 4:Enemy, 5:MissileH, 6:MissileV };
 
 	public Cell() {
@@ -24,16 +47,16 @@ public class Cell extends JButton {
 		String sprite;
 		switch(objectType) {
 			case 1:
-				sprite = "#";
+				sprite = String.valueOf('#');
 				break;
 			case 2:
-				sprite = "[F]";
+				sprite = "F";
 				break;
 			case 3:
-				sprite = "[+]";
+				sprite = "+";
 				break;
 			case 4:
-				sprite = "[x]";
+				sprite = "x";
 				break;
 			case 5:
 				sprite = "~";
@@ -57,19 +80,12 @@ public class Cell extends JButton {
 
 	public void setEntity(int entityNumber) { //Default Set entity function.
 		this.objectType = entityNumber;
-
+		toString();
 		}
 
-/*	private void setMines(int size, int mines, Cell[][] cells) {
-		for (int i = 0; i < mines; i++) {
-			int x, y;
-			do {
-				x = ThreadLocalRandom.current().nextInt(size);
-				y = ThreadLocalRandom.current().nextInt(size);
-			} while (cells[x][y].isMine());
-			cells[x][y].setMine();
-		}
-	}*/
+	void redraw() {
+		setText(toString());
 	}
 }
+
 

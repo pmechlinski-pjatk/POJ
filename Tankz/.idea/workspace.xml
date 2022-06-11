@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="Work in progress przy generatorze pola gry">
+    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="Podstawowy generator mapy">
+      <change afterPath="$PROJECT_DIR$/src/KeyListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Window.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -50,7 +59,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1654955462001</updated>
-      <workItem from="1654955464681" duration="3756000" />
+      <workItem from="1654955464681" duration="7906000" />
     </task>
     <task id="LOCAL-00001" summary="Pliki z projektu saperowego">
       <created>1654955760842</created>
@@ -73,7 +82,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654958348387</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Podstawowy generator mapy">
+      <created>1654959245114</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1654959245114</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -95,6 +111,7 @@
     <MESSAGE value="Pliki z projektu saperowego" />
     <MESSAGE value="Funkcja do rysowania obiektów w grze" />
     <MESSAGE value="Work in progress przy generatorze pola gry" />
-    <option name="LAST_COMMIT_MESSAGE" value="Work in progress przy generatorze pola gry" />
+    <MESSAGE value="Podstawowy generator mapy" />
+    <option name="LAST_COMMIT_MESSAGE" value="Podstawowy generator mapy" />
   </component>
 </project>

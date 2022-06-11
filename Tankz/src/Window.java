@@ -1,10 +1,8 @@
 import java.awt.GridLayout;
 import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
-
 import javax.swing.JPanel;
 import javax.swing.JWindow;
-import javax.swing.SwingUtilities;
 
 public class Window {
 
@@ -20,15 +18,24 @@ public class Window {
 		window.add(panel);
 		window.setSize(size * 50, size * 50);
 		window.setVisible(true);
+
+		setEntities(entities, size, cells);
+
+		for (int i = 0; i < size; i++) {
+			for (int j = 0; j < size; j++) {
+				cells[i][j].redraw();
+			}
+		}
+
+		while(true)
+		{
+			if (KeyListener.isWPressed() == true)
+		}
+
 	}
 
 
-
-
-
-
-
-	private void setEntities(int entitiesNumber, int size, Cell[][] cells) {
+public void setEntities(int entitiesNumber, int size, Cell[][] cells) {
 		int entityType = 0; // Default type gives empty field.
 		int starterX, starterY;
 		int baseX, baseY;
@@ -41,7 +48,7 @@ public class Window {
 		do { // Generowanie losowej pozycji bazy wroga w nie za małej odleglości
 			baseX = ThreadLocalRandom.current().nextInt(size);
 			baseY = ThreadLocalRandom.current().nextInt(size);
-		} while (cells[baseX][baseY].isEntity() && Math.abs(starterX-baseX) < 5 && Math.abs(starterY-baseY) < 5);
+		} while (cells[baseX][baseY].isEntity() && Math.abs(starterX-baseX) < 20 && Math.abs(starterY-baseY) < 20);
 		cells[baseX][baseY].setEntity(2); //
 
 		for (int i = 0; i < entitiesNumber; i++) {
