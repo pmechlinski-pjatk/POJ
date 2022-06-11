@@ -3,14 +3,15 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
-import javax.swing.JButton;
-
+import javax.swing.JLabel;
+// Render + logika + klasa-tablica z polami gry i ich wartościami
 @SuppressWarnings("serial")
-public class Cell extends JButton {
+public class Cell extends JLabel {
 	Cell[][] neibers = new Cell[3][3];
 	public boolean isPlayer () { if (this.objectType == 3) return true; return false; };
 	public Cell movable (int kierunek) // TODO: Change into probably enum with used keys
 	{
+		setHorizontalTextPosition(CENTER);
 		Cell movable;
 		switch (kierunek) {
 			case 1: //góra
@@ -33,9 +34,9 @@ public class Cell extends JButton {
 	}
 	private int objectType; // { 1:Wall, 2:Base, 3:Player, 4:Enemy, 5:MissileH, 6:MissileV };
 
-	public Cell() {
-		// TODO Auto-generated constructor stub
-	}
+//	public Cell() {
+//		setHorizontalTextPosition(CENTER);
+//	}
 
 	public void setNeiber(Cell cell, int p, int q) {
 		neibers[p][q] = cell;
@@ -53,7 +54,7 @@ public class Cell extends JButton {
 				sprite = "F";
 				break;
 			case 3:
-				sprite = "+";
+				sprite = "[+]";
 				break;
 			case 4:
 				sprite = "x";

@@ -1,13 +1,13 @@
 import java.awt.GridLayout;
 import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
-import javax.swing.JPanel;
-import javax.swing.JWindow;
+import javax.swing.*;
 
 public class Window {
 
 	public Window(int size, int entities) { //In this version it will generate the random map very randomly xD
-		JWindow window = new JWindow();
+		JFrame window = new JFrame();
+		window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		JPanel panel = new JPanel(new GridLayout(size, size));
 		Cell[][] cells = new Cell[size][size];
 		filArray(size, cells);
@@ -16,7 +16,7 @@ public class Window {
 
 		Arrays.stream(cells).flatMap(Arrays::stream).forEach(q -> panel.add(q));
 		window.add(panel);
-		window.setSize(size * 50, size * 50);
+		window.setSize(size * 30, size * 30);
 		window.setVisible(true);
 
 		setEntities(entities, size, cells);
@@ -27,10 +27,10 @@ public class Window {
 			}
 		}
 
-		while(true)
-		{
-			if (KeyListener.isWPressed() == true)
-		}
+		//while(true)
+		//{
+		//	if (KeyListener.isWPressed() == true)
+		//}
 
 	}
 
@@ -44,6 +44,7 @@ public void setEntities(int entitiesNumber, int size, Cell[][] cells) {
 		starterX = ThreadLocalRandom.current().nextInt(size);
 		starterY = ThreadLocalRandom.current().nextInt(size);
 		cells[starterX][starterY].setEntity(3); //
+		//Player.
 
 		do { // Generowanie losowej pozycji bazy wroga w nie za małej odleglości
 			baseX = ThreadLocalRandom.current().nextInt(size);
