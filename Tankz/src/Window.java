@@ -1,6 +1,4 @@
 import java.awt.GridLayout;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -30,15 +28,32 @@ public class Window {
 
 
 
-	private void setEntities(int entitiesNumber, Cell[][] cells) {
+	private void setEntities(int entitiesNumber, int size, Cell[][] cells) {
 		int entityType = 0; // Default type gives empty field.
+		int starterX, starterY;
+		int baseX, baseY;
+
+		// Generowanie losowej pozycji startowej gracza.
+		starterX = ThreadLocalRandom.current().nextInt(size);
+		starterY = ThreadLocalRandom.current().nextInt(size);
+		cells[starterX][starterY].setEntity(3); //
+
+		do { // Generowanie losowej pozycji bazy wroga w nie za małej odleglości
+			baseX = ThreadLocalRandom.current().nextInt(size);
+			baseY = ThreadLocalRandom.current().nextInt(size);
+		} while (cells[baseX][baseY].isEntity() && Math.abs(starterX-baseX) < 5 && Math.abs(starterY-baseY) < 5);
+		cells[baseX][baseY].setEntity(2); //
+
 		for (int i = 0; i < entitiesNumber; i++) {
-			int x, y;
-			do {
+			// 1#  4[x]
+			int x, y, p;
+			do { // Generowanie losowej pozycji bazy wroga w nie za małej odleglości
 				x = ThreadLocalRandom.current().nextInt(size);
 				y = ThreadLocalRandom.current().nextInt(size);
 			} while (cells[x][y].isEntity());
-			cells[x][y].setEntity(entityType);
+			p = ThreadLocalRandom.current().nextInt(16);
+			if (p > 14)	cells[x][y].setEntity(4);
+			else cells[x][y].setEntity(1);
 		}
 	}
 
