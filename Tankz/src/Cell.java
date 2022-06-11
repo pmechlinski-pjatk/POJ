@@ -7,8 +7,7 @@ import javax.swing.JButton;
 @SuppressWarnings("serial")
 public class Cell extends JButton {
 	Cell[][] neibers = new Cell[3][3];
-	private boolean isMine;
-	private boolean isFlag;
+	private int objectType; // { 1:Wall, 2:Base, 3:Player, 4:Enemy, 5:MissileH, 6:MissileV };
 
 	public Cell() {
 		// TODO Auto-generated constructor stub
@@ -18,67 +17,39 @@ public class Cell extends JButton {
 		neibers[p][q] = cell;
 	}
 
-	public boolean isMine() {
-		return isMine;
-	}
-
-	public void setMine() {
-		isMine = true;
-	}
-
-	public void setFlag() {
-		if (!isEnabled())
-			return;
-		isFlag = !isFlag;
-		redraw();
-	}
-
 	@Override
 	public String toString() {
-		if (isFlag)
-			return "F";
-		if (isEnabled())
-			return "";
-		if (isMine)
-			return "+";
-		if (getValue() > 0)
-			return getValue() + "";
-		return "";
-	}
+		//1:Wall, 2:Base, 3:Player, 4:Enemy, 5:MissileH, 6:MissileV
+		String sprite;
+		switch(objectType) {
+			case 1:
+				sprite="#";
+				break;
+			case 2:
+				sprite="[F]";
+				break;
+			case 3:
+				sprite="[+]";
+				break;
+			case 4:
+				sprite="[x]";
+				break;
+			case 5:
+				sprite="~";
+				break;
+			case 6:
+				sprite=";";
+				break;
+			default:
+				sprite="";
+				break;
 
-	private long getValue() {
-		return Arrays.stream(neibers).flatMap(Arrays::stream).filter(q -> q != null && q.isMine).count();
+		return sprite;
 	}
 
 	private void redraw() {
 		setText(toString());
 	}
-
-	public void uncover() {
-		if (isMine) {
-			// TODO przegrana
-			System.out.println("FRAJER");
-			System.exit(0);
-		}
-		uncover(new ArrayList<Cell>());
-	}
-
-	private void uncover(List<Cell> done) {
-		done.add(this);
-		if (isMine)
-			return;
-		setEnabled(false);
-		redraw();
-		if (getValue() > 0)
-			return;
-
-		for (Cell[] cells : neibers) {
-			for (Cell cell : cells) {
-				if (cell != null && !done.contains(cell))
-					cell.uncover(done);
-			}
-
-		}
 
 	}
 }
