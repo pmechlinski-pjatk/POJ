@@ -1,9 +1,9 @@
 
 public class Game {
-	final static int SIZE = 9;
-	final static int MINES = 10;
+	final static int SIZE = 20; // Szerokość pola gry. TODO: Ustalana przy wyborze mapy
+	// TODO: Wybór mapy z pliku .csv
 
 	public static void main(String[] args) {
-		Window main = new Window(SIZE, MINES);
+		Window main = new Window(SIZE, 40);
 	}
 }

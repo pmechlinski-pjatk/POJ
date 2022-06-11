@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 import javax.swing.JButton;
 
@@ -23,33 +24,52 @@ public class Cell extends JButton {
 		String sprite;
 		switch(objectType) {
 			case 1:
-				sprite="#";
+				sprite = "#";
 				break;
 			case 2:
-				sprite="[F]";
+				sprite = "[F]";
 				break;
 			case 3:
-				sprite="[+]";
+				sprite = "[+]";
 				break;
 			case 4:
-				sprite="[x]";
+				sprite = "[x]";
 				break;
 			case 5:
-				sprite="~";
+				sprite = "~";
 				break;
 			case 6:
-				sprite=";";
+				sprite = ";";
 				break;
 			default:
-				sprite="";
+				sprite = "";
 				break;
-
+		}
 		return sprite;
 	}
 
-	private void redraw() {
-		setText(toString());
+	public boolean isEntity ()
+	{
+		if (this.toString() == "") return false;
+		else return true;
 	}
 
+
+	public void setEntity(int entityNumber) { //Default Set entity function.
+		this.objectType = entityNumber;
+
+		}
+
+/*	private void setMines(int size, int mines, Cell[][] cells) {
+		for (int i = 0; i < mines; i++) {
+			int x, y;
+			do {
+				x = ThreadLocalRandom.current().nextInt(size);
+				y = ThreadLocalRandom.current().nextInt(size);
+			} while (cells[x][y].isMine());
+			cells[x][y].setMine();
+		}
+	}*/
 	}
 }
+
