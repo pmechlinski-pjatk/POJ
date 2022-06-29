@@ -3,36 +3,77 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
-import javax.swing.JLabel;
+import javax.swing.*;
+
 // Render + logika + klasa-tablica z polami gry i ich wartościami
 @SuppressWarnings("serial")
 public class Cell extends JLabel {
+	public Cell() {
+		this.entityType = "";
+	}
+
 	Cell[][] neibers = new Cell[3][3];
-	public boolean isPlayer () { if (this.objectType == 3) return true; return false; };
-	public Cell movable (int kierunek) // TODO: Change into probably enum with used keys
-	{
-		setHorizontalTextPosition(CENTER);
-		Cell movable;
-		switch (kierunek) {
-			case 1: //góra
-				movable = neibers[2][1];
+
+	public String entityType = "";
+
+	public boolean isEntity() {
+		if (this.entityType == "") {
+			return false;
+		} else {
+			return true;
+		}
+	}
+
+	@Override
+	public String toString() {
+		//1:Wall, 2:Base, 3:Player, 4:Enemy, 5:MissileH, 6:MissileV
+		String sprite;
+		switch(entityType) {
+			case "Wall":
+				sprite = String.valueOf('#');
 				break;
-			case 2: //dół
-				movable = neibers[2][3];
+			case "EnemyBase":
+				sprite = "F";
 				break;
-			case 3: //lewo
-				movable = neibers[1][2];
+			case "Player":
+				sprite = "[+]";
 				break;
-			case 4: //prawo
-				movable = neibers[3][2];
+			case "Enemy":
+				sprite = "x";
+				break;
+			case "Missile":
+				sprite = "*";
 				break;
 			default:
-				movable = neibers[2][2];
+				sprite = "";
 				break;
 		}
-		return movable;
+		return sprite;
 	}
-	private int objectType; // { 1:Wall, 2:Base, 3:Player, 4:Enemy, 5:MissileH, 6:MissileV };
+//	public Cell movable (int kierunek) // TODO: Change into probably enum with used keys
+//	{
+//		setHorizontalTextPosition(CENTER);
+//		Cell movable;
+//		switch (kierunek) {
+//			case 1: //góra
+//				movable = neibers[2][1];
+//				break;
+//			case 2: //dół
+//				movable = neibers[2][3];
+//				break;
+//			case 3: //lewo
+//				movable = neibers[1][2];
+//				break;
+//			case 4: //prawo
+//				movable = neibers[3][2];
+//				break;
+//			default:
+//				movable = neibers[2][2];
+//				break;
+//		}
+//		return movable;
+//	}
+//	private int objectType; // { 1:Wall, 2:Base, 3:Player, 4:Enemy, 5:MissileH, 6:MissileV };
 
 //	public Cell() {
 //		setHorizontalTextPosition(CENTER);
@@ -42,47 +83,6 @@ public class Cell extends JLabel {
 		neibers[p][q] = cell;
 	}
 
-	@Override
-	public String toString() {
-		//1:Wall, 2:Base, 3:Player, 4:Enemy, 5:MissileH, 6:MissileV
-		String sprite;
-		switch(objectType) {
-			case 1:
-				sprite = String.valueOf('#');
-				break;
-			case 2:
-				sprite = "F";
-				break;
-			case 3:
-				sprite = "[+]";
-				break;
-			case 4:
-				sprite = "x";
-				break;
-			case 5:
-				sprite = "~";
-				break;
-			case 6:
-				sprite = ";";
-				break;
-			default:
-				sprite = "";
-				break;
-		}
-		return sprite;
-	}
-
-	public boolean isEntity ()
-	{
-		if (this.toString() == "") return false;
-		else return true;
-	}
-
-
-	public void setEntity(int entityNumber) { //Default Set entity function.
-		this.objectType = entityNumber;
-		toString();
-		}
 
 	void redraw() {
 		setText(toString());
