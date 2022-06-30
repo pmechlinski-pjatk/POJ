@@ -1,8 +1,8 @@
-public class enemyTank extends movingObject {
+public class EnemyTank extends MovingObject {
 
     private String direction;
 
-    public enemyTank(String image, int hp, boolean isDestructible) {
+    public EnemyTank(String image, int hp, boolean isDestructible) {
         super(image, hp, isDestructible);
     }
     public void watchtower() {};

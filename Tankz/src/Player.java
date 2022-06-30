@@ -1,4 +1,4 @@
-public class Player extends movingObject{
+public class Player extends MovingObject {
     public Player(String image, int hp, boolean isDestructible) {
         super(image, hp, isDestructible);
     }

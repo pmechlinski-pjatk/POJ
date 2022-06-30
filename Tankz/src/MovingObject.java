@@ -1,9 +1,9 @@
-public class movingObject extends gameObject {
+public class MovingObject extends GameObject {
 
     //private enum movementType { RANDOM, PANTHER, CONTROLLABLE }; // For now I'm not sure, if this will even be needed as of now.
 
 
-    public movingObject(String image, int hp, boolean isDestructible) {
+    public MovingObject(String image, int hp, boolean isDestructible) {
         super(image, hp, isDestructible);
     }
 
