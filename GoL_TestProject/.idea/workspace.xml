@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="Sterowanie work in progress">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tankz/Cell.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/Cell.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tankz/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tankz/Window.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/Window.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Map.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Tankz/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Tankz/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Tankz/src/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Tankz/src/Cell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Tankz/src/Dir.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Tankz/src/Dir.java" afterDir="false" />
@@ -46,32 +42,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/admiralisastralis/Repo/pja/poj/POJ/GoL_TestProject&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/admiralisastralis/Repo/pja/poj/POJ/Tankz"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Game" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Game" />
       <module name="Tankz" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="Tankz" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="Tankz" />
-      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -89,6 +72,7 @@
       <workItem from="1656430802451" duration="9635000" />
       <workItem from="1656522794995" duration="16000" />
       <workItem from="1656524823269" duration="1229000" />
+      <workItem from="1656627658368" duration="28000" />
     </task>
     <task id="LOCAL-00001" summary="Pliki z projektu saperowego">
       <created>1654955760842</created>

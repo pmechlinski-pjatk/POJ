@@ -1,2 +1,3 @@
-package PACKAGE_NAME;public class Dir {
+public enum Dir {
+    NORTH, SOUTH, EAST, WEST
 }

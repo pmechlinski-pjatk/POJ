@@ -1,9 +1,10 @@
 
 public class Game {
-	final static int SIZE = 20; // Szerokość pola gry. TODO: Ustalana przy wyborze mapy
-	// TODO: Wybór mapy z pliku .csv
+	final static int SIZE = 20; //  Currently the game field will be randomly generated.
+	//							    For the (hypothetical later) game version in which there are predefined maps, also predefined map size would be unnecessary
+	// 							  	Eventually there could be other things parametrized, such as:
+	//								number of enemies, enemy bases, difficulty etc. in a still random game variant.
 
-	// Currently Game.claas only sets the size of the map & initializes object of the Window class.
 	public static void main(String[] args) {
 		Window main = new Window(SIZE);
 	}
