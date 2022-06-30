@@ -54,19 +54,16 @@ public class Cell extends JLabel {
 				sprite = "<html>###<br/>###<br/>###</html>";
 				break;
 			case 2:
-				sprite = "|F|";
+				sprite = "<html>@=@<br/>|| F ||<br/>@=@</html>";
 				break;
 			case 3:
-				sprite = "[+]";
+				sprite = "<html>_|_<br/>[+]<br/></html>";
 				break;
 			case 4:
-				sprite = "[x]";
+				sprite = "<html>_!_<br/>[X]<br/>###</html>";
 				break;
 			case 5:
-				sprite = "~";
-				break;
-			case 6:
-				sprite = ";";
+				sprite = "*";
 				break;
 			default:
 				sprite = "";
