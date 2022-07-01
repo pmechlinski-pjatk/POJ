@@ -1,6 +1,5 @@
 import java.awt.GridLayout;
 import java.util.Arrays;
-import java.util.concurrent.ThreadLocalRandom;
 import javax.swing.*;
 
 import static java.lang.Thread.sleep;
@@ -21,7 +20,7 @@ public class Window {
 
 		Arrays.stream(cells).flatMap(Arrays::stream).forEach(q -> panel.add(q));
 		window.add(panel);
-		window.setSize(size * 20, size * 20);
+		window.setSize(size * 15, size * 15);
 		window.setVisible(true);
 
 		gameLoop(cells, 1000);

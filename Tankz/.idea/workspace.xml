@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="Zaimplementowałem coś na kształt słownika, żeby trzymać w nim (w jednym miejscu) grafiki używnae w grze.&#10;(Nie jestem pewien, czy to ma do końca sens, ale no na razie powinno działać)">
+    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="Some changes. I need to revert some commits, because tiles crashed - they all displays at the very small field">
+      <change afterPath="$PROJECT_DIR$/out/production/Tankz/Window.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GoL_TestProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../GoL_TestProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GoL_TestProject/out/production/Tankz/Window.class" beforeDir="false" afterPath="$PROJECT_DIR$/../GoL_TestProject/out/production/Tankz/Window.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GoL_TestProject/src/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/../GoL_TestProject/src/Window.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Window.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,7 +23,15 @@
       </list>
     </option>
   </component>
+  <component name="Git.Rebase.Settings">
+    <option name="NEW_BASE" value="origin/tankz-archive" />
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
@@ -75,6 +89,7 @@
       <workItem from="1656522794995" duration="16000" />
       <workItem from="1656524823269" duration="1229000" />
       <workItem from="1656627687413" duration="2709000" />
+      <workItem from="1656700775252" duration="1265000" />
     </task>
     <task id="LOCAL-00001" summary="Pliki z projektu saperowego">
       <created>1654955760842</created>

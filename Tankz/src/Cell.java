@@ -1,32 +1,28 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.concurrent.ThreadLocalRandom;
+import javax.swing.*;
 
-import javax.swing.JLabel;
 // Render + logika + klasa-tablica z polami gry i ich wartościami
-@SuppressWarnings("serial")
+
 public class Cell extends JLabel
 {
-	private int x,y;
-
-	@Override
-	public int getY() {
-		return y;
-	}
-
-	@Override
-	public int getX() {
-		return x;
-	}
-
-	public Cell (int x, int y)
-	{
-		this.x = x;
-		this.y = y;
-	}
 	Cell[][] neibers = new Cell[3][3];
-	private GameObject linkedObject = null;
+	private int tiledX;
+	private int tiledY;
+	private GameObject linkedObject;
+
+	public Cell (int tiledX, int tiledY)
+	{
+		this.tiledX = tiledX;
+		this.tiledY = tiledY;
+	}
+
+	public int getTiledY() {
+		return tiledY;
+	}
+
+	public int getTiledX() {
+		return tiledX;
+	}
+
 	public void setNeiber(Cell cell, int p, int q)
 	{
 		neibers[p][q] = cell;
@@ -39,8 +35,7 @@ public class Cell extends JLabel
 		{
 			return linkedObject.getImage();
 		}
-		else return "XD";
-		//return "";
+		else return "YOLO";
 	}
 
 //		//1:Wall, 2:Base, 3:Player, 4:Enemy, 5:MissileH, 6:MissileV

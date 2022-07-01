@@ -1,4 +1,4 @@
-import java.awt.GridLayout;
+import java.awt.*;
 import java.net.StandardSocketOptions;
 import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
@@ -6,11 +6,15 @@ import javax.swing.*;
 
 public class Window {
 
+
+
 	public Window(int size) {
 		// Create game window
-		JFrame window = new JFrame();
+		JFrame window = new JFrame("Tankz ASCII REMAKE");
 		window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-		JPanel panel = new JPanel(new GridLayout(size, size));
+		JPanel panel = new JPanel();
+
+		panel.setLayout(new GridLayout(size, size));
 
 		// Create cell array object.
 		Cell[][] cells = new Cell[size][size];
@@ -20,30 +24,30 @@ public class Window {
 		setNeibers(size, cells);
 
 		// Those make tiles visible and of reasonable size for the ascii graphics to be seen
-		Arrays.stream(cells).flatMap(Arrays::stream).forEach(q -> panel.add(q));
+		Arrays.stream(cells).flatMap(Arrays::stream).forEach(panel::add);
 //		for (Cell[] cell : cells) {
 //			for (Cell q : cell) {
 //				panel.add(q);
 //			}
 //		}
 		window.add(panel);
-		window.setSize(size * 100, size * 100);
+		window.setSize(size * 25, size * 25);
 		window.setVisible(true);
 
 		// Generate some random things at the start TODO: Make it make sense, i.e. create objects for game objects etc.
-		//setEntities(size, cells);
+		 //setEntities(size, cells);
 
 
 		//System.out.print(player.getImage());
 		//System.out.println("X: "+(player.linkedCell.getX())+ " Y: "+(player.linkedCell.getY()));
 		//System.out.println("X: "+cells[1][1].getX()+" Y: "+cells[1][1].getY());
 
-		EnemyTank[] enemies;
-		Sprites [] s = new Sprites[9];
+		//EnemyTank[] enemies;
+		//Sprites [] s = new Sprites[9];
 
 
-		s[0] = new Sprites("Wall", "<html>###<br/>###<br/>###</html>");
-		s[1] = new Sprites("Player", "<html>_|_<br/>[+]<br/></html>");
+		//s[0] = new Sprites("Wall", "<html>###<br/>###<br/>###</html>");
+		//s[1] = new Sprites("Player", "<html>_|_<br/>[+]<br/></html>");
 
 		//Player player = new Player(s[0].getImage(), 3, true, cells[2][5]);
 		//mapGen(size, cells);
@@ -53,6 +57,11 @@ public class Window {
 				cells[i][j].redraw();
 			}
 		}
+		//Player player = new Player("XD", 3, true, cells[1][1]);
+		//Player player2 = new Player("%%", 3, true, cells[9][9]);
+		//cells[1][1].setLinkedObject(player);
+		//cells[1][1].redraw();
+		//cells[9][9].redraw();
 
 
 		// There should be the main game loops with:
@@ -137,7 +146,7 @@ public class Window {
 		private void filArray ( int size, Cell[][] cells){
 			for (int i = 0; i < size; i++) {
 				for (int j = 0; j < size; j++) {
-					// System.out.print("New cell with x ="+i+" & y: "+j+"\n");  //DEBUG
+					//System.out.print("New cell with x = "+i+" & y = "+j+"\n");  //DEBUG
 					cells[i][j] = new Cell(i, j);
 				}
 			}
