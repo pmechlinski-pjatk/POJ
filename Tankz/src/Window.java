@@ -1,6 +1,4 @@
 import java.awt.GridLayout;
-import java.util.Arrays;
-import java.util.concurrent.ThreadLocalRandom;
 import javax.swing.*;
 
 public class Window {
@@ -19,13 +17,17 @@ public class Window {
 		setNeibers(size, cells);
 
 		// Those make tiles visible and of reasonable size for the ascii graphics to be seen
-		Arrays.stream(cells).flatMap(Arrays::stream).forEach(q -> panel.add(q));
+		for (Cell[] cell : cells) {
+			for (Cell q : cell) {
+				panel.add(q);
+			}
+		}
 		window.add(panel);
 		window.setSize(size * 100, size * 100);
 		window.setVisible(true);
 
 		// Generate some random things at the start TODO: Make it make sense, i.e. create objects for game objects etc.
-		setEntities(size, cells);
+		//setEntities(size, cells);
 
 		for (int i = 0; i < size; i++) {
 			for (int j = 0; j < size; j++) {
@@ -44,7 +46,7 @@ public class Window {
 
 	}
 
-
+/*
 	public void setEntities(int size, Cell[][] cells) {
 		int entityType = 0; // Default type gives empty field.
 		int starterX, starterY;
@@ -86,7 +88,7 @@ public class Window {
 			cells[x][y].setEntity(1);
 		}
 	}
-
+*/
 	/**
 	 * @param size
 	 * @param cells
@@ -114,7 +116,7 @@ public class Window {
 	private void filArray(int size, Cell[][] cells) {
 		for (int i = 0; i < size; i++) {
 			for (int j = 0; j < size; j++) {
-				cells[i][j] = new Cell();
+				cells[i][j] = new Cell(i, j);
 			}
 		}
 	}

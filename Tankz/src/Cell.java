@@ -8,6 +8,13 @@ import javax.swing.JLabel;
 @SuppressWarnings("serial")
 public class Cell extends JLabel
 {
+	private int x,y;
+
+	public Cell (int x, int y)
+	{
+		this.x = x;
+		this.y = y;
+	}
 	Cell[][] neibers = new Cell[3][3];
 	private GameObject linkedObject;
 	public void setNeiber(Cell cell, int p, int q)
