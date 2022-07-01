@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="Change in a JLabel size - looks good on my screen...">
+    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="added gameObjects inits &#10;started sculpting the mapGen method">
       <change beforePath="$PROJECT_DIR$/../GoL_TestProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../GoL_TestProject/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tankz/Window.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/Window.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Window.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -87,7 +85,7 @@
       <workItem from="1656522794995" duration="16000" />
       <workItem from="1656524823269" duration="1229000" />
       <workItem from="1656627687413" duration="2709000" />
-      <workItem from="1656700775252" duration="2535000" />
+      <workItem from="1656700775252" duration="3850000" />
     </task>
     <task id="LOCAL-00001" summary="Pliki z projektu saperowego">
       <created>1654955760842</created>
@@ -208,7 +206,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656702668855</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="added gameObjects inits &#10;started sculpting the mapGen method">
+      <created>1656703458779</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1656703458779</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,7 +247,8 @@
     <MESSAGE value="Zaimplementowałem coś na kształt słownika, żeby trzymać w nim (w jednym miejscu) grafiki używnae w grze.&#10;(Nie jestem pewien, czy to ma do końca sens, ale no na razie powinno działać)" />
     <MESSAGE value="Lol. I've spent ca. 2,5 hour debugging my code, because tile rendering was severely screwed somehow. Eventually it came out that my x and y parameters for JLabel are somehow forcing renders to display at absolute value of x &amp; y, ignoring layout.&#10;&#10;Renaming them did the trick." />
     <MESSAGE value="Change in a JLabel size - looks good on my screen..." />
-    <option name="LAST_COMMIT_MESSAGE" value="Change in a JLabel size - looks good on my screen..." />
+    <MESSAGE value="added gameObjects inits &#10;started sculpting the mapGen method" />
+    <option name="LAST_COMMIT_MESSAGE" value="added gameObjects inits &#10;started sculpting the mapGen method" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

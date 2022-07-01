@@ -31,24 +31,23 @@ public class Window {
 		window.setVisible(true);
 
 		// Game init variables
-		GameObject [] terrain;
-		EnemyTank [] enemies;
-		GameObject [] enemyBases;
-		Missile [] missiles;
-		Player player;
-
-		// Generate procedural map.
-
+		GameObject [] terrain = new GameObject[200];
+		EnemyTank [] enemies = new EnemyTank[200];
+		GameObject [] enemyBases = new GameObject[5];
+		Missile [] missiles = new Missile[200];
 
 		//TODO: [Math.round(size/33)]  <- generate enemies.
-		Sprites [] s = new Sprites[9];
-
+		Sprites [] s = new Sprites[5];
 
 		s[0] = new Sprites("Wall", "<html>###<br/>###<br/>###</html>");
-		//s[1] = new Sprites("Player", "<html>_|_<br/>[+]<br/></html>");
+		s[1] = new Sprites("Player", "<html>_|_<br/>[+]<br/></html>");
+		s[2] = new Sprites("EnemyBase", "<html>@=@<br/>|| F ||<br/>@=@</html>");
+		s[3] = new Sprites("EnemyTank", "<html>_!_<br/>[X]<br/>###</html>");
+		s[4] = new Sprites("MissileHorizontal", "<html>_|_<br/>[+]<br/></html>");
+		s[5] = new Sprites("MissileVertical", "<html>_|_<br/>[+]<br/></html>");
 
-		//Player player = new Player(s[0].getImage(), 3, true, cells[2][5]);
-		//mapGen(size, cells);
+		// Generate procedural map.
+		mapGen(size, cells, terrain, enemyBases, enemies, s);
 
 		for (int i = 0; i < size; i++) {
 			for (int j = 0; j < size; j++) {
@@ -72,8 +71,15 @@ public class Window {
 
 	}
 
-
-	public void mapGen(int size, Cell[][] cells, GameObject[] terrain, GameObject enemyBases, EnemyTank[] enemies, Player player)
+	public String getSpriteByName(Sprites [] s, String name)
+	{
+		for (Sprites sprite : s)
+		{
+			if (sprite.getName() == name) return sprite.getName();
+		}
+			return "NULL!";
+	}
+	public void mapGen(int size, Cell[][] cells, GameObject[] terrain, GameObject [] enemyBases, EnemyTank[] enemies, Sprites [] s)
 	{
 		int starterX, starterY;
 		int baseX, baseY;
@@ -85,6 +91,7 @@ public class Window {
 		} while ((starterX > 3 && starterX < size - 3) && (starterY > 3 && starterY < size - 3));
 		// This requirement should ensure that the starting position of the player is close to the map's border.*
 		// *It could crash on maps less than 6x6, but why'd someone use that small map?
+		Player player = new Player(s, hp, isDestructible, linkedCell)
 		player.setLinkedCell(cells[starterX][starterY]);
 
 		do { // Generowanie losowej pozycji bazy wroga w nie za małej odleglości
