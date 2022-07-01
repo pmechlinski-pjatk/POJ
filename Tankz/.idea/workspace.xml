@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="I've refactored class names">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="I've added a new version of ascii images - it's harder than I thought to make them stick together.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cell.java" afterDir="false" />
     </list>
@@ -50,6 +49,11 @@
     "last_opened_file_path": "/home/admiralisastralis/Repo/pja/poj/POJ/Tankz"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Game" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Game" />
@@ -122,7 +126,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656631083106</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="I've added a new version of ascii images - it's harder than I thought to make them stick together.">
+      <created>1656631770836</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1656631770836</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,7 +158,8 @@
     <MESSAGE value="Podstawowy generator mapy" />
     <MESSAGE value="Sterowanie work in progress" />
     <MESSAGE value="I've refactored class names" />
-    <option name="LAST_COMMIT_MESSAGE" value="I've refactored class names" />
+    <MESSAGE value="I've added a new version of ascii images - it's harder than I thought to make them stick together." />
+    <option name="LAST_COMMIT_MESSAGE" value="I've added a new version of ascii images - it's harder than I thought to make them stick together." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
