@@ -31,14 +31,15 @@ public class Window {
 		// Generate some random things at the start TODO: Make it make sense, i.e. create objects for game objects etc.
 		//setEntities(size, cells);
 
-		Player player = new Player("[+]", 3, true, cells[1][1]);
-		System.out.print(player.getImage());
+
+		//System.out.print(player.getImage());
 		//System.out.println("X: "+(player.linkedCell.getX())+ " Y: "+(player.linkedCell.getY()));
-		System.out.println("X: "+cells[1][1].getX()+" Y: "+cells[1][1].getY());
+		//System.out.println("X: "+cells[1][1].getX()+" Y: "+cells[1][1].getY());
 
 		EnemyTank[] enemies;
 
-
+		loadSprites();
+		//Player player = new Player(player, 3, true, cells[1][1]);
 //		for (int i = 0; i < size; i++) {
 //			for (int j = 0; j < size; j++) {
 //				cells[i][j].redraw();
@@ -55,6 +56,14 @@ public class Window {
 
 
 	}
+
+	public void loadSprites()
+	{
+		Sprites [] s = new Sprites[9];
+
+		s[0] = new Sprites("Wall", "<html>###<br/>###<br/>###</html>");
+		s[1] = new Sprites("Player", "<html>_|_<br/>[+]<br/></html>");
+	}
 	public void mapGen(int size, Cell[][] cells)
 	{
 		int starterX, starterY;
@@ -67,6 +76,7 @@ public class Window {
 		} while ((starterX > 3 && starterX < size - 3) && (starterY > 3 && starterY < size - 3));
 		// This requirement should ensure that the starting position of the player is close to the map's border.*
 		// *It could crash on maps less than 6x6, but why'd someone use that small map?
+		Player player = new Player("[+]", 3, true, cells[1][1]);
 
 		do { // Generowanie losowej pozycji bazy wroga w nie za małej odleglości
 			baseX = ThreadLocalRandom.current().nextInt(size);
@@ -131,6 +141,8 @@ public class Window {
 				}
 			}
 		}
+
+
 
 	}
 

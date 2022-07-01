@@ -48,7 +48,7 @@ public class Cell extends JLabel
 //		String sprite;
 //		switch(objectType) {
 //			case 1:
-//				sprite = "<html>###<br/>###<br/>###</html>";
+//				sprite = ;
 //				break;
 //			case 2:
 //				sprite = "<html>@=@<br/>|| F ||<br/>@=@</html>";
