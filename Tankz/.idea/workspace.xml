@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="I've added direction variable for movable class&#10;I've added name variable for to GameObjects which will be needed to ID them in pathfinding.">
-      <change afterPath="$PROJECT_DIR$/out/production/Tankz/Direction.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Tankz/EnemyTank.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Tankz/GameObject.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Tankz/Missile.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Tankz/MovingObject.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Tankz/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GoL_TestProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../GoL_TestProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tankz/Window.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/Window.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EnemyTank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EnemyTank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Missile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Missile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovingObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovingObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
+    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="getNeibers method for movables is working - it can be used to detect where one can go.">
       <change beforePath="$PROJECT_DIR$/src/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Window.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -95,7 +82,7 @@
       <workItem from="1656522794995" duration="16000" />
       <workItem from="1656524823269" duration="1229000" />
       <workItem from="1656627687413" duration="2709000" />
-      <workItem from="1656700775252" duration="11893000" />
+      <workItem from="1656700775252" duration="12227000" />
     </task>
     <task id="LOCAL-00001" summary="Pliki z projektu saperowego">
       <created>1654955760842</created>
@@ -244,7 +231,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656717571372</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="getNeibers method for movables is working - it can be used to detect where one can go.">
+      <created>1656718645332</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1656718645332</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -285,7 +279,8 @@
     <MESSAGE value="I didn't want to write so many constructors so I've created a small function to append new sprites to the sprite array." />
     <MESSAGE value="I didn't want to write so many constructors, so I've created a small function to append new sprites to the sprite array." />
     <MESSAGE value="I've added direction variable for movable class&#10;I've added name variable for to GameObjects which will be needed to ID them in pathfinding." />
-    <option name="LAST_COMMIT_MESSAGE" value="I've added direction variable for movable class&#10;I've added name variable for to GameObjects which will be needed to ID them in pathfinding." />
+    <MESSAGE value="getNeibers method for movables is working - it can be used to detect where one can go." />
+    <option name="LAST_COMMIT_MESSAGE" value="getNeibers method for movables is working - it can be used to detect where one can go." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

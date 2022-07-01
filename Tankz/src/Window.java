@@ -42,7 +42,7 @@ public class Window {
 
 		addToSprites(0, s, "Wall", "<html><font color=#A52A2A>###<br/>###<br/>###</font></html>");
 		addToSprites(1, s, "Player", "[+]");
-		addToSprites(2, s, "EnemyBase", "<html>@=@<br/>|| F ||<br/>@=@</html>");
+		addToSprites(2, s, "EnemyBase", "<html><font color='gray'>@=@<br/>|| <font color='red'>F</font> ||<br/>@=@</font></html>");
 		addToSprites(3, s, "EnemyTank", "[x]");
 		addToSprites(4, s, "MissileHorizontal", "<html>_|_<br/>[+]<br/></html>");
 		addToSprites(5, s, "MissileVertical", "<html>_|_<br/>[+]<br/></html>");
