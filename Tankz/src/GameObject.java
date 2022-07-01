@@ -1,7 +1,20 @@
 public class GameObject {
 
     private String image;
+
+    private String name;
+
+    public String getName() {
+        return name;
+    }
+
     private int hp;
+
+    public boolean isObject() {
+        return isObject;
+    }
+
+    private boolean isObject = true;
 
     Cell linkedCell;
 
@@ -11,15 +24,18 @@ public class GameObject {
 
     public void setLinkedCell(Cell linkedCell) {
         this.linkedCell = linkedCell;
+        linkedCell.setLinkedObject(this);
     }
 
     private boolean isDestructible;
 
-    public GameObject(String image, int hp, boolean isDestructible, Cell linkedCell) {
+    public GameObject(String name, String image, int hp, boolean isDestructible, Cell linkedCell) {
         this.image = image;
         this.hp = hp;
         this.isDestructible = isDestructible;
         this.linkedCell = linkedCell;
+        this.name = name;
+        linkedCell.setLinkedObject(this);
         linkedCell.redraw();
     }
 
