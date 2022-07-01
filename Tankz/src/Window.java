@@ -25,25 +25,15 @@ public class Window {
 
 		// Those make tiles visible and of reasonable size for the ascii graphics to be seen
 		Arrays.stream(cells).flatMap(Arrays::stream).forEach(panel::add);
-//		for (Cell[] cell : cells) {
-//			for (Cell q : cell) {
-//				panel.add(q);
-//			}
-//		}
+
 		window.add(panel);
-		window.setSize(size * 25, size * 25);
+		window.setSize(size * 35, size * 50);
 		window.setVisible(true);
 
-		// Generate some random things at the start TODO: Make it make sense, i.e. create objects for game objects etc.
-		 //setEntities(size, cells);
 
 
-		//System.out.print(player.getImage());
-		//System.out.println("X: "+(player.linkedCell.getX())+ " Y: "+(player.linkedCell.getY()));
-		//System.out.println("X: "+cells[1][1].getX()+" Y: "+cells[1][1].getY());
-
-		//EnemyTank[] enemies;
-		//Sprites [] s = new Sprites[9];
+		EnemyTank[] enemies;
+		Sprites [] s = new Sprites[9];
 
 
 		//s[0] = new Sprites("Wall", "<html>###<br/>###<br/>###</html>");

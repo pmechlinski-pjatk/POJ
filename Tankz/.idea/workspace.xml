@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="Some changes. I need to revert some commits, because tiles crashed - they all displays at the very small field">
-      <change afterPath="$PROJECT_DIR$/out/production/Tankz/Window.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GoL_TestProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../GoL_TestProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GoL_TestProject/out/production/Tankz/Window.class" beforeDir="false" afterPath="$PROJECT_DIR$/../GoL_TestProject/out/production/Tankz/Window.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GoL_TestProject/src/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/../GoL_TestProject/src/Window.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="Lol. I've spent ca. 2,5 hour debugging my code, because tile rendering was severely screwed somehow. Eventually it came out that my x and y parameters for JLabel are somehow forcing renders to display at absolute value of x &amp; y, ignoring layout.&#10;&#10;Renaming them did the trick.">
       <change beforePath="$PROJECT_DIR$/src/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Window.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,7 +82,7 @@
       <workItem from="1656522794995" duration="16000" />
       <workItem from="1656524823269" duration="1229000" />
       <workItem from="1656627687413" duration="2709000" />
-      <workItem from="1656700775252" duration="1265000" />
+      <workItem from="1656700775252" duration="1594000" />
     </task>
     <task id="LOCAL-00001" summary="Pliki z projektu saperowego">
       <created>1654955760842</created>
@@ -196,7 +189,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656691124672</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Lol. I've spent ca. 2,5 hour debugging my code, because tile rendering was severely screwed somehow. Eventually it came out that my x and y parameters for JLabel are somehow forcing renders to display at absolute value of x &amp; y, ignoring layout.&#10;&#10;Renaming them did the trick.">
+      <created>1656702315520</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1656702315520</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,7 +228,8 @@
     <MESSAGE value="I've started improving map generator.&#10;- I've added an extra req so that player will spawn near to the map edge.&#10;- I've added disclaimer to the game class about minimal size." />
     <MESSAGE value="I'm still not sure if it would be better to enforce setting starting cell for the object or not..." />
     <MESSAGE value="Zaimplementowałem coś na kształt słownika, żeby trzymać w nim (w jednym miejscu) grafiki używnae w grze.&#10;(Nie jestem pewien, czy to ma do końca sens, ale no na razie powinno działać)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Zaimplementowałem coś na kształt słownika, żeby trzymać w nim (w jednym miejscu) grafiki używnae w grze.&#10;(Nie jestem pewien, czy to ma do końca sens, ale no na razie powinno działać)" />
+    <MESSAGE value="Lol. I've spent ca. 2,5 hour debugging my code, because tile rendering was severely screwed somehow. Eventually it came out that my x and y parameters for JLabel are somehow forcing renders to display at absolute value of x &amp; y, ignoring layout.&#10;&#10;Renaming them did the trick." />
+    <option name="LAST_COMMIT_MESSAGE" value="Lol. I've spent ca. 2,5 hour debugging my code, because tile rendering was severely screwed somehow. Eventually it came out that my x and y parameters for JLabel are somehow forcing renders to display at absolute value of x &amp; y, ignoring layout.&#10;&#10;Renaming them did the trick." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

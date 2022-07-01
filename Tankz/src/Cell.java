@@ -35,7 +35,8 @@ public class Cell extends JLabel
 		{
 			return linkedObject.getImage();
 		}
-		else return "YOLO";
+		//else return tiledX+" "+tiledY; // DEBUG MODE
+		else return "<html>###<br/>###<br/>###</html>"; // DEBUG MODE
 	}
 
 //		//1:Wall, 2:Base, 3:Player, 4:Enemy, 5:MissileH, 6:MissileV
