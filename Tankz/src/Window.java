@@ -79,8 +79,7 @@ public class Window {
 		}
 			return "NULL!";
 	}
-	public void mapGen(int size, Cell[][] cells, GameObject[] terrain, GameObject [] enemyBases, EnemyTank[] enemies, Sprites [] s)
-	{
+	public void mapGen(int size, Cell[][] cells, GameObject[] terrain, GameObject [] enemyBases, EnemyTank[] enemies, Sprites [] s) {
 		int starterX, starterY;
 		int baseX, baseY;
 
@@ -91,13 +90,16 @@ public class Window {
 		} while ((starterX > 3 && starterX < size - 3) && (starterY > 3 && starterY < size - 3));
 		// This requirement should ensure that the starting position of the player is close to the map's border.*
 		// *It could crash on maps less than 6x6, but why'd someone use that small map?
-		Player player = new Player(s, hp, isDestructible, linkedCell)
-		player.setLinkedCell(cells[starterX][starterY]);
+		Player player = new Player(getSpriteByName(s, "Player"), 3, true, cells[starterX][starterY]);
+		for (int i = 0; i < enemyBases.length; i++) {
+			do { // Generowanie losowej pozycji bazy wroga w nie za małej odleglości
+				baseX = ThreadLocalRandom.current().nextInt(size);
+				baseY = ThreadLocalRandom.current().nextInt(size);
+			} while (cells[baseX][baseY].getLinkedObject() == null && Math.abs(starterX - baseX) < 20 && Math.abs(starterY - baseY) < 20);
+			enemyBases[i] = new GameObject(getSpriteByName(s, "EnemyBase"), 3 , true, cells[baseX][baseY]);
+		}
 
-		do { // Generowanie losowej pozycji bazy wroga w nie za małej odleglości
-			baseX = ThreadLocalRandom.current().nextInt(size);
-			baseY = ThreadLocalRandom.current().nextInt(size);
-		} while (cells[baseX][baseY].getLinkedObject() == null && Math.abs(starterX - baseX) < 20 && Math.abs(starterY - baseY) < 20);
+
 	}
 		// For more enemy bases there could be probably an array of them...
 
