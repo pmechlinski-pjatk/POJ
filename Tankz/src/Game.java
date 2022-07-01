@@ -6,6 +6,8 @@ public class Game {
 	//								number of enemies, enemy bases, difficulty etc. in a still random game variant.
 	//
 	//								<!> Map size shouldn't be smaller than 7 & optimally it would be around 10-20.
+
+	// TODO: Zdecydować się na jeden język w komentarzach i nazwach funkcji xd
 	public static void main(String[] args) {
 		Window main = new Window(SIZE);
 	}

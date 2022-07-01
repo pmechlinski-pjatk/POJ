@@ -66,7 +66,7 @@ public class Window {
 			starterY = ThreadLocalRandom.current().nextInt(size);
 		} while ((starterX > 3 && starterX < size - 3) && (starterY > 3 && starterY < size - 3));
 		// This requirement should ensure that the starting position of the player is close to the map's border.*
-		// It could crash on maps less than 6x6, but why'd someone use that small map?
+		// *It could crash on maps less than 6x6, but why'd someone use that small map?
 
 		do { // Generowanie losowej pozycji bazy wroga w nie za małej odleglości
 			baseX = ThreadLocalRandom.current().nextInt(size);
