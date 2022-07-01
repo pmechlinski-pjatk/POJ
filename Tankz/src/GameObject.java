@@ -3,7 +3,7 @@ public class GameObject {
     private String image;
     private int hp;
 
-    private Cell linkedCell;
+    Cell linkedCell;
 
     private boolean isDestructible;
 
@@ -12,6 +12,7 @@ public class GameObject {
         this.hp = hp;
         this.isDestructible = isDestructible;
         this.linkedCell = linkedCell;
+        linkedCell.redraw();
     }
 
     public int[] getCoordinates()

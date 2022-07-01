@@ -10,13 +10,23 @@ public class Cell extends JLabel
 {
 	private int x,y;
 
+	@Override
+	public int getY() {
+		return y;
+	}
+
+	@Override
+	public int getX() {
+		return x;
+	}
+
 	public Cell (int x, int y)
 	{
 		this.x = x;
 		this.y = y;
 	}
 	Cell[][] neibers = new Cell[3][3];
-	private GameObject linkedObject;
+	private GameObject linkedObject = null;
 	public void setNeiber(Cell cell, int p, int q)
 	{
 		neibers[p][q] = cell;
@@ -29,7 +39,8 @@ public class Cell extends JLabel
 		{
 			return linkedObject.getImage();
 		}
-		return "";
+		else return "XD";
+		//return "";
 	}
 
 //		//1:Wall, 2:Base, 3:Player, 4:Enemy, 5:MissileH, 6:MissileV
@@ -69,4 +80,6 @@ public class Cell extends JLabel
 	void redraw() {
 		setText(toString());
 	}
+
+
 }

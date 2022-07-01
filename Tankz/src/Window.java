@@ -1,4 +1,6 @@
 import java.awt.GridLayout;
+import java.net.StandardSocketOptions;
+import java.util.concurrent.ThreadLocalRandom;
 import javax.swing.*;
 
 public class Window {
@@ -29,11 +31,16 @@ public class Window {
 		// Generate some random things at the start TODO: Make it make sense, i.e. create objects for game objects etc.
 		//setEntities(size, cells);
 
-		for (int i = 0; i < size; i++) {
-			for (int j = 0; j < size; j++) {
-				cells[i][j].redraw();
-			}
-		}
+		Player player = new Player("XD", 3, true, cells[1][1]);
+		System.out.print(player.getImage());
+		//System.out.println("X: "+(player.linkedCell.getX())+ " Y: "+(player.linkedCell.getY()));
+		System.out.println("X: "+cells[1][1].getX()+" Y: "+cells[1][1].getY());
+		cells[1][1].redraw();
+//		for (int i = 0; i < size; i++) {
+//			for (int j = 0; j < size; j++) {
+//				cells[i][j].redraw();
+//			}
+//		}
 
 
 		// There should be the main game loops with:
@@ -46,7 +53,7 @@ public class Window {
 
 	}
 
-/*
+
 	public void setEntities(int size, Cell[][] cells) {
 		int entityType = 0; // Default type gives empty field.
 		int starterX, starterY;
@@ -55,70 +62,71 @@ public class Window {
 		// Generowanie losowej pozycji startowej gracza.
 		starterX = ThreadLocalRandom.current().nextInt(size);
 		starterY = ThreadLocalRandom.current().nextInt(size);
-		cells[starterX][starterY].setEntity(3); //
-		//Player player = new player(starterX, starterY, 10);
-		//Player.
+
 
 		do { // Generowanie losowej pozycji bazy wroga w nie za małej odleglości
 			baseX = ThreadLocalRandom.current().nextInt(size);
 			baseY = ThreadLocalRandom.current().nextInt(size);
-		} while (cells[baseX][baseY].isEntity() && Math.abs(starterX-baseX) < 20 && Math.abs(starterY-baseY) < 20);
-		cells[baseX][baseY].setEntity(2); //
+		} while (cells[baseX][baseY].getLinkedObject() == null && Math.abs(starterX - baseX) < 20 && Math.abs(starterY - baseY) < 20);
 
-		for (int i = 0; i < 20; i++) {
-			// 1#  4[x]
-			int x, y, p;
-			do { // Generowanie losowej pozycji bazy wroga w nie za małej odleglości
-				x = ThreadLocalRandom.current().nextInt(size);
-				y = ThreadLocalRandom.current().nextInt(size);
-			} while (cells[x][y].isEntity());
-			p = ThreadLocalRandom.current().nextInt(16);
-			if (p > 14)	cells[x][y].setEntity(4);
-			else cells[x][y].setEntity(1);
-		}
+		// For more enemy bases there could be probably an array of them...
 
-		for (int i = 0; i < 40; i++) {  // Generate more walls to make the game more interesting
-			// 1#
-			int x, y, p;
-			do { // Generowanie losowej pozycji bazy wroga w nie za małej odleglości
-				x = ThreadLocalRandom.current().nextInt(size);
-				y = ThreadLocalRandom.current().nextInt(size);
-			} while (cells[x][y].isEntity());
-			p = ThreadLocalRandom.current().nextInt(16);
-			cells[x][y].setEntity(1);
-		}
+//		for (int i = 0; i < 20; i++) {
+//			// 1#  4[x]
+//			int x, y, p;
+//			do { // Generowanie losowej pozycji bazy wroga w nie za małej odleglości
+//				x = ThreadLocalRandom.current().nextInt(size);
+//				y = ThreadLocalRandom.current().nextInt(size);
+//			} while (cells[x][y].isEntity());
+//			p = ThreadLocalRandom.current().nextInt(16);
+//			if (p > 14)	cells[x][y].setEntity(4);
+//			else cells[x][y].setEntity(1);
+//		}
+
+//		for (int i = 0; i < 40; i++) {  // Generate more walls to make the game more interesting
+//			// 1#
+//			int x, y, p;
+//			do { // Generowanie losowej pozycji bazy wroga w nie za małej odleglości
+//				x = ThreadLocalRandom.current().nextInt(size);
+//				y = ThreadLocalRandom.current().nextInt(size);
+//			} while (cells[x][y].isEntity());
+//			p = ThreadLocalRandom.current().nextInt(16);
+//			cells[x][y].setEntity(1);
+//		}
+//	}
 	}
-*/
-	/**
-	 * @param size
-	 * @param cells
-	 */
-	private void setNeibers(int size, Cell[][] cells) {
-		for (int i = 0; i < size; i++) {
-			for (int j = 0; j < size; j++) {
+		/**
+		 * @param size
+		 * @param cells
+		 */
+		private void setNeibers ( int size, Cell[][] cells){
+			for (int i = 0; i < size; i++) {
+				for (int j = 0; j < size; j++) {
 
-				for (int p = 0; p <= 2; p++) {
-					for (int q = 0; q <= 2; q++) {
-						int x = i + p - 1, y = j + q - 1;
-						if (x >= 0 && x < size && y >= 0 && y < size)
-							cells[i][j].setNeiber(cells[x][y], p, q);
+					for (int p = 0; p <= 2; p++) {
+						for (int q = 0; q <= 2; q++) {
+							int x = i + p - 1, y = j + q - 1;
+							if (x >= 0 && x < size && y >= 0 && y < size)
+								cells[i][j].setNeiber(cells[x][y], p, q);
 
+						}
 					}
 				}
 			}
 		}
-	}
 
-	/**
-	 * @param size
-	 * @param cells
-	 */
-	private void filArray(int size, Cell[][] cells) {
-		for (int i = 0; i < size; i++) {
-			for (int j = 0; j < size; j++) {
-				cells[i][j] = new Cell(i, j);
+		/**
+		 * @param size
+		 * @param cells
+		 */
+		private void filArray ( int size, Cell[][] cells){
+			for (int i = 0; i < size; i++) {
+				for (int j = 0; j < size; j++) {
+					// System.out.print("New cell with x ="+i+" & y: "+j+"\n");  //DEBUG
+					cells[i][j] = new Cell(i, j);
+				}
 			}
 		}
+
 	}
 
-}
