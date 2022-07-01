@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="I didn't want to write so many constructors, so I've created a small function to append new sprites to the sprite array.">
-      <change afterPath="$PROJECT_DIR$/out/production/Tankz/Cell.class" afterDir="false" />
+    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="I've added direction variable for movable class&#10;I've added name variable for to GameObjects which will be needed to ID them in pathfinding.">
+      <change afterPath="$PROJECT_DIR$/out/production/Tankz/Direction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Tankz/EnemyTank.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/out/production/Tankz/GameObject.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Tankz/Missile.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Tankz/MovingObject.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Tankz/Player.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GoL_TestProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../GoL_TestProject/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tankz/Window.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/Window.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/EnemyTank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EnemyTank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Missile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Missile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MovingObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovingObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
@@ -93,7 +95,7 @@
       <workItem from="1656522794995" duration="16000" />
       <workItem from="1656524823269" duration="1229000" />
       <workItem from="1656627687413" duration="2709000" />
-      <workItem from="1656700775252" duration="10858000" />
+      <workItem from="1656700775252" duration="11893000" />
     </task>
     <task id="LOCAL-00001" summary="Pliki z projektu saperowego">
       <created>1654955760842</created>
@@ -235,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656709336375</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="I've added direction variable for movable class&#10;I've added name variable for to GameObjects which will be needed to ID them in pathfinding.">
+      <created>1656717571372</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1656717571372</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -275,7 +284,8 @@
     <MESSAGE value="Objects now should render properly as constructor and setter for gameObject also invokes setLinkedObject for linkedCell. &#10;Also, I've overdone it at first and managed to invoke set method loop &amp; StackOverflow error. nice" />
     <MESSAGE value="I didn't want to write so many constructors so I've created a small function to append new sprites to the sprite array." />
     <MESSAGE value="I didn't want to write so many constructors, so I've created a small function to append new sprites to the sprite array." />
-    <option name="LAST_COMMIT_MESSAGE" value="I didn't want to write so many constructors, so I've created a small function to append new sprites to the sprite array." />
+    <MESSAGE value="I've added direction variable for movable class&#10;I've added name variable for to GameObjects which will be needed to ID them in pathfinding." />
+    <option name="LAST_COMMIT_MESSAGE" value="I've added direction variable for movable class&#10;I've added name variable for to GameObjects which will be needed to ID them in pathfinding." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

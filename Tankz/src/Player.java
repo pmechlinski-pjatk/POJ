@@ -1,8 +1,8 @@
 public class Player extends MovingObject {
 
 
-    public Player(String image, int hp, boolean isDestructible, Cell linkedCell) {
-        super(image, hp, isDestructible, linkedCell);
+    public Player(String name, String image, int hp, boolean isDestructible, Cell linkedCell) {
+        super(name, image, hp, isDestructible, linkedCell);
     }
 
     public void move() {} // Should allow to move player's tank according to the keyboard keys pressed.

@@ -2,8 +2,8 @@ public class EnemyTank extends MovingObject {
 
     private String direction;
 
-    public EnemyTank(String image, int hp, boolean isDestructible, Cell linkedCell) {
-        super(image, hp, isDestructible, linkedCell);
+    public EnemyTank(String name, String image, int hp, boolean isDestructible, Cell linkedCell) {
+        super(name, image, hp, isDestructible, linkedCell);
     }
 
 

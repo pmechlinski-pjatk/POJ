@@ -103,6 +103,7 @@ public class Window {
 		//System.out.println("Player's coords: "+Arrays.toString(player.linkedCell.getCoordinates()));
 		//System.out.println("LinkedObject:" + cells[starterX][starterY].getLinkedObject().getImage());
 		System.out.println("\t(+)Player created at: "+starterX+","+starterY);
+		//System.out.println("Player's neibers are:\n"+(Arrays.deepToString(player.getNeibers())));
 
 
 		for (int i = 0; i < enemyBases.length; i++) {
@@ -139,6 +140,7 @@ public class Window {
 				y = ThreadLocalRandom.current().nextInt(size);
 			} while (cells[x][y].getLinkedObject() != null || Math.abs(starterX - x) < 5 || Math.abs(starterY - y) < 5);
 			enemies[i] = new EnemyTank("EnemyTank", getSpriteByName(s, "EnemyTank"), 1, true, cells[x][y]);
+			System.out.println("Tank neibers are:\n"+(Arrays.deepToString(enemies[i].getNeibers())));
 			cells[x][y].redraw();
 			x = y = 0;
 		}
