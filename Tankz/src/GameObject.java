@@ -5,6 +5,14 @@ public class GameObject {
 
     Cell linkedCell;
 
+    public Cell getLinkedCell() {
+        return linkedCell;
+    }
+
+    public void setLinkedCell(Cell linkedCell) {
+        this.linkedCell = linkedCell;
+    }
+
     private boolean isDestructible;
 
     public GameObject(String image, int hp, boolean isDestructible, Cell linkedCell) {

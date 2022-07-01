@@ -30,13 +30,21 @@ public class Window {
 		window.setSize(size * 35, size * 50);
 		window.setVisible(true);
 
+		// Game init variables
+		GameObject [] terrain;
+		EnemyTank [] enemies;
+		GameObject [] enemyBases;
+		Missile [] missiles;
+		Player player;
+
+		// Generate procedural map.
 
 
-		EnemyTank[] enemies;
+		//TODO: [Math.round(size/33)]  <- generate enemies.
 		Sprites [] s = new Sprites[9];
 
 
-		//s[0] = new Sprites("Wall", "<html>###<br/>###<br/>###</html>");
+		s[0] = new Sprites("Wall", "<html>###<br/>###<br/>###</html>");
 		//s[1] = new Sprites("Player", "<html>_|_<br/>[+]<br/></html>");
 
 		//Player player = new Player(s[0].getImage(), 3, true, cells[2][5]);
@@ -65,7 +73,8 @@ public class Window {
 	}
 
 
-	public void mapGen(int size, Cell[][] cells) {
+	public void mapGen(int size, Cell[][] cells, GameObject[] terrain, GameObject enemyBases, EnemyTank[] enemies, Player player)
+	{
 		int starterX, starterY;
 		int baseX, baseY;
 
@@ -76,7 +85,7 @@ public class Window {
 		} while ((starterX > 3 && starterX < size - 3) && (starterY > 3 && starterY < size - 3));
 		// This requirement should ensure that the starting position of the player is close to the map's border.*
 		// *It could crash on maps less than 6x6, but why'd someone use that small map?
-		Player player = new Player("[+]", 3, true, cells[1][1]);
+		player.setLinkedCell(cells[starterX][starterY]);
 
 		do { // Generowanie losowej pozycji bazy wroga w nie za małej odleglości
 			baseX = ThreadLocalRandom.current().nextInt(size);
