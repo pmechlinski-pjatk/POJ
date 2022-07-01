@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="I'm still not sure if it would be better to enforce setting starting cell for the object or not...">
-      <change afterPath="$PROJECT_DIR$/src/Sprites.java" afterDir="false" />
+    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="Zaimplementowałem coś na kształt słownika, żeby trzymać w nim (w jednym miejscu) grafiki używnae w grze.&#10;(Nie jestem pewien, czy to ma do końca sens, ale no na razie powinno działać)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Window.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -176,7 +174,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656690047772</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Zaimplementowałem coś na kształt słownika, żeby trzymać w nim (w jednym miejscu) grafiki używnae w grze.&#10;(Nie jestem pewien, czy to ma do końca sens, ale no na razie powinno działać)">
+      <created>1656691124672</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1656691124672</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,7 +212,8 @@
     <MESSAGE value="Some testing regarding proper rendering and tiling. Seems ok for now. &#10;I've also added cell redraw directly to the gameObject constructor to make sure that every new object will be rendered." />
     <MESSAGE value="I've started improving map generator.&#10;- I've added an extra req so that player will spawn near to the map edge.&#10;- I've added disclaimer to the game class about minimal size." />
     <MESSAGE value="I'm still not sure if it would be better to enforce setting starting cell for the object or not..." />
-    <option name="LAST_COMMIT_MESSAGE" value="I'm still not sure if it would be better to enforce setting starting cell for the object or not..." />
+    <MESSAGE value="Zaimplementowałem coś na kształt słownika, żeby trzymać w nim (w jednym miejscu) grafiki używnae w grze.&#10;(Nie jestem pewien, czy to ma do końca sens, ale no na razie powinno działać)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Zaimplementowałem coś na kształt słownika, żeby trzymać w nim (w jednym miejscu) grafiki używnae w grze.&#10;(Nie jestem pewien, czy to ma do końca sens, ale no na razie powinno działać)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,5 +1,6 @@
 import java.awt.GridLayout;
 import java.net.StandardSocketOptions;
+import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
 import javax.swing.*;
 
@@ -19,11 +20,12 @@ public class Window {
 		setNeibers(size, cells);
 
 		// Those make tiles visible and of reasonable size for the ascii graphics to be seen
-		for (Cell[] cell : cells) {
-			for (Cell q : cell) {
-				panel.add(q);
-			}
-		}
+		Arrays.stream(cells).flatMap(Arrays::stream).forEach(q -> panel.add(q));
+//		for (Cell[] cell : cells) {
+//			for (Cell q : cell) {
+//				panel.add(q);
+//			}
+//		}
 		window.add(panel);
 		window.setSize(size * 100, size * 100);
 		window.setVisible(true);
@@ -37,14 +39,20 @@ public class Window {
 		//System.out.println("X: "+cells[1][1].getX()+" Y: "+cells[1][1].getY());
 
 		EnemyTank[] enemies;
+		Sprites [] s = new Sprites[9];
 
-		loadSprites();
-		//Player player = new Player(player, 3, true, cells[1][1]);
-//		for (int i = 0; i < size; i++) {
-//			for (int j = 0; j < size; j++) {
-//				cells[i][j].redraw();
-//			}
-//		}
+
+		s[0] = new Sprites("Wall", "<html>###<br/>###<br/>###</html>");
+		s[1] = new Sprites("Player", "<html>_|_<br/>[+]<br/></html>");
+
+		//Player player = new Player(s[0].getImage(), 3, true, cells[2][5]);
+		//mapGen(size, cells);
+
+		for (int i = 0; i < size; i++) {
+			for (int j = 0; j < size; j++) {
+				cells[i][j].redraw();
+			}
+		}
 
 
 		// There should be the main game loops with:
@@ -57,15 +65,8 @@ public class Window {
 
 	}
 
-	public void loadSprites()
-	{
-		Sprites [] s = new Sprites[9];
 
-		s[0] = new Sprites("Wall", "<html>###<br/>###<br/>###</html>");
-		s[1] = new Sprites("Player", "<html>_|_<br/>[+]<br/></html>");
-	}
-	public void mapGen(int size, Cell[][] cells)
-	{
+	public void mapGen(int size, Cell[][] cells) {
 		int starterX, starterY;
 		int baseX, baseY;
 
@@ -82,7 +83,7 @@ public class Window {
 			baseX = ThreadLocalRandom.current().nextInt(size);
 			baseY = ThreadLocalRandom.current().nextInt(size);
 		} while (cells[baseX][baseY].getLinkedObject() == null && Math.abs(starterX - baseX) < 20 && Math.abs(starterY - baseY) < 20);
-
+	}
 		// For more enemy bases there could be probably an array of them...
 
 //		for (int i = 0; i < 20; i++) {
@@ -108,7 +109,7 @@ public class Window {
 //			cells[x][y].setEntity(1);
 //		}
 //	}
-	}
+
 		/**
 		 * @param size
 		 * @param cells
