@@ -1,5 +1,9 @@
 public class Player extends MovingObject {
 
+    LocalUtils u = new LocalUtils();
+    Sprites [] s = new Sprites[8];
+
+
 
     public Player(String name, String image, int hp, boolean isDestructible, Cell linkedCell) {
         super(name, image, hp, isDestructible, linkedCell);
@@ -40,4 +44,10 @@ else if (k != ' ') tryMove(k, cells);
     } // Should allow to move player's tank according to the keyboard keys pressed.
 
     public void shoot(Direction direction) {} // Player should be able to shoot at will / at clicking SPACE or something.
+
+    @Override
+    public void setDirection(Direction direction) {
+        this.setDirection(direction);
+        this.setImage();
+    }
 }
