@@ -11,5 +11,14 @@ Pliki/foldery (być może) istotne z perspektywy oceny za repozytorium (branch m
     
 - /Tankz/
     Gra inspirowana grą Tanks 1990 na NES, z grafiką ascii (właściwie unicode). WIP, został mi jeszcze do zdebuggowania kontroler strzelania i ~~do napisania 
-    kontrolki dla wrogich czołgów oraz warunki zwycięstwa.~~ *Warunki są zaimplementowane, kontrolki dla wrogich czołgów też, ale nie działają do końca poprawnie i potrzebują łatki.*
+    kontrolki dla wrogich czołgów oraz warunki zwycięstwa.~~ *Warunki są zaimplementowane, ~~kontrolki dla wrogich czołgów też, ale nie działają do końca poprawnie i potrzebują łatki.*~~ 
+    PR II:
+        Kontrolki do czołgów "AI" działają już w miarę sensownie
+      
+    TODO:
+        (M) Fix dla strzelania
+        (M) Strzelanie wrogich czołgów
+        (S) Identyfikacja gracza i atak wyprzedzający dla czołgów sterowanych przez komputer.
+        (C) Woda.
+        (C) Krzewy.
 
