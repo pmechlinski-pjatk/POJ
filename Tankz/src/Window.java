@@ -125,7 +125,7 @@ public class Window {
 		Missile[] missiles = new Missile[200];
 
 
-		//TODO: [Math.round(size/33)]  <- generate enemies.
+		// Init sprites
 		Sprites[] s = new Sprites[8];
 
 		u.addToSprites(0, s, "Wall", "<html><font color=#A52A2A>###<br/>###<br/>###</font></html>");

@@ -1,5 +1,3 @@
-enum Direction {  NORTH, SOUTH, EAST, WEST }
-
 public class MovingObject extends GameObject {
     public MovingObject(String name, String image, int hp, boolean isDestructible, Cell linkedCell) {
         super(name, image, hp, isDestructible, linkedCell);
@@ -7,13 +5,13 @@ public class MovingObject extends GameObject {
 
     //private enum movementType { RANDOM, PANTHER, CONTROLLABLE }; // For now I'm not sure, if this will even be needed as of now.
 
-    private Direction direction;
+    private char direction;
 
-    public Direction getDirection() {
+    public char getDirection() {
         return direction;
     }
 
-    public void setDirection(Direction direction) {
+    public void setDirection(char direction) {
         this.direction = direction;
     }
 

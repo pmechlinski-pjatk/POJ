@@ -2,9 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="Sterowanie work in progress">
-      <change afterPath="$PROJECT_DIR$/../Tankz/src/LocalUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tankz/out/production/Tankz/Game.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tankz/out/production/Tankz/Sprites.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Tankz/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Tankz/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Tankz/out/production/Tankz/Direction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Tankz/out/production/Tankz/MovingObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Tankz/out/production/Tankz/MovingObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Tankz/out/production/Tankz/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Tankz/out/production/Tankz/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Tankz/out/production/Tankz/Window$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Tankz/out/production/Tankz/Window$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Tankz/out/production/Tankz/Window.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Tankz/out/production/Tankz/Window.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Tankz/src/MovingObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Tankz/src/MovingObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Tankz/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Tankz/src/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Tankz/src/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Tankz/src/Window.java" afterDir="false" />
     </list>
@@ -39,15 +46,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/admiralisastralis/Repo/pja/poj/POJ/Tankz"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/admiralisastralis/Repo/pja/poj/POJ/Tankz&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Game" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Game" />
