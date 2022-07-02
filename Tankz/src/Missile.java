@@ -167,42 +167,6 @@ public class Missile extends MovingObject {
         }
     }
 
-    // Utility functions
-    public String getTestNeiber(char direction) {
-        String neibers[][] = getNeibers();
-        switch (direction) {
-            case 'N':
-                return neibers[0][1];
-            case 'E':
-                return neibers[1][0];
-            case 'S':
-                return neibers[2][1];
-            case 'W':
-                return neibers[1][2];
-            default:
-                return "EOM";
-        }
-    }
-
-    public Cell getCoordCell(char direction, Cell[][] cells) {
-        String neibers[][] = getNeibers();
-        int x = this.getLinkedCell().getTiledX();
-        int y = this.getLinkedCell().getTiledY();
-
-        switch (direction) {
-            case 'N':
-                return cells[x - 1][y];
-            case 'E':
-                return cells[x][y + 1];
-            case 'S':
-                return cells[x + 1][y];
-            case 'W':
-                return cells[x][y - 1];
-            default:
-                return null;
-        }
-    }
-
     public void stop() {
         this.setDirection('0');
         System.out.println("Missile stopped");

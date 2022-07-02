@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="Shooting function should probably need proper multithreading to be implemented (i.e. not just lambdas, bc it seems that I have no control over missile's threads). Also, player.shoot() needs refactoring simmilar to missile.class methods.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tankz/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tankz/Window$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/Window$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tankz/Window.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/Window.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Window.java" afterDir="false" />
+    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="Enemy tank directional sprites added">
+      <change beforePath="$PROJECT_DIR$/src/LocalUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LocalUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Missile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Missile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MovingObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovingObject.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -323,7 +321,21 @@
       <option name="project" value="LOCAL" />
       <updated>1656772051901</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="I implemented method to check for endgame requirements.">
+      <created>1656776203751</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1656776203751</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Enemy tank directional sprites added">
+      <created>1656780517263</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1656780517264</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -342,8 +354,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Some testing regarding proper rendering and tiling. Seems ok for now. &#10;I've also added cell redraw directly to the gameObject constructor to make sure that every new object will be rendered." />
-    <MESSAGE value="I've started improving map generator.&#10;- I've added an extra req so that player will spawn near to the map edge.&#10;- I've added disclaimer to the game class about minimal size." />
     <MESSAGE value="I'm still not sure if it would be better to enforce setting starting cell for the object or not..." />
     <MESSAGE value="Zaimplementowałem coś na kształt słownika, żeby trzymać w nim (w jednym miejscu) grafiki używnae w grze.&#10;(Nie jestem pewien, czy to ma do końca sens, ale no na razie powinno działać)" />
     <MESSAGE value="Lol. I've spent ca. 2,5 hour debugging my code, because tile rendering was severely screwed somehow. Eventually it came out that my x and y parameters for JLabel are somehow forcing renders to display at absolute value of x &amp; y, ignoring layout.&#10;&#10;Renaming them did the trick." />
@@ -367,7 +377,9 @@
     <MESSAGE value="At this moment it seems like the projectiles spawn rather properly, but I still have some problems with deleting it and esp. self-destruction after collision." />
     <MESSAGE value="I refactored missile movement into a few smaller functions and it looks promising: projectiles are displaying properly one every direction, but they still fail to disappear." />
     <MESSAGE value="Shooting function should probably need proper multithreading to be implemented (i.e. not just lambdas, bc it seems that I have no control over missile's threads). Also, player.shoot() needs refactoring simmilar to missile.class methods." />
-    <option name="LAST_COMMIT_MESSAGE" value="Shooting function should probably need proper multithreading to be implemented (i.e. not just lambdas, bc it seems that I have no control over missile's threads). Also, player.shoot() needs refactoring simmilar to missile.class methods." />
+    <MESSAGE value="I implemented method to check for endgame requirements." />
+    <MESSAGE value="Enemy tank directional sprites added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Enemy tank directional sprites added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -166,12 +166,12 @@ public class Window {
 			}
 		}).start();
 
-		System.out.println("Game loop with endgame check");
+		System.out.println("(0) Game loop with endgame check");
 		while (true)
 		{
 			sleep(100);
 			u.redrawAll(cells, size);
-			System.out.println("Test for endgame");
+			//System.out.println("(0) Test for endgame");
 			testForEndgame(enemyBases, player[0]);
 		}
 
