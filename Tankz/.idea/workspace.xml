@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="Shooting still WIP. Small improvement - missiles seem to destroy walls, but still more doesn't work than do here.">
+    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="At this moment it seems like the projectiles spawn rather properly, but I still have some problems with deleting it and esp. self-destruction after collision.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tankz/Missile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/Missile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tankz/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/Player.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tankz/Window.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/Window.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Missile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Missile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Window.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -304,7 +302,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656739696096</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="At this moment it seems like the projectiles spawn rather properly, but I still have some problems with deleting it and esp. self-destruction after collision.">
+      <created>1656743870284</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1656743870284</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -323,7 +328,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="I've added a new version of ascii images - it's harder than I thought to make them stick together." />
     <MESSAGE value="I've refactored Cell.class:&#10;- deleted unused fields and methods.&#10;- Added linkedObject to link with game objects on a given field.&#10;- toString gets sprite from gameObject&#10;- (Old toString is here to stay until I migrate sprites to a new file)." />
     <MESSAGE value="I've added coordinates handling. Now they need to be stated in the cell initialization and it's possible for the gameObject to know coords of the linked cell." />
     <MESSAGE value="Some testing regarding proper rendering and tiling. Seems ok for now. &#10;I've also added cell redraw directly to the gameObject constructor to make sure that every new object will be rendered." />
@@ -348,7 +352,8 @@
     <MESSAGE value="Moving is working already pretty well, but shooting seems unstable and missile is not spawning itself yet." />
     <MESSAGE value="Very small improvement regarding shooting - missile seems to spawn, but it flickers. Good thing is that it can actually kill (the player)" />
     <MESSAGE value="Shooting still WIP. Small improvement - missiles seem to destroy walls, but still more doesn't work than do here." />
-    <option name="LAST_COMMIT_MESSAGE" value="Shooting still WIP. Small improvement - missiles seem to destroy walls, but still more doesn't work than do here." />
+    <MESSAGE value="At this moment it seems like the projectiles spawn rather properly, but I still have some problems with deleting it and esp. self-destruction after collision." />
+    <option name="LAST_COMMIT_MESSAGE" value="At this moment it seems like the projectiles spawn rather properly, but I still have some problems with deleting it and esp. self-destruction after collision." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

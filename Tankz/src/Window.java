@@ -166,6 +166,7 @@ public class Window {
 
 		while (true) {
 			sleep(100);
+			u.redrawAll(cells, size);
 		}
 
 
