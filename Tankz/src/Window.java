@@ -152,7 +152,7 @@ public class Window {
 		new Thread(() -> {
 			while (true) {
 				try {
-					player[0].tryAction(easyKeyDispatcher(), cells);
+					player[0].tryAction(easyKeyDispatcher(), cells, size);
 				} catch (InterruptedException e) {
 					throw new RuntimeException(e);
 				}

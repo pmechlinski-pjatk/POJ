@@ -27,16 +27,16 @@ public class Player extends MovingObject {
     private final String southStandby = "<html><br/>[+]<br/>-|-</html>";
     private final String westStandby =  "<html><br/>--[+]<br/></html>";
     private final String eastStandby = "<html><br/>[+]--<br/></html>";
-    private final String northReload =  "<html><font color='red'>|</font><br/>[+]<br/></html>";
-    private final String southReload = "<html><br/>[+]<br/><font color='red'>|</font></html>";
-    private final String westReload = "<html><br/><font color='red'>-</font>[+]<br/></html>";
-    private final String eastReload = "<html><br/>[+]<font color='red'>-</font><br/></html>";
+    private final String northReload =  "<html>_<font color='red'>|</font>_<br/>[+]<br/></html>";
+    private final String southReload = "<html><br/>[+]<br/>-<font color='red'>|</font>-</html>";
+    private final String westReload = "<html><br/><font color='red'>--</font>[+]<br/></html>";
+    private final String eastReload = "<html><br/>[+]<font color='red'>--</font><br/></html>";
 
     public Player(String name, String image, int hp, boolean isDestructible, Cell linkedCell) {
         super(name, image, hp, isDestructible, linkedCell);
     }
-public void tryAction(char k, Cell cells[][]) throws InterruptedException {
-    if (k == 'l') shoot(cells);
+public void tryAction(char k, Cell cells[][], int size) throws InterruptedException {
+    if (k == 'l') shoot(cells, size);
 else if (k != ' ') tryMove(k, cells);
 }
     public void tryMove(char k, Cell cells[][])
@@ -76,7 +76,7 @@ else if (k != ' ') tryMove(k, cells);
       }
     } // Should allow to move player's tank according to the keyboard keys pressed.
 
-    public void shoot(Cell[][] cells) throws InterruptedException {
+    public void shoot(Cell[][] cells, int size) throws InterruptedException {
         String neibers[][] = this.getNeibers();
         int x = this.getLinkedCell().getTiledX();
         int y = this.getLinkedCell().getTiledY();
@@ -89,7 +89,7 @@ else if (k != ' ') tryMove(k, cells);
                 {
                     setImage(northReload);
                     this.linkedCell.redraw();
-                    Missile m = new Missile('N', cells[x-1][y], cells);
+                    Missile m = new Missile('N', cells[x-1][y], cells, size);
                 }
                 sleep(2000);
                 setImage(northStandby);
@@ -97,9 +97,9 @@ else if (k != ' ') tryMove(k, cells);
             case 'E':
                 if (neibers[1][0] == "0")
                 {
-                    setImage(westReload);
+                    setImage(eastReload);
                     this.linkedCell.redraw();
-                    Missile m = new Missile('E', cells[x][y-1], cells);
+                    Missile m = new Missile('E', cells[x][y+1], cells, size);
                 }
                 sleep(2000);
                 setImage(westStandby);
@@ -107,9 +107,9 @@ else if (k != ' ') tryMove(k, cells);
             case 'S':
                 if (neibers[1][2] == "0")
                 {
-                    setImage(eastReload);
+                    setImage(southReload);
                     this.linkedCell.redraw();
-                    Missile m = new Missile('S', cells[x][y+1], cells);
+                    Missile m = new Missile('S', cells[x+1][y], cells, size);
                 }
                 sleep(2000);
                 setImage(eastStandby);
@@ -117,9 +117,9 @@ else if (k != ' ') tryMove(k, cells);
             case 'W':
                 if (neibers[2][1] == "0")
                 {
-                    setImage(southReload);
+                    setImage(westReload);
                     this.linkedCell.redraw();
-                    Missile m = new Missile('W', cells[x+1][y], cells);
+                    Missile m = new Missile('W', cells[x+1][y], cells, size);
                 }
                 sleep(2000);
                 setImage(southStandby);
