@@ -1,0 +1,191 @@
+Index: ../GoL_TestProject/.idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"ead81f70-d5f4-4d60-aa85-25339a6fa7c1\" name=\"Changes\" comment=\"Sterowanie work in progress\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/../Tankz/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/../Tankz/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/../Tankz/src/Cell.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/../Tankz/src/Cell.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/../Tankz/src/Dir.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/../Tankz/src/Dir.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/../Tankz/src/Game.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/../Tankz/src/Game.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/../Tankz/src/Map.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/../Tankz/src/Map.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/../Tankz/src/Player.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/../Tankz/src/Player.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/../Tankz/src/Window.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/../Tankz/src/Window.java\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$/..\" />\n  </component>\n  <component name=\"HighlightingSettingsPerFile\">\n    <setting file=\"file://$PROJECT_DIR$/src/Cell.java\" root0=\"FORCE_HIGHLIGHTING\" />\n    <setting file=\"file://$PROJECT_DIR$/src/Game.java\" root0=\"FORCE_HIGHLIGHTING\" />\n    <setting file=\"file://$PROJECT_DIR$/src/Window.java\" root0=\"FORCE_HIGHLIGHTING\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectId\" id=\"2AQx99pLe0QlNlsxUGQ3GRlbM6S\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\"><![CDATA[{\n  \"keyToString\": {\n    \"ASKED_ADD_EXTERNAL_FILES\": \"true\",\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\n    \"WebServerToolWindowFactoryState\": \"false\",\n    \"last_opened_file_path\": \"/home/admiralisastralis/Repo/pja/poj/POJ/Tankz\"\n  }\n}]]></component>\n  <component name=\"RunManager\">\n    <configuration name=\"Game\" type=\"Application\" factoryName=\"Application\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"Game\" />\n      <module name=\"Tankz\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"ead81f70-d5f4-4d60-aa85-25339a6fa7c1\" name=\"Changes\" comment=\"\" />\n      <created>1654955462001</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1654955462001</updated>\n      <workItem from=\"1654955464681\" duration=\"8888000\" />\n      <workItem from=\"1656430802451\" duration=\"9635000\" />\n      <workItem from=\"1656522794995\" duration=\"16000\" />\n      <workItem from=\"1656524823269\" duration=\"1229000\" />\n      <workItem from=\"1656627658368\" duration=\"28000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"Pliki z projektu saperowego\">\n      <created>1654955760842</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1654955760843</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"Funkcja do rysowania obiektów w grze\">\n      <created>1654956835686</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1654956835686</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"Work in progress przy generatorze pola gry\">\n      <created>1654958348387</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1654958348387</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"Podstawowy generator mapy\">\n      <created>1654959245114</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1654959245114</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"Sterowanie work in progress\">\n      <created>1654963394154</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1654963394154</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"Sterowanie work in progress\">\n      <created>1656516138258</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1656516138259</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"7\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\n    <MESSAGE value=\"Pliki z projektu saperowego\" />\n    <MESSAGE value=\"Funkcja do rysowania obiektów w grze\" />\n    <MESSAGE value=\"Work in progress przy generatorze pola gry\" />\n    <MESSAGE value=\"Podstawowy generator mapy\" />\n    <MESSAGE value=\"Sterowanie work in progress\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Sterowanie work in progress\" />\n  </component>\n  <component name=\"XDebuggerManager\">\n    <breakpoint-manager>\n      <breakpoints>\n        <breakpoint enabled=\"true\" type=\"java-exception\">\n          <properties class=\"java.lang.ArrayStoreException\" package=\"java.lang\" />\n          <option name=\"timeStamp\" value=\"1\" />\n        </breakpoint>\n      </breakpoints>\n    </breakpoint-manager>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../GoL_TestProject/.idea/workspace.xml b/../GoL_TestProject/.idea/workspace.xml
+--- a/../GoL_TestProject/.idea/workspace.xml	(revision 321b2fe147c022d37698171915a3ae6022c209e6)
++++ b/../GoL_TestProject/.idea/workspace.xml	(date 1656630821623)
+@@ -2,14 +2,7 @@
+ <project version="4">
+   <component name="ChangeListManager">
+     <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="Sterowanie work in progress">
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/../Tankz/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Tankz/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/../Tankz/src/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Tankz/src/Cell.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/../Tankz/src/Dir.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Tankz/src/Dir.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/../Tankz/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Tankz/src/Game.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/../Tankz/src/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Tankz/src/Map.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/../Tankz/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Tankz/src/Player.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/../Tankz/src/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Tankz/src/Window.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -48,7 +41,7 @@
+     "RunOnceActivity.OpenProjectViewOnStart": "true",
+     "RunOnceActivity.ShowReadmeOnStart": "true",
+     "WebServerToolWindowFactoryState": "false",
+-    "last_opened_file_path": "/home/admiralisastralis/Repo/pja/poj/POJ/Tankz"
++    "last_opened_file_path": "/home/admiralisastralis/Repo/pja/poj/POJ/robociki-labirynt"
+   }
+ }]]></component>
+   <component name="RunManager">
+@@ -73,6 +66,7 @@
+       <workItem from="1656522794995" duration="16000" />
+       <workItem from="1656524823269" duration="1229000" />
+       <workItem from="1656627658368" duration="28000" />
++      <workItem from="1656630796691" duration="25000" />
+     </task>
+     <task id="LOCAL-00001" summary="Pliki z projektu saperowego">
+       <created>1654955760842</created>
+Index: ../robociki-labirynt/.idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../robociki-labirynt/.idea/vcs.xml b/../robociki-labirynt/.idea/vcs.xml
+new file mode 100644
+--- /dev/null	(date 1656630854894)
++++ b/../robociki-labirynt/.idea/vcs.xml	(date 1656630854894)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: ../robociki-labirynt/.idea/robociki-labirynt.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../robociki-labirynt/.idea/robociki-labirynt.iml b/../robociki-labirynt/.idea/robociki-labirynt.iml
+new file mode 100644
+--- /dev/null	(date 1656630854885)
++++ b/../robociki-labirynt/.idea/robociki-labirynt.iml	(date 1656630854885)
+@@ -0,0 +1,9 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="JAVA_MODULE" version="4">
++  <component name="NewModuleRootManager" inherit-compiler-output="true">
++    <exclude-output />
++    <content url="file://$MODULE_DIR$" />
++    <orderEntry type="inheritedJdk" />
++    <orderEntry type="sourceFolder" forTests="false" />
++  </component>
++</module>
+\ No newline at end of file
+Index: ../robociki-labirynt/.idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../robociki-labirynt/.idea/modules.xml b/../robociki-labirynt/.idea/modules.xml
+new file mode 100644
+--- /dev/null	(date 1656630854890)
++++ b/../robociki-labirynt/.idea/modules.xml	(date 1656630854890)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectModuleManager">
++    <modules>
++      <module fileurl="file://$PROJECT_DIR$/.idea/robociki-labirynt.iml" filepath="$PROJECT_DIR$/.idea/robociki-labirynt.iml" />
++    </modules>
++  </component>
++</project>
+\ No newline at end of file
+Index: ../robociki-labirynt/.idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../robociki-labirynt/.idea/.gitignore b/../robociki-labirynt/.idea/.gitignore
+new file mode 100644
+--- /dev/null	(date 1656630855341)
++++ b/../robociki-labirynt/.idea/.gitignore	(date 1656630855341)
+@@ -0,0 +1,8 @@
++# Default ignored files
++/shelf/
++/workspace.xml
++# Editor-based HTTP Client requests
++/httpRequests/
++# Datasource local storage ignored files
++/dataSources/
++/dataSources.local.xml
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"ead81f70-d5f4-4d60-aa85-25339a6fa7c1\" name=\"Changes\" comment=\"Sterowanie work in progress\">\n      <change afterPath=\"$PROJECT_DIR$/src/enemyTank.java\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/src/gameObject.java\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/src/missile.java\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/src/movingObject.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/../GoL_TestProject/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/../GoL_TestProject/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/Cell.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Cell.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/Dir.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Dir.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/Game.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Game.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/Map.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Map.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/Player.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Player.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/Window.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Window.java\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$/..\" />\n  </component>\n  <component name=\"HighlightingSettingsPerFile\">\n    <setting file=\"file://$PROJECT_DIR$/src/Cell.java\" root0=\"FORCE_HIGHLIGHTING\" />\n    <setting file=\"file://$PROJECT_DIR$/src/Dir.java\" root0=\"FORCE_HIGHLIGHTING\" />\n    <setting file=\"file://$PROJECT_DIR$/src/Game.java\" root0=\"FORCE_HIGHLIGHTING\" />\n    <setting file=\"file://$PROJECT_DIR$/src/KeyListener.java\" root0=\"FORCE_HIGHLIGHTING\" />\n    <setting file=\"file://$PROJECT_DIR$/src/Map.java\" root0=\"FORCE_HIGHLIGHTING\" />\n    <setting file=\"file://$PROJECT_DIR$/src/Object.java\" root0=\"FORCE_HIGHLIGHTING\" />\n    <setting file=\"file://$PROJECT_DIR$/src/Player.java\" root0=\"FORCE_HIGHLIGHTING\" />\n    <setting file=\"file://$PROJECT_DIR$/src/Window.java\" root0=\"FORCE_HIGHLIGHTING\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectId\" id=\"2AQx99pLe0QlNlsxUGQ3GRlbM6S\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\"><![CDATA[{\n  \"keyToString\": {\n    \"ASKED_ADD_EXTERNAL_FILES\": \"true\",\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\n    \"WebServerToolWindowFactoryState\": \"false\",\n    \"last_opened_file_path\": \"/home/admiralisastralis/Repo/pja/poj/POJ/Tankz\"\n  }\n}]]></component>\n  <component name=\"RunManager\">\n    <configuration name=\"Game\" type=\"Application\" factoryName=\"Application\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"Game\" />\n      <module name=\"Tankz\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"ead81f70-d5f4-4d60-aa85-25339a6fa7c1\" name=\"Changes\" comment=\"\" />\n      <created>1654955462001</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1654955462001</updated>\n      <workItem from=\"1654955464681\" duration=\"8888000\" />\n      <workItem from=\"1656430802451\" duration=\"9635000\" />\n      <workItem from=\"1656522794995\" duration=\"16000\" />\n      <workItem from=\"1656524823269\" duration=\"1229000\" />\n      <workItem from=\"1656627687413\" duration=\"2709000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"Pliki z projektu saperowego\">\n      <created>1654955760842</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1654955760843</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"Funkcja do rysowania obiektów w grze\">\n      <created>1654956835686</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1654956835686</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"Work in progress przy generatorze pola gry\">\n      <created>1654958348387</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1654958348387</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"Podstawowy generator mapy\">\n      <created>1654959245114</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1654959245114</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"Sterowanie work in progress\">\n      <created>1654963394154</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1654963394154</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"Sterowanie work in progress\">\n      <created>1656516138258</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1656516138259</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"7\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\n    <MESSAGE value=\"Pliki z projektu saperowego\" />\n    <MESSAGE value=\"Funkcja do rysowania obiektów w grze\" />\n    <MESSAGE value=\"Work in progress przy generatorze pola gry\" />\n    <MESSAGE value=\"Podstawowy generator mapy\" />\n    <MESSAGE value=\"Sterowanie work in progress\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Sterowanie work in progress\" />\n  </component>\n  <component name=\"XDebuggerManager\">\n    <breakpoint-manager>\n      <breakpoints>\n        <breakpoint enabled=\"true\" type=\"java-exception\">\n          <properties class=\"java.lang.ArrayStoreException\" package=\"java.lang\" />\n          <option name=\"timeStamp\" value=\"1\" />\n        </breakpoint>\n      </breakpoints>\n    </breakpoint-manager>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 321b2fe147c022d37698171915a3ae6022c209e6)
++++ b/.idea/workspace.xml	(date 1656630795342)
+@@ -1,19 +1,8 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="Sterowanie work in progress">
+-      <change afterPath="$PROJECT_DIR$/src/enemyTank.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/gameObject.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/missile.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/movingObject.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/../GoL_TestProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../GoL_TestProject/.idea/workspace.xml" afterDir="false" />
++    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="Two main progresses (IK those should be in different commits...):&#10;- I've managed to create 3x3 object's &quot;ascii sprite&quot; using embedded html snippet.&#10;- I've created a sketch of a current (and hopefully final for now) version of the game's architecture (?):&#10; &gt; Game/Window/Cell hierarchy untouched.&#10; &gt; Cells will have a variable to store gameObjects that have the same coordinates as the given cell has.&#10; &gt; gameObjects will store graphical representation &amp; HP and will be further extended to movables, then enemies and the player, each with unique abilities.&#10; &gt; Lots of fancy functions for those movables still TODO.&#10; &#10; - Deleting unused classes is TODO">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cell.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Dir.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dir.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Window.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -57,7 +46,7 @@
+     "RunOnceActivity.OpenProjectViewOnStart": "true",
+     "RunOnceActivity.ShowReadmeOnStart": "true",
+     "WebServerToolWindowFactoryState": "false",
+-    "last_opened_file_path": "/home/admiralisastralis/Repo/pja/poj/POJ/Tankz"
++    "last_opened_file_path": "/home/admiralisastralis/Repo/pja/poj/POJ/GoL_TestProject"
+   }
+ }]]></component>
+   <component name="RunManager">
+@@ -81,7 +70,7 @@
+       <workItem from="1656430802451" duration="9635000" />
+       <workItem from="1656522794995" duration="16000" />
+       <workItem from="1656524823269" duration="1229000" />
+-      <workItem from="1656627687413" duration="2709000" />
++      <workItem from="1656627687413" duration="3108000" />
+     </task>
+     <task id="LOCAL-00001" summary="Pliki z projektu saperowego">
+       <created>1654955760842</created>
+@@ -125,7 +114,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1656516138259</updated>
+     </task>
+-    <option name="localTasksCounter" value="7" />
++    <task id="LOCAL-00007" summary="Two main progresses (IK those should be in different commits...):&#10;- I've managed to create 3x3 object's &quot;ascii sprite&quot; using embedded html snippet.&#10;- I've created a sketch of a current (and hopefully final for now) version of the game's architecture (?):&#10; &gt; Game/Window/Cell hierarchy untouched.&#10; &gt; Cells will have a variable to store gameObjects that have the same coordinates as the given cell has.&#10; &gt; gameObjects will store graphical representation &amp; HP and will be further extended to movables, then enemies and the player, each with unique abilities.&#10; &gt; Lots of fancy functions for those movables still TODO.&#10; &#10; - Deleting unused classes is TODO">
++      <created>1656630723441</created>
++      <option name="number" value="00007" />
++      <option name="presentableId" value="LOCAL-00007" />
++      <option name="project" value="LOCAL" />
++      <updated>1656630723441</updated>
++    </task>
++    <option name="localTasksCounter" value="8" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -149,7 +145,8 @@
+     <MESSAGE value="Work in progress przy generatorze pola gry" />
+     <MESSAGE value="Podstawowy generator mapy" />
+     <MESSAGE value="Sterowanie work in progress" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Sterowanie work in progress" />
++    <MESSAGE value="Two main progresses (IK those should be in different commits...):&#10;- I've managed to create 3x3 object's &quot;ascii sprite&quot; using embedded html snippet.&#10;- I've created a sketch of a current (and hopefully final for now) version of the game's architecture (?):&#10; &gt; Game/Window/Cell hierarchy untouched.&#10; &gt; Cells will have a variable to store gameObjects that have the same coordinates as the given cell has.&#10; &gt; gameObjects will store graphical representation &amp; HP and will be further extended to movables, then enemies and the player, each with unique abilities.&#10; &gt; Lots of fancy functions for those movables still TODO.&#10; &#10; - Deleting unused classes is TODO" />
++    <option name="LAST_COMMIT_MESSAGE" value="Two main progresses (IK those should be in different commits...):&#10;- I've managed to create 3x3 object's &quot;ascii sprite&quot; using embedded html snippet.&#10;- I've created a sketch of a current (and hopefully final for now) version of the game's architecture (?):&#10; &gt; Game/Window/Cell hierarchy untouched.&#10; &gt; Cells will have a variable to store gameObjects that have the same coordinates as the given cell has.&#10; &gt; gameObjects will store graphical representation &amp; HP and will be further extended to movables, then enemies and the player, each with unique abilities.&#10; &gt; Lots of fancy functions for those movables still TODO.&#10; &#10; - Deleting unused classes is TODO" />
+   </component>
+   <component name="XDebuggerManager">
+     <breakpoint-manager>
