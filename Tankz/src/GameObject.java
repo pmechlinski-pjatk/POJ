@@ -57,13 +57,14 @@ public class GameObject {
 
     public void setHp(int hp)
     {
+        if (this.getLinkedCell().getLinkedObject() == null) return;
         this.hp = hp;
-        if (this.getImage().equals("<html><font color=#A52A2A>###<br/>###<br/>###</font></html>") && this.hp == 1) this.setImage("<html><font color=#A52A2A>%##<br/>##E<br/>_)##</font></html>");
+        if (this.getImage() != null && this.getImage().equals("<html><font color=#A52A2A>###<br/>###<br/>###</font></html>") && this.hp == 1) this.setImage("<html><font color=#A52A2A>%##<br/>##E<br/>_)##</font></html>");
         if (this.hp <= 0 && this.isDestructible)
         {
             linkedCell.setLinkedObject(null);
             linkedCell.redraw();
-            this.setLinkedCell(null);
+            //this.setLinkedCell(null);
             this.isObject = false;
         }
     }

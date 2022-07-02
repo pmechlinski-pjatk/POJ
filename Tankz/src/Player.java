@@ -2,7 +2,17 @@ import static java.lang.Thread.sleep;
 
 public class Player extends MovingObject {
 
-    char direction = 'N';
+    @Override
+    public char getDirection() {
+        return direction;
+    }
+
+    @Override
+    public void setDirection(char direction) {
+        this.direction = direction;
+    }
+
+    private char direction = 'N';
     private boolean isReloading;
 
     public boolean isReloading() {
@@ -71,9 +81,10 @@ else if (k != ' ') tryMove(k, cells);
         int x = this.getLinkedCell().getTiledX();
         int y = this.getLinkedCell().getTiledY();
         // CENTRAL SHOULD BE neibers[1][1]
-        switch(direction) {
-            case 'W':
-
+        System.out.println(neibers[0][1]);
+        System.out.println(getDirection());
+        switch(getDirection()) {
+            case 'N':
                 if (neibers[0][1] == "0")
                 {
                     setImage(northReload);
@@ -83,7 +94,7 @@ else if (k != ' ') tryMove(k, cells);
                 sleep(2000);
                 setImage(northStandby);
                 break;
-            case 'A':
+            case 'E':
                 if (neibers[1][0] == "0")
                 {
                     setImage(westReload);
@@ -93,29 +104,26 @@ else if (k != ' ') tryMove(k, cells);
                 sleep(2000);
                 setImage(westStandby);
                 break;
-            case 'D':
+            case 'S':
                 if (neibers[1][2] == "0")
                 {
                     setImage(eastReload);
                     this.linkedCell.redraw();
-                    Missile m = new Missile('D', cells[x][y+1], cells);
+                    Missile m = new Missile('S', cells[x][y+1], cells);
                 }
                 sleep(2000);
                 setImage(eastStandby);
                 break;
-            case 'S':
+            case 'W':
                 if (neibers[2][1] == "0")
                 {
                     setImage(southReload);
                     this.linkedCell.redraw();
-                    Missile m = new Missile('S', cells[x+1][y], cells);
+                    Missile m = new Missile('W', cells[x+1][y], cells);
                 }
                 sleep(2000);
                 setImage(southStandby);
                 break;
-
-
-
             default:
                 System.out.println("(?)Unknown exception at shooting.");
                 break;

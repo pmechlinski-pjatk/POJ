@@ -5,9 +5,10 @@ public class Missile extends MovingObject {
     // A missile should have it's starting direction (and coordinates as every gameObject), should at least id another tile on it's track
     // and eventually should id collision and deal damage (or not if inapplicable)
 
-   private String MissileHorizontal = "<html><font color='orange'>~</font></html>";
-   private String MissileVertical = "<html><font color='orange'>\"</font></html>";
-
+//   private String MissileHorizontal = "<html><font color='orange'>~</font></html>";
+//   private String MissileVertical = "<html><font color='orange'>\"</font></html>";
+private String MissileHorizontal = "~";
+private String MissileVertical = "\'";
     public Missile(char direction, Cell startingTile, Cell[][] cells)
     {
         super();
@@ -19,13 +20,18 @@ public class Missile extends MovingObject {
         this.setLinkedCell(cells[x][y]);
         this.linkedCell.redraw();
         new Thread(() -> {
-            while (true) {
+        while (true)
+        {
+            if (this.getHp() != -1)
+            {
                 this.missileMove(cells);
-                try {
-                    sleep(100);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
+
+            try {
+                sleep(100);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            } else break;
             }
         }).start();
     }

@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="After canibalizing reduntant setDirection method, magically it started working.&#10;Now the Player's tank changes sprite &amp; direction on keyboard movement.">
+    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="Moving is working already pretty well, but shooting seems unstable and missile is not spawning itself yet.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tankz/GameObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/GameObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tankz/Missile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/Missile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tankz/MovingObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/MovingObject.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tankz/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tankz/Window.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/Window.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Missile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Missile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovingObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovingObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Window.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -287,7 +282,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656732282987</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Moving is working already pretty well, but shooting seems unstable and missile is not spawning itself yet.">
+      <created>1656735525575</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1656735525575</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -306,7 +308,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Podstawowy generator mapy" />
     <MESSAGE value="Sterowanie work in progress" />
     <MESSAGE value="I've refactored class names" />
     <MESSAGE value="I've added a new version of ascii images - it's harder than I thought to make them stick together." />
@@ -331,7 +332,8 @@
     <MESSAGE value="Metodą prób i błędów udało mi sie zrobić &quot;ruszający&quot; czołg, który nie rozwala losowo ścian i nie myli kierunków" />
     <MESSAGE value="Dodanie asynchronicznej funkcji do obłsugi sterowania czołgiem okazało się wręcz podejrzanie proste..." />
     <MESSAGE value="After canibalizing reduntant setDirection method, magically it started working.&#10;Now the Player's tank changes sprite &amp; direction on keyboard movement." />
-    <option name="LAST_COMMIT_MESSAGE" value="After canibalizing reduntant setDirection method, magically it started working.&#10;Now the Player's tank changes sprite &amp; direction on keyboard movement." />
+    <MESSAGE value="Moving is working already pretty well, but shooting seems unstable and missile is not spawning itself yet." />
+    <option name="LAST_COMMIT_MESSAGE" value="Moving is working already pretty well, but shooting seems unstable and missile is not spawning itself yet." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
