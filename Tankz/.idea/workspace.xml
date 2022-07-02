@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="Seems like I'm almost there in terms of tanks &quot;AI&quot; control, but tryMove functions probably need refactoring/universalization first.">
+    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="Enemy tanks lowered to one for debugging purposes">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tankz/MovingObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/MovingObject.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MovingObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovingObject.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -340,7 +342,28 @@
       <option name="project" value="LOCAL" />
       <updated>1656781599486</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="They move a bit, but it's still very buggy.">
+      <created>1656782398020</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1656782398020</updated>
+    </task>
+    <task id="LOCAL-00039" summary="I've added tests to random direction moving pattern so that tanks should theoretically be less prone to block near objects. They seem to be a bit more agile now, but still they almost always choose to go south somehow...">
+      <created>1656783725608</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1656783725608</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Enemy tanks lowered to one for debugging purposes">
+      <created>1656784435693</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1656784435693</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -359,9 +382,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Zaimplementowałem coś na kształt słownika, żeby trzymać w nim (w jednym miejscu) grafiki używnae w grze.&#10;(Nie jestem pewien, czy to ma do końca sens, ale no na razie powinno działać)" />
-    <MESSAGE value="Lol. I've spent ca. 2,5 hour debugging my code, because tile rendering was severely screwed somehow. Eventually it came out that my x and y parameters for JLabel are somehow forcing renders to display at absolute value of x &amp; y, ignoring layout.&#10;&#10;Renaming them did the trick." />
-    <MESSAGE value="Change in a JLabel size - looks good on my screen..." />
     <MESSAGE value="added gameObjects inits &#10;started sculpting the mapGen method" />
     <MESSAGE value="I wrote a method to get sprites by name for easier initialization of objects." />
     <MESSAGE value="Player gen and enemy bases gen are ready for QA" />
@@ -384,7 +404,10 @@
     <MESSAGE value="I implemented method to check for endgame requirements." />
     <MESSAGE value="Enemy tank directional sprites added" />
     <MESSAGE value="Seems like I'm almost there in terms of tanks &quot;AI&quot; control, but tryMove functions probably need refactoring/universalization first." />
-    <option name="LAST_COMMIT_MESSAGE" value="Seems like I'm almost there in terms of tanks &quot;AI&quot; control, but tryMove functions probably need refactoring/universalization first." />
+    <MESSAGE value="They move a bit, but it's still very buggy." />
+    <MESSAGE value="I've added tests to random direction moving pattern so that tanks should theoretically be less prone to block near objects. They seem to be a bit more agile now, but still they almost always choose to go south somehow..." />
+    <MESSAGE value="Enemy tanks lowered to one for debugging purposes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Enemy tanks lowered to one for debugging purposes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

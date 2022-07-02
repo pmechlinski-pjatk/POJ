@@ -1,5 +1,8 @@
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.stream.IntStream;
 
 import static java.lang.Thread.sleep;
 
@@ -98,34 +101,67 @@ public class MovingObject extends GameObject {
 
     public void panther(Cell [][] cells) throws InterruptedException // Standard enemy tank moving pattern
     {
-        int test = 0;
         // Random starting direction.
         int k4 = ThreadLocalRandom.current().nextInt(4);
+        // Extra variables will be used for "smart" pathfinding.
+        int[] testedDirs = new int[4];
+        int testedCounter = 0;
+        int test = 0;
+
+        // movement loop
         while (true)
         {
-
-
-            System.out.println("k4: "+k4);
+            System.out.println("k4: "+k4+ "Test: "+test);
             switch(k4)
             {
                 case 0:
                     test = tryMoveRespond('N', cells);
+                    break;
                 case 1:
                     test = tryMoveRespond('E', cells);
+                    break;
                 case 2:
                     test = tryMoveRespond('W', cells);
+                    break;
                 case 3:
                     test = tryMoveRespond('S', cells);
+                    break;
                 default:
                     System.out.println("(-) Tank AI movement error.");
+                    test = 0;
                     break;
 
+                }
+                // If you weren't able to move...
+                if (test == 0)
+                {
+                    System.out.println("Tank can move no more in dis direction!");
+                    // Save in memory a destination that was unavailable.
+                    testedDirs[testedCounter] = k4;
+                    testedCounter++;
+                    k4 = ThreadLocalRandom.current().nextInt(4);
+                    // If you've tested all then wait a bit and start all over.
+                    if (testedCounter == 3)
+                    {
+                        System.out.println("(0) Nowhere to move for a tank!");
+                        sleep(2000);
+                        testedCounter = 0;
+                        Arrays.fill(testedDirs, -1);
+                    }
+                } else if (test == 1) sleep(2000);
+
+                // Otherwise, pick another one, which IS NOT included in the already tested ones.
+
+//                int finalK = k4;
+//                // It array does not
+//                if (!Arrays.stream(testedDirs).anyMatch(i -> i == finalK)) test = -2;
+                }
+
             }
-            // Choose a new random destination if current is unavailable
-            if (test == 0) k4 = ThreadLocalRandom.current().nextInt(4);
-            sleep(2000);
-        }
-    }
+
+
+
+
 
     // Utility functions
     public String getTestNeiber(char direction) {
@@ -258,7 +294,7 @@ public class MovingObject extends GameObject {
                 return -1;
 
         }
-        return 0; // If there's no move or error. For success return 1
+        return 0; // If there's no move nor error. For success return 1
     }
 
     private char dirUnif(char direction)
