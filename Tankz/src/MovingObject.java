@@ -107,21 +107,24 @@ public class MovingObject extends GameObject {
         int testedCounter = 0;
         while (true)
         {
-
-
-            System.out.println("k4: "+k4);
+            System.out.println("k4: "+k4+ "Test: "+test);
             switch(k4)
             {
                 case 0:
                     test = tryMoveRespond('N', cells);
+                    continue;
                 case 1:
                     test = tryMoveRespond('E', cells);
+                    continue;
                 case 2:
                     test = tryMoveRespond('W', cells);
+                    continue;
                 case 3:
                     test = tryMoveRespond('S', cells);
+                    continue;
                 default:
                     System.out.println("(-) Tank AI movement error.");
+                    test = 0;
                     break;
 
             }
@@ -135,6 +138,7 @@ public class MovingObject extends GameObject {
                 // If you've tested all then wait a bit and start all over.
                 if (testedCounter == 3)
                 {
+                    System.out.println("(0) Nowhere to move for a tank!");
                     sleep(4000);
                     testedCounter = 0;
                     Arrays.fill(testedDirs, -1);
@@ -279,7 +283,7 @@ public class MovingObject extends GameObject {
                 return -1;
 
         }
-        return 0; // If there's no move or error. For success return 1
+        return 0; // If there's no move nor error. For success return 1
     }
 
     private char dirUnif(char direction)

@@ -104,8 +104,8 @@ public class LocalUtils {
             x = y = 0;
         }
         System.out.println("\t(+) A few walls are build on your way.");
-
-        for (int i = 0; i <= Math.round(size/3); i++)
+        for (int i = 0; i <1; i++) // ONE TANK DEBUG
+//        for (int i = 0; i <= Math.round(size/3); i++)
         {
             int x,y;
             do
