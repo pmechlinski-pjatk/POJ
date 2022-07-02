@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="Enemy tank directional sprites added">
-      <change beforePath="$PROJECT_DIR$/src/LocalUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LocalUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Missile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Missile.java" afterDir="false" />
+    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="Seems like I'm almost there in terms of tanks &quot;AI&quot; control, but tryMove functions probably need refactoring/universalization first.">
       <change beforePath="$PROJECT_DIR$/src/MovingObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovingObject.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -335,7 +333,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656780517264</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Seems like I'm almost there in terms of tanks &quot;AI&quot; control, but tryMove functions probably need refactoring/universalization first.">
+      <created>1656781599486</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1656781599486</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -354,7 +359,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="I'm still not sure if it would be better to enforce setting starting cell for the object or not..." />
     <MESSAGE value="Zaimplementowałem coś na kształt słownika, żeby trzymać w nim (w jednym miejscu) grafiki używnae w grze.&#10;(Nie jestem pewien, czy to ma do końca sens, ale no na razie powinno działać)" />
     <MESSAGE value="Lol. I've spent ca. 2,5 hour debugging my code, because tile rendering was severely screwed somehow. Eventually it came out that my x and y parameters for JLabel are somehow forcing renders to display at absolute value of x &amp; y, ignoring layout.&#10;&#10;Renaming them did the trick." />
     <MESSAGE value="Change in a JLabel size - looks good on my screen..." />
@@ -379,7 +383,8 @@
     <MESSAGE value="Shooting function should probably need proper multithreading to be implemented (i.e. not just lambdas, bc it seems that I have no control over missile's threads). Also, player.shoot() needs refactoring simmilar to missile.class methods." />
     <MESSAGE value="I implemented method to check for endgame requirements." />
     <MESSAGE value="Enemy tank directional sprites added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Enemy tank directional sprites added" />
+    <MESSAGE value="Seems like I'm almost there in terms of tanks &quot;AI&quot; control, but tryMove functions probably need refactoring/universalization first." />
+    <option name="LAST_COMMIT_MESSAGE" value="Seems like I'm almost there in terms of tanks &quot;AI&quot; control, but tryMove functions probably need refactoring/universalization first." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

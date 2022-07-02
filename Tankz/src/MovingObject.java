@@ -200,14 +200,16 @@ public class MovingObject extends GameObject {
             }
         }
 
-    public int tryMoveRespond(char k, Cell cells[][])
+    private int tryMoveRespond(char direction, Cell[][] cells)
     {
+        // Will work agnostically both for direction uppercase (geographical) and for keyboard strokes 'directions'.
+        char d = dirUnif(direction);
         String neibers[][] = this.getNeibers();
         int x = this.getLinkedCell().getTiledX();
         int y = this.getLinkedCell().getTiledY();
-        // CENTRAL SHOULD BE neibers[1][1]
-        switch(k) {
-            case 'w':
+
+        switch(d) {
+            case 'N':
                 setImage(northStandby);
                 setDirection('N');
 
@@ -218,7 +220,7 @@ public class MovingObject extends GameObject {
                     return 1;
                 }
                 break;
-            case 'a':
+            case 'W':
                 setImage(westStandby);
                 setDirection('W');
 
@@ -229,7 +231,7 @@ public class MovingObject extends GameObject {
                     return 1;
                 }
                 break;
-            case 'd':
+            case 'E':
                 setImage(eastStandby);
                 setDirection('E');
                 this.linkedCell.redraw();
@@ -240,7 +242,7 @@ public class MovingObject extends GameObject {
                     return 1;
                 }
                 break;
-            case 's':
+            case 'S':
                 setImage(southStandby);
                 setDirection('S');
                 this.linkedCell.redraw();
@@ -253,10 +255,21 @@ public class MovingObject extends GameObject {
                 break;
             default:
                 System.out.println("(?)Unknown control error.");
-                break;
+                return -1;
+
         }
         return 0; // If there's no move or error. For success return 1
     }
+
+    private char dirUnif(char direction)
+    {
+        if (direction == 'w') return 'N';
+        else if (direction == 's') return 'S';
+        else if (direction == 'a') return 'A';
+        else if (direction == 'd') return 'E';
+        else if (direction == 'w') return 'N';
+        else return direction;
     }
+}
 
 
