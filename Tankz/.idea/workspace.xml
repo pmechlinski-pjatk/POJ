@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="getNeibers method for movables is working - it can be used to detect where one can go.">
+    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="Enemy base colored 4 fun">
+      <change afterPath="$PROJECT_DIR$/out/production/Tankz/IsKeyPressed$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Tankz/IsKeyPressed.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IsKeyPressed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GoL_TestProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../GoL_TestProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tankz/Window.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/KeyListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/KeyListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Window.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -82,7 +90,7 @@
       <workItem from="1656522794995" duration="16000" />
       <workItem from="1656524823269" duration="1229000" />
       <workItem from="1656627687413" duration="2709000" />
-      <workItem from="1656700775252" duration="12227000" />
+      <workItem from="1656700775252" duration="15557000" />
     </task>
     <task id="LOCAL-00001" summary="Pliki z projektu saperowego">
       <created>1654955760842</created>
@@ -238,7 +246,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656718645332</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Enemy base colored 4 fun">
+      <created>1656718814653</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1656718814653</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,7 +295,8 @@
     <MESSAGE value="I didn't want to write so many constructors, so I've created a small function to append new sprites to the sprite array." />
     <MESSAGE value="I've added direction variable for movable class&#10;I've added name variable for to GameObjects which will be needed to ID them in pathfinding." />
     <MESSAGE value="getNeibers method for movables is working - it can be used to detect where one can go." />
-    <option name="LAST_COMMIT_MESSAGE" value="getNeibers method for movables is working - it can be used to detect where one can go." />
+    <MESSAGE value="Enemy base colored 4 fun" />
+    <option name="LAST_COMMIT_MESSAGE" value="Enemy base colored 4 fun" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

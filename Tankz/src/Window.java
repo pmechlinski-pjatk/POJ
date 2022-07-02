@@ -1,21 +1,107 @@
 import java.awt.*;
-import java.util.ArrayList;
+import java.awt.event.KeyListener;
+import java.util.*;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 import javax.swing.*;
+import java.awt.KeyEventDispatcher;
+import java.awt.KeyboardFocusManager;
+import java.awt.event.KeyEvent;
+
+
+import static java.lang.Thread.sleep;
 
 public class Window {
 
+	static volatile boolean wPressed = false;
+	static volatile boolean aPressed = false;
+	static volatile boolean sPressed = false;
+	static volatile boolean dPressed = false;
+	static volatile boolean lPressed = false;
+	public static boolean isWPressed() {
+		synchronized (KeyListener.class) {
+			return wPressed;
+		}
+	}
+	public static boolean isAPressed() {
+		synchronized (KeyListener.class) {
+			return aPressed;
+		}
+	}
+	public static boolean isSPressed() {
+		synchronized (KeyListener.class) {
+			return sPressed;
+		}
+	}
+	public static boolean isDPressed() {
+		synchronized (KeyListener.class) {
+			return dPressed;
+		}
+	}
+	public static boolean isLPressed() {
+		synchronized (KeyListener.class) {
+			return lPressed;
+		}
+	}
 
+	public Window(int size) throws InterruptedException {
+		// Implement Key Listener
+		KeyboardFocusManager.getCurrentKeyboardFocusManager().addKeyEventDispatcher(new KeyEventDispatcher() {
 
-	public Window(int size) {
+			@Override
+			public boolean dispatchKeyEvent(KeyEvent ke) {
+				synchronized (KeyListener.class) {
+					switch (ke.getID()) {
+						case KeyEvent.KEY_PRESSED:
+							if (ke.getKeyCode() == KeyEvent.VK_W) {
+								wPressed = true;
+							}
+							else if (ke.getKeyCode() == KeyEvent.VK_A) {
+								aPressed = true;
+							}
+							else if (ke.getKeyCode() == KeyEvent.VK_S) {
+								sPressed = true;
+							}
+							else if (ke.getKeyCode() == KeyEvent.VK_D) {
+								dPressed = true;
+							}
+							else if (ke.getKeyCode() == KeyEvent.VK_L) {
+								lPressed = true;
+							}
+							break;
+
+						case KeyEvent.KEY_RELEASED:
+							if (ke.getKeyCode() == KeyEvent.VK_W) {
+								wPressed = false;
+							}
+							else if (ke.getKeyCode() == KeyEvent.VK_A) {
+								aPressed = false;
+							}
+							else if (ke.getKeyCode() == KeyEvent.VK_S) {
+								sPressed = false;
+							}
+							else if (ke.getKeyCode() == KeyEvent.VK_D) {
+								dPressed = false;
+							}
+							else if (ke.getKeyCode() == KeyEvent.VK_L) {
+								lPressed = false;
+							}
+							break;
+					}
+					return false;
+				}
+			}
+		});
+
 		// Create game window
 		JFrame window = new JFrame("Tankz ASCII REMAKE");
 		window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		JPanel panel = new JPanel();
 
 		panel.setLayout(new GridLayout(size, size));
+
+
 
 		// Create cell array object.
 		Cell[][] cells = new Cell[size][size];
@@ -62,13 +148,17 @@ public class Window {
 		mapGen(size, cells, terrain, enemyBases, enemies, s);
 		System.out.println("(+)Logical map generated & also rendered!\n");
 
-
-
-		for (int i = 0; i < size; i++) {
-			for (int j = 0; j < size; j++) {
-				cells[i][j].redraw();
-			}
+		// Game loop
+		while (true)
+		{
+			if (isWPressed()) System.out.println("W is pressed.");
+			if (isAPressed()) System.out.println("A is pressed.");
+			if (isSPressed()) System.out.println("S is pressed.");
+			if (isDPressed()) System.out.println("D is pressed.");
+			if (isLPressed()) System.out.println("L is pressed.");
+			sleep(50);
 		}
+
 		//Player player = new Player("XD", 3, true, cells[1][1]);
 		//Player player2 = new Player("%%", 3, true, cells[9][9]);
 		//cells[1][1].setLinkedObject(player);
@@ -85,7 +175,16 @@ public class Window {
 
 
 	}
-
+public void redrawAll(Cell cells[][], int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		for (int j = 0; j < size; j++)
+		{
+			cells[i][j].redraw();
+		}
+	}
+}
 
 	public void mapGen(int size, Cell[][] cells, GameObject[] terrain, GameObject [] enemyBases, EnemyTank[] enemies, Sprites [] s) {
 		int starterX, starterY;
@@ -140,7 +239,7 @@ public class Window {
 				y = ThreadLocalRandom.current().nextInt(size);
 			} while (cells[x][y].getLinkedObject() != null || Math.abs(starterX - x) < 5 || Math.abs(starterY - y) < 5);
 			enemies[i] = new EnemyTank("EnemyTank", getSpriteByName(s, "EnemyTank"), 1, true, cells[x][y]);
-			System.out.println("Tank neibers are:\n"+(Arrays.deepToString(enemies[i].getNeibers())));
+			//System.out.println("Tank neibers are:\n"+(Arrays.deepToString(enemies[i].getNeibers())));
 			cells[x][y].redraw();
 			x = y = 0;
 		}

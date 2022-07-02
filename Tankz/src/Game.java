@@ -8,7 +8,7 @@ public class Game {
 	//								<!> Map size shouldn't be smaller than 7.
 
 	// TODO: Zdecydować się na jeden język w komentarzach i nazwach funkcji xd
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		Window main = new Window(SIZE);
 	}
 }
