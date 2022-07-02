@@ -1,3 +1,5 @@
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -101,6 +103,8 @@ public class MovingObject extends GameObject {
         int test = 0;
         // Random starting direction.
         int k4 = ThreadLocalRandom.current().nextInt(4);
+        int[] testedDirs = new int[4];
+        int testedCounter = 0;
         while (true)
         {
 
@@ -121,8 +125,25 @@ public class MovingObject extends GameObject {
                     break;
 
             }
-            // Choose a new random destination if current is unavailable
-            if (test == 0) k4 = ThreadLocalRandom.current().nextInt(4);
+            // If you weren't able to move...
+            if (test == 0)
+            {
+                // Save in memory a destination that was unavailable.
+                testedDirs[testedCounter] = k4;
+                testedCounter++;
+
+                // If you've tested all then wait a bit and start all over.
+                if (testedCounter == 3)
+                {
+                    sleep(4000);
+                    testedCounter = 0;
+                    Arrays.fill(testedDirs, -1);
+                }
+
+                // Otherwise, pick another one, which IS NOT included in the already tested ones.
+                int finalK = k4;
+                while (Arrays.stream(testedDirs).anyMatch(i -> i == finalK)) { k4 = ThreadLocalRandom.current().nextInt(4); }
+            }
             sleep(2000);
         }
     }
