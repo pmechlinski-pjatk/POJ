@@ -109,7 +109,7 @@ else if (k != ' ') tryMove(k, cells);
                     }).start();
                 }
                 sleep(2000);
-                setImage(westStandby);
+                setImage(eastStandby);
                 break;
             case 'S':
                 if (neibers[1][2] == "0")
@@ -121,7 +121,7 @@ else if (k != ' ') tryMove(k, cells);
                     }).start();
                 }
                 sleep(2000);
-                setImage(eastStandby);
+                setImage(southStandby);
                 break;
             case 'W':
                 if (neibers[0][1] == "0")
@@ -133,7 +133,7 @@ else if (k != ' ') tryMove(k, cells);
                     }).start();
                 }
                 sleep(2000);
-                setImage(southStandby);
+                setImage(westStandby);
                 break;
             default:
                 System.out.println("(?)Unknown exception at shooting.");
