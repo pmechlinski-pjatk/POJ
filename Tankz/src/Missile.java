@@ -15,38 +15,29 @@ public class Missile extends MovingObject {
     private String name = "Missile";
 
 
-    @Override
-    public int getHp() {
-        return hp;
-    }
+//    @Override
+//    public int getHp() {
+//        return hp;
+//    }
+//
+//    @Override
+//    public void setHp(int hp) {
+//        this.hp = hp;
+//    }
 
-    @Override
-    public void setHp(int hp) {
-        this.hp = hp;
-    }
+//    @Override
+//    public void changeLinkedCell(Cell newCell) {
+//        linkedCell.setLinkedObject(null);
+//        int x = linkedCell.getTiledX();
+//        int y = linkedCell.getTiledY();
+//        linkedCell.redraw();
+//        this.linkedCell = newCell;
+//        newCell.setLinkedObject(this);
+//        newCell.redraw();
+//
+//    }
 
-    @Override
-    public void changeLinkedCell(Cell newCell) {
-        linkedCell.setLinkedObject(null);
-        int x = linkedCell.getTiledX();
-        int y = linkedCell.getTiledY();
-        linkedCell.redraw();
-        this.linkedCell = newCell;
-        newCell.setLinkedObject(this);
-        newCell.redraw();
 
-    }
-
-    public void stop() {
-        this.setDirection('0');
-        while (true) {
-            try {
-                sleep(10000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-        }
-    }
 
     public Missile(char direction, Cell startingTile, Cell[][] cells, int size) {
         super();
@@ -55,24 +46,128 @@ public class Missile extends MovingObject {
         int x = startingTile.getTiledX();
         int y = startingTile.getTiledY();
         cells[x][y].setLinkedObject(this);
-        this.setLinkedCell(cells[x][y]);
         this.setImage("*");
         this.linkedCell.redraw();
-        new Thread(() -> {
-            while (true) {
-                if (this.getHp() != -1) {
+//        new Thread(() -> {
+            System.out.println("New thread initialized");
+            if (!isNull(this.getLinkedCell()) && this.getDirection() != '0')
+                {
+                    System.out.println("missileMove initializing");
                     this.missileMove(cells, size);
-
-                    try {
-                        sleep(1500);
-                    } catch (InterruptedException e) {
-                        throw new RuntimeException(e);
-                    }
-                } else break;
-            }
-        }).start();
+                }
+//        }).start();
+        System.out.println("Missile stopping");
+        stop();
     }
 
+    // Move control flow
+
+    public void missileMove(Cell[][] cells, int size) {
+        System.out.println("missileMove initialized");
+        if (this.getLinkedCell() == null) stop();
+        String neibers[][] = this.getNeibers();
+        int x = this.getLinkedCell().getTiledX();
+        int y = this.getLinkedCell().getTiledY();
+        if (!isNull(getDirection()) && getDirection() != '0')
+        {
+            //            try {
+//                sleep(1500);
+//            } catch (InterruptedException e) {
+//                throw new RuntimeException(e);
+//            }
+            System.out.println("controlLoop initalizing");
+            controlLoop(this.getDirection(), this.getNeibers(), cells, size);
+            // TODO: Check, if I can get along without 'size' variable  - maybe isNotNull will be enough?
+        }
+        stop();
+    }
+
+    public void controlLoop(char direction, String[][] neibers, Cell[][] cells, int size) {
+        if (direction == 'N' || direction == 'S') setImage(MissileVertical);
+        else if (direction == 'E' || direction == 'W') setImage(MissileHorizontal);
+        else {
+            setImage(" ");
+            stop();
+            return;
+        }
+
+        int x = this.getLinkedCell().getTiledX();
+        int y = this.getLinkedCell().getTiledY();
+
+        String testNeiber;
+
+
+        while (!isNull(getDirection()) && getDirection() != '0')
+        {
+            testNeiber = getTestNeiber(direction);
+            if (testNeiber == "EnemyBase" || testNeiber == "Player" || testNeiber == "EnemyTank" || testNeiber == "Wall") testNeiber = "Destructible";
+            System.out.println("moveInLoop initialized");
+            System.out.println("testNeiber: "+testNeiber);
+            moveInLoop(direction, testNeiber, cells, size);
+        }
+        stop();
+    }
+
+    public void moveInLoop(char direction, String neiber, Cell[][] cells, int size) {
+        int x = this.getLinkedCell().getTiledX();
+        int y = this.getLinkedCell().getTiledY();
+
+        if (isNull(neiber)) {
+            System.out.println("moveInLoop: Neiber is null");
+            stop();
+            return;
+        }
+
+        switch (neiber) {
+            case "0": // Can move freely
+                if (!isNull(getCoordCell(direction, cells))) {
+                    System.out.println("moveInLoop: Neiber is empty, can move");
+                    this.setLinkedCell(getCoordCell(direction, cells));
+                    getLinkedCell().redraw();
+                    getCoordCell(direction, cells).setLinkedObject(this);
+                    cells[x][y].setLinkedObject(null);
+                    cells[x][y]. redraw();
+                    return;
+                }
+                return;
+            case "Missile": // Two missiles should cancel each other
+                if (!isNull(getCoordCell(direction, cells))) {
+                    System.out.println("moveInLoop: Neiber is missile, should self-destruct");
+                    getLinkedCell().setLinkedObject(null);
+                    getLinkedCell().redraw();
+                    this.setLinkedCell(null);
+                    getCoordCell(direction, cells).setLinkedObject(null);
+                    getCoordCell(direction, cells).redraw();
+                    stop();
+                    return;
+                }
+            case "EOM": // End of map
+                if (!isNull(getCoordCell(direction, cells))) {
+                    System.out.println("moveInLoop: Neiber is out of range, should self-destruct");
+                    getLinkedCell().setLinkedObject(null);
+                    getLinkedCell().redraw();
+                    this.setLinkedCell(null);
+                    stop();
+                    return;
+                }
+            case "Destructible": // Deal damage before disappearing
+                if (!isNull(getCoordCell(direction, cells))) {
+                    System.out.println("moveInLoop: Neiber is destructible, should deal damage and self-destruct");
+                    getLinkedCell().setLinkedObject(null);
+                    getLinkedCell().redraw();
+                    this.setLinkedCell(null);
+                    getCoordCell(direction, cells).getLinkedObject().setHp(getHp() - 1);
+                    stop();
+                    return;
+                }
+            default:
+                System.out.println("moveInLoop: Neiber is something else, stopping");
+                stop();
+                return;
+        }
+    }
+
+    // Utility functions
     public String getTestNeiber(char direction) {
         String neibers[][] = getNeibers();
         switch (direction) {
@@ -108,81 +203,25 @@ public class Missile extends MovingObject {
         }
     }
 
-    public void moveInLoop(char direction, String neiber, Cell[][] cells, int size) {
-        int x = this.getLinkedCell().getTiledX();
-        int y = this.getLinkedCell().getTiledY();
-
-        if (isNull(neiber)) {
-            stop();
-            return;
+    public void stop() {
+        this.setDirection('0');
+        System.out.println("Missile stopped");
+        this.setImage(" ");
+        this.getLinkedCell().redraw();
+        if (!isNull(getLinkedCell()))
+        {
+            this.getLinkedCell().setLinkedObject(null);
+            setLinkedCell(null);
+        }
+        return;
         }
 
-        switch (neiber) {
-            case "0": // Can move freely
-                if (!isNull(getCoordCell(direction, cells))) {
-                    this.setLinkedCell(getCoordCell(direction, cells));
-                    getCoordCell(direction, cells).setLinkedObject(this);
-                    cells[x][y].setLinkedObject(null);
-                }
-                return;
-            case "Missile": // Two missiles should cancel each other
-                if (!isNull(getCoordCell(direction, cells))) {
-                    getLinkedCell().setLinkedObject(null);
-                    this.setLinkedCell(null);
-                    getCoordCell(direction, cells).setLinkedObject(null);
-                    stop();
-                }
-            case "EOM": // End of map
-                if (!isNull(getCoordCell(direction, cells))) {
-                    getLinkedCell().setLinkedObject(null);
-                    this.setLinkedCell(null);
-                    stop();
-                }
-            case "Destructible": // Deal damage before disappearing
-                if (!isNull(getCoordCell(direction, cells))) {
-                    getLinkedCell().setLinkedObject(null);
-                    this.setLinkedCell(null);
-                    getCoordCell(direction, cells).getLinkedObject().setHp(getHp() - 1);
-                    stop();
-                }
-            default:
-                stop();
-                return;
-        }
-    }
 
-    public void controlLoop(char direction, String[][] neibers, Cell[][] cells, int size) {
-        if (direction == 'N' || direction == 'S') setImage(MissileVertical);
-        else if (direction == 'E' || direction == 'W') setImage(MissileHorizontal);
-        else {
-            setImage(" ");
-            stop();
-        }
 
-        int x = this.getLinkedCell().getTiledX();
-        int y = this.getLinkedCell().getTiledY();
 
-        String testNeiber;
 
-        while (!isNull(getDirection()) && getDirection() != '0') {
-            testNeiber = getTestNeiber(direction);
-            moveInLoop(direction, testNeiber, cells, size);
-        }
-        stop();
-    }
 
-    public void missileMove(Cell[][] cells, int size) {
-        if (this.getLinkedCell() == null) stop();
-        String neibers[][] = this.getNeibers();
-        int x = this.getLinkedCell().getTiledX();
-        int y = this.getLinkedCell().getTiledY();
 
-        while (!isNull(getDirection()) && getDirection() != '0') {
-            controlLoop(this.getDirection(), this.getNeibers(), cells, size);
-            // TODO: Check, if I can get along without 'size' variable  - maybe isNotNull will be enough?
-        }
-        stop();
-    }
 
     //        switch (getDirection())
 //        {
@@ -293,6 +332,7 @@ public class Missile extends MovingObject {
 //                stop();
 //        }
 //    }
+
     public Missile(String name, String image, int hp, boolean isDestructible, Cell linkedCell) {
         super(name, image, hp, isDestructible, linkedCell);
     }

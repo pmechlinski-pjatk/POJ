@@ -89,7 +89,12 @@ else if (k != ' ') tryMove(k, cells);
                 {
                     setImage(northReload);
                     this.linkedCell.redraw();
-                    Missile m = new Missile('N', cells[x-1][y], cells, size);
+                    try
+                    {
+                        new Thread(() -> {
+                            Missile m = new Missile('N', cells[x - 1][y], cells, size);
+                        }).start();
+                    } catch (IndexOutOfBoundsException e) { return; }
                 }
                 sleep(2000);
                 setImage(northStandby);
@@ -99,7 +104,9 @@ else if (k != ' ') tryMove(k, cells);
                 {
                     setImage(eastReload);
                     this.linkedCell.redraw();
+                    new Thread(() -> {
                     Missile m = new Missile('E', cells[x][y+1], cells, size);
+                    }).start();
                 }
                 sleep(2000);
                 setImage(westStandby);
@@ -109,7 +116,9 @@ else if (k != ' ') tryMove(k, cells);
                 {
                     setImage(southReload);
                     this.linkedCell.redraw();
+                    new Thread(() -> {
                     Missile m = new Missile('S', cells[x+1][y], cells, size);
+                    }).start();
                 }
                 sleep(2000);
                 setImage(eastStandby);
@@ -119,7 +128,9 @@ else if (k != ' ') tryMove(k, cells);
                 {
                     setImage(westReload);
                     this.linkedCell.redraw();
+                    new Thread(() -> {
                     Missile m = new Missile('W', cells[x][y-1], cells, size);
+                    }).start();
                 }
                 sleep(2000);
                 setImage(southStandby);
