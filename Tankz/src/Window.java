@@ -1,3 +1,5 @@
+import com.sun.source.tree.WhileLoopTree;
+
 import java.awt.*;
 import java.awt.event.KeyListener;
 import java.util.*;
@@ -151,11 +153,23 @@ public class Window {
 		System.out.println("(+)Logical map generated & also rendered!\n");
 
 		// Game loop
-		while (true)
+
+			new Thread(() -> {
+				while (true) {
+					player[0].tryAction(easyKeyDispatcher(), cells);
+					try {
+						sleep(500);
+					} catch (InterruptedException e) {
+						throw new RuntimeException(e);
+					}
+				}
+			}).start();
+
+		while(true)
 		{
-			player[0].tryAction(easyKeyDispatcher(), cells);
-			sleep(50);
+			sleep(100);
 		}
+
 
 		//Player player = new Player("XD", 3, true, cells[1][1]);
 		//Player player2 = new Player("%%", 3, true, cells[9][9]);
