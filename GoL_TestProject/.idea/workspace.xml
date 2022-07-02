@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="Sterowanie work in progress">
-      <change afterPath="$PROJECT_DIR$/../Tankz/src/LocalUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tankz/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Tankz/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tankz/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Tankz/src/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tankz/src/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Tankz/src/Window.java" afterDir="false" />
-    </list>
+    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="Sterowanie work in progress" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

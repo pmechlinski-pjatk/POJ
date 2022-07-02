@@ -1,0 +1,28 @@
+
+package gamers;
+
+import main.Pair;
+import main.Unit;
+import main.PhysicalObject.CollisionModel;
+
+public class s26129 extends Unit {
+    public s26129(String id, Pair<Double, Double> position, double r, CollisionModel model) {
+        super(id, position, r, model);
+    }
+
+    public void run() {
+        this.enableStopOnWall();
+        this.enableMovement();
+	while(true) {
+            if (rand.nextBoolean()) {
+                this.rotateLeft();
+            } else {
+                this.rotateRight();
+            }
+	 this.forward();
+
+	}
+    }
+}
+
+
