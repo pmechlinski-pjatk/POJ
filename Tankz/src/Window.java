@@ -157,7 +157,7 @@ public class Window {
 					throw new RuntimeException(e);
 				}
 				try {
-					sleep(500);
+					sleep(1000);
 				} catch (InterruptedException e) {
 					throw new RuntimeException(e);
 				}

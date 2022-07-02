@@ -7,10 +7,12 @@ public class Missile extends MovingObject {
 
 //   private String MissileHorizontal = "<html><font color='orange'>~</font></html>";
 //   private String MissileVertical = "<html><font color='orange'>\"</font></html>";
-private String MissileHorizontal = "~";
-private String MissileVertical = "\'";
+private String MissileHorizontal = "<html><font color='orange'>@</font></html>";
+private String MissileVertical = "<html><font color='orange'>@</font></html>";
 
 private int hp = 0;
+private String name = "Missile";
+
 
     @Override
     public int getHp() {
@@ -41,7 +43,7 @@ private int hp = 0;
                 this.missileMove(cells, size);
 
             try {
-                sleep(100);
+                sleep(1500);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
@@ -63,20 +65,31 @@ private int hp = 0;
                 setDirection('N');
                 while (true)
                 {
-                    if (neibers[0][1] == "EOM")
+                    x = getLinkedCell().getTiledX();
+                    y = getLinkedCell().getTiledY();
+                    if (neibers[0][1] == "EOM" || neibers[0][1] == "Missile")
                     {
-                        this.setHp(-1);
+                        cells[x][y].redraw();
+                        this.setLinkedCell(null);
+                        cells[x][y].setLinkedObject(null);
                         break;
                     } else if (neibers[0][1] == "0") {
-                        x = getLinkedCell().getTiledX();
-                        y = getLinkedCell().getTiledY();
+
                         cells[x][y].redraw();
                         if (x-1 >= 0) changeLinkedCell(cells[x - 1][y]);
                         continue;
                     } else if (neibers[0][1] == "EnemyBase" || neibers[0][1] == "Player" || neibers[0][1] == "EnemyTank" || neibers[0][1] == "Wall") {
                         cells[x - 1][y].getLinkedObject().setHp(getHp()-1);
-                        this.setHp(-1);
-                    } else this.setHp(-1);
+                        cells[x][y].redraw();
+                        this.setLinkedCell(null);
+                        cells[x][y].setLinkedObject(null);
+                        break;
+                    } else {
+                        cells[x][y].redraw();
+                        this.setLinkedCell(null);
+                        cells[x][y].setLinkedObject(null);
+                        break;
+                    }
                 }
             case 'W':
                 setImage(MissileHorizontal);

@@ -24,11 +24,11 @@ public class Player extends MovingObject {
     }
 
     private final String northStandby = "<html>_|_<br/>[+]<br/></html>";
-    private final String southStandby = "<html><br/>[+]<br/>-|-</html>";
+    private final String southStandby = "<html><br/>[+]<br/>`|`</html>";
     private final String westStandby =  "<html><br/>--[+]<br/></html>";
     private final String eastStandby = "<html><br/>[+]--<br/></html>";
     private final String northReload =  "<html>_<font color='red'>|</font>_<br/>[+]<br/></html>";
-    private final String southReload = "<html><br/>[+]<br/>-<font color='red'>|</font>-</html>";
+    private final String southReload = "<html><br/>[+]<br/>'<font color='red'>|</font>'</html>";
     private final String westReload = "<html><br/><font color='red'>--</font>[+]<br/></html>";
     private final String eastReload = "<html><br/>[+]<font color='red'>--</font><br/></html>";
 
@@ -115,11 +115,11 @@ else if (k != ' ') tryMove(k, cells);
                 setImage(eastStandby);
                 break;
             case 'W':
-                if (neibers[2][1] == "0")
+                if (neibers[0][1] == "0")
                 {
                     setImage(westReload);
                     this.linkedCell.redraw();
-                    Missile m = new Missile('W', cells[x+1][y], cells, size);
+                    Missile m = new Missile('W', cells[x][y-1], cells, size);
                 }
                 sleep(2000);
                 setImage(southStandby);
