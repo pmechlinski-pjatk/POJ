@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="I refactored missile movement into a few smaller functions and it looks promising: projectiles are displaying properly one every direction, but they still fail to disappear.">
+    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="Shooting function should probably need proper multithreading to be implemented (i.e. not just lambdas, bc it seems that I have no control over missile's threads). Also, player.shoot() needs refactoring simmilar to missile.class methods.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tankz/Missile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/Missile.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tankz/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Missile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Missile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tankz/Window$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/Window$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tankz/Window.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/Window.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Window.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -316,7 +316,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656768616313</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Shooting function should probably need proper multithreading to be implemented (i.e. not just lambdas, bc it seems that I have no control over missile's threads). Also, player.shoot() needs refactoring simmilar to missile.class methods.">
+      <created>1656772051901</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1656772051901</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -335,7 +342,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="I've added coordinates handling. Now they need to be stated in the cell initialization and it's possible for the gameObject to know coords of the linked cell." />
     <MESSAGE value="Some testing regarding proper rendering and tiling. Seems ok for now. &#10;I've also added cell redraw directly to the gameObject constructor to make sure that every new object will be rendered." />
     <MESSAGE value="I've started improving map generator.&#10;- I've added an extra req so that player will spawn near to the map edge.&#10;- I've added disclaimer to the game class about minimal size." />
     <MESSAGE value="I'm still not sure if it would be better to enforce setting starting cell for the object or not..." />
@@ -360,7 +366,8 @@
     <MESSAGE value="Shooting still WIP. Small improvement - missiles seem to destroy walls, but still more doesn't work than do here." />
     <MESSAGE value="At this moment it seems like the projectiles spawn rather properly, but I still have some problems with deleting it and esp. self-destruction after collision." />
     <MESSAGE value="I refactored missile movement into a few smaller functions and it looks promising: projectiles are displaying properly one every direction, but they still fail to disappear." />
-    <option name="LAST_COMMIT_MESSAGE" value="I refactored missile movement into a few smaller functions and it looks promising: projectiles are displaying properly one every direction, but they still fail to disappear." />
+    <MESSAGE value="Shooting function should probably need proper multithreading to be implemented (i.e. not just lambdas, bc it seems that I have no control over missile's threads). Also, player.shoot() needs refactoring simmilar to missile.class methods." />
+    <option name="LAST_COMMIT_MESSAGE" value="Shooting function should probably need proper multithreading to be implemented (i.e. not just lambdas, bc it seems that I have no control over missile's threads). Also, player.shoot() needs refactoring simmilar to missile.class methods." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -372,6 +379,10 @@
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.StackOverflowError" package="java.lang" />
           <option name="timeStamp" value="2" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="3" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
