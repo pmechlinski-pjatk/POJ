@@ -132,9 +132,7 @@ public class Window {
 		u.addToSprites(1, s, "Player", "[+]");
 		u.addToSprites(2, s, "EnemyBase", "<html><font color='gray'>@=@<br/>|| <font color='red'>F</font> ||<br/>@=@</font></html>");
 		u.addToSprites(3, s, "EnemyTank", "[x]");
-		u.addToSprites(4, s, "MissileHorizontal", "<html>_|_<br/>[+]<br/></html>");
-		u.addToSprites(5, s, "MissileVertical", "<html>_|_<br/>[+]<br/></html>");
-		u.addToSprites(6, s, "WallRuined", "<html><font color=#A52A2A>%##<br/>##E<br/>_)##</font></html>");
+		u.addToSprites(4, s, "WallRuined", "<html><font color=#A52A2A>%##<br/>##E<br/>_)##</font></html>");
 		//s[] = new Sprites("Water", "<html><font color='blue'>~~~<br/>~~~<br/>~~~</font></html>"); // TODO: Water block? Need more tweaking due to being passable for missiles.
 		System.out.println("(+) Sprites loaded!\n");
 
@@ -153,7 +151,11 @@ public class Window {
 		// Loop to steer the tank
 		new Thread(() -> {
 			while (true) {
-				player[0].tryAction(easyKeyDispatcher(), cells);
+				try {
+					player[0].tryAction(easyKeyDispatcher(), cells);
+				} catch (InterruptedException e) {
+					throw new RuntimeException(e);
+				}
 				try {
 					sleep(500);
 				} catch (InterruptedException e) {

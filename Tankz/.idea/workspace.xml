@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="Dodanie asynchronicznej funkcji do obłsugi sterowania czołgiem okazało się wręcz podejrzanie proste...">
-      <change afterPath="$PROJECT_DIR$/out/production/Tankz/Game.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Tankz/Sprites.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GoL_TestProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../GoL_TestProject/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="After canibalizing reduntant setDirection method, magically it started working.&#10;Now the Player's tank changes sprite &amp; direction on keyboard movement.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tankz/Direction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tankz/GameObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/GameObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tankz/Missile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/Missile.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tankz/MovingObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/MovingObject.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tankz/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tankz/Window$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/Window$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tankz/Window.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/Window.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Missile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Missile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MovingObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovingObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Window.java" afterDir="false" />
@@ -274,7 +273,21 @@
       <option name="project" value="LOCAL" />
       <updated>1656726489911</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="After canibalizing reduntant setDirection method, magically it started working.&#10;Now the Player's tank changes sprite &amp; direction on keyboard movement.">
+      <created>1656732240900</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1656732240900</updated>
+    </task>
+    <task id="LOCAL-00028" summary="After canibalizing reduntant setDirection method, magically it started working.&#10;Now the Player's tank changes sprite &amp; direction on keyboard movement.">
+      <created>1656732282987</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1656732282987</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -293,7 +306,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Work in progress przy generatorze pola gry" />
     <MESSAGE value="Podstawowy generator mapy" />
     <MESSAGE value="Sterowanie work in progress" />
     <MESSAGE value="I've refactored class names" />
@@ -318,7 +330,8 @@
     <MESSAGE value="Key listener seems to work &quot;jakotako&quot;, but it's still unknown if it will block game time loop." />
     <MESSAGE value="Metodą prób i błędów udało mi sie zrobić &quot;ruszający&quot; czołg, który nie rozwala losowo ścian i nie myli kierunków" />
     <MESSAGE value="Dodanie asynchronicznej funkcji do obłsugi sterowania czołgiem okazało się wręcz podejrzanie proste..." />
-    <option name="LAST_COMMIT_MESSAGE" value="Dodanie asynchronicznej funkcji do obłsugi sterowania czołgiem okazało się wręcz podejrzanie proste..." />
+    <MESSAGE value="After canibalizing reduntant setDirection method, magically it started working.&#10;Now the Player's tank changes sprite &amp; direction on keyboard movement." />
+    <option name="LAST_COMMIT_MESSAGE" value="After canibalizing reduntant setDirection method, magically it started working.&#10;Now the Player's tank changes sprite &amp; direction on keyboard movement." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

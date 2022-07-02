@@ -7,6 +7,10 @@ public class MovingObject extends GameObject {
 
     private char direction;
 
+    public MovingObject() {
+        super();
+    }
+
     public char getDirection() {
         return direction;
     }

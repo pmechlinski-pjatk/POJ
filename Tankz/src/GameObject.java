@@ -4,6 +4,10 @@ public class GameObject {
 
     private String name;
 
+    public GameObject() {
+
+    }
+
     public String getName() {
         return name;
     }
@@ -51,8 +55,17 @@ public class GameObject {
         return hp;
     }
 
-    public void setHp(int hp) {
+    public void setHp(int hp)
+    {
         this.hp = hp;
+        if (this.getImage().equals("<html><font color=#A52A2A>###<br/>###<br/>###</font></html>") && this.hp == 1) this.setImage("<html><font color=#A52A2A>%##<br/>##E<br/>_)##</font></html>");
+        if (this.hp <= 0 && this.isDestructible)
+        {
+            linkedCell.setLinkedObject(null);
+            linkedCell.redraw();
+            this.setLinkedCell(null);
+            this.isObject = false;
+        }
     }
 
     public void setImage(String image) {

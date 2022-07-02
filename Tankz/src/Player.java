@@ -1,6 +1,18 @@
+import static java.lang.Thread.sleep;
+
 public class Player extends MovingObject {
 
     char direction = 'N';
+    private boolean isReloading;
+
+    public boolean isReloading() {
+        return isReloading;
+    }
+
+    public void setReloading(boolean reloading) {
+        isReloading = reloading;
+    }
+
     private final String northStandby = "<html>_|_<br/>[+]<br/></html>";
     private final String southStandby = "<html><br/>[+]<br/>-|-</html>";
     private final String westStandby =  "<html><br/>--[+]<br/></html>";
@@ -13,9 +25,8 @@ public class Player extends MovingObject {
     public Player(String name, String image, int hp, boolean isDestructible, Cell linkedCell) {
         super(name, image, hp, isDestructible, linkedCell);
     }
-public void tryAction(char k, Cell cells[][])
-{
-    if (k == 'l') shoot();
+public void tryAction(char k, Cell cells[][]) throws InterruptedException {
+    if (k == 'l') shoot(cells);
 else if (k != ' ') tryMove(k, cells);
 }
     public void tryMove(char k, Cell cells[][])
@@ -55,10 +66,62 @@ else if (k != ' ') tryMove(k, cells);
       }
     } // Should allow to move player's tank according to the keyboard keys pressed.
 
-    public void shoot()
-    {
+    public void shoot(Cell[][] cells) throws InterruptedException {
+        String neibers[][] = this.getNeibers();
+        int x = this.getLinkedCell().getTiledX();
+        int y = this.getLinkedCell().getTiledY();
+        // CENTRAL SHOULD BE neibers[1][1]
+        switch(direction) {
+            case 'W':
 
+                if (neibers[0][1] == "0")
+                {
+                    setImage(northReload);
+                    this.linkedCell.redraw();
+                    Missile m = new Missile('N', cells[x-1][y], cells);
+                }
+                sleep(2000);
+                setImage(northStandby);
+                break;
+            case 'A':
+                if (neibers[1][0] == "0")
+                {
+                    setImage(westReload);
+                    this.linkedCell.redraw();
+                    Missile m = new Missile('E', cells[x][y-1], cells);
+                }
+                sleep(2000);
+                setImage(westStandby);
+                break;
+            case 'D':
+                if (neibers[1][2] == "0")
+                {
+                    setImage(eastReload);
+                    this.linkedCell.redraw();
+                    Missile m = new Missile('D', cells[x][y+1], cells);
+                }
+                sleep(2000);
+                setImage(eastStandby);
+                break;
+            case 'S':
+                if (neibers[2][1] == "0")
+                {
+                    setImage(southReload);
+                    this.linkedCell.redraw();
+                    Missile m = new Missile('S', cells[x+1][y], cells);
+                }
+                sleep(2000);
+                setImage(southStandby);
+                break;
+
+
+
+            default:
+                System.out.println("(?)Unknown exception at shooting.");
+                break;
+        }
     } // Player should be able to shoot at will / at clicking SPACE or something.
+
 
 
     }
