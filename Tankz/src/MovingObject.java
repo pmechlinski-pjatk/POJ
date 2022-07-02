@@ -42,5 +42,14 @@ public class MovingObject extends GameObject {
         }
         return results;
     }
+
+    public void changeLinkedCell(Cell newCell)
+    {
+        linkedCell.setLinkedObject(null);
+        linkedCell.redraw();
+        this.linkedCell = newCell;
+        newCell.setLinkedObject(this);
+        newCell.redraw();
+    }
 }
 

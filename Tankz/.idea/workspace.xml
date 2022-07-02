@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="Enemy base colored 4 fun">
-      <change afterPath="$PROJECT_DIR$/out/production/Tankz/IsKeyPressed$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Tankz/IsKeyPressed.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/IsKeyPressed.java" afterDir="false" />
+    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="Key listener seems to work &quot;jakotako&quot;, but it's still unknown if it will block game time loop.">
       <change beforePath="$PROJECT_DIR$/../GoL_TestProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../GoL_TestProject/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tankz/Window.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/KeyListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/KeyListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tankz/MovingObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/MovingObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tankz/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tankz/Window.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/Window.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MovingObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovingObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Window.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -90,7 +89,7 @@
       <workItem from="1656522794995" duration="16000" />
       <workItem from="1656524823269" duration="1229000" />
       <workItem from="1656627687413" duration="2709000" />
-      <workItem from="1656700775252" duration="15557000" />
+      <workItem from="1656700775252" duration="19116000" />
     </task>
     <task id="LOCAL-00001" summary="Pliki z projektu saperowego">
       <created>1654955760842</created>
@@ -253,7 +252,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656718814653</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Key listener seems to work &quot;jakotako&quot;, but it's still unknown if it will block game time loop.">
+      <created>1656722286766</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1656722286766</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,7 +302,8 @@
     <MESSAGE value="I've added direction variable for movable class&#10;I've added name variable for to GameObjects which will be needed to ID them in pathfinding." />
     <MESSAGE value="getNeibers method for movables is working - it can be used to detect where one can go." />
     <MESSAGE value="Enemy base colored 4 fun" />
-    <option name="LAST_COMMIT_MESSAGE" value="Enemy base colored 4 fun" />
+    <MESSAGE value="Key listener seems to work &quot;jakotako&quot;, but it's still unknown if it will block game time loop." />
+    <option name="LAST_COMMIT_MESSAGE" value="Key listener seems to work &quot;jakotako&quot;, but it's still unknown if it will block game time loop." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

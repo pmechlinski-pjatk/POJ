@@ -121,7 +121,9 @@ public class Window {
 		GameObject [] terrain = new GameObject[200];
 		EnemyTank [] enemies = new EnemyTank[200];
 		GameObject [] enemyBases = new GameObject[3];
+		Player [] player = new Player[1];
 		Missile [] missiles = new Missile[200];
+
 
 		//TODO: [Math.round(size/33)]  <- generate enemies.
 		Sprites [] s = new Sprites[8];
@@ -145,17 +147,13 @@ public class Window {
 
 		// Generate procedural map.
 		System.out.println("(0) Initialize map generation...");
-		mapGen(size, cells, terrain, enemyBases, enemies, s);
+		mapGen(size, cells, terrain, enemyBases, enemies, s, player);
 		System.out.println("(+)Logical map generated & also rendered!\n");
 
 		// Game loop
 		while (true)
 		{
-			if (isWPressed()) System.out.println("W is pressed.");
-			if (isAPressed()) System.out.println("A is pressed.");
-			if (isSPressed()) System.out.println("S is pressed.");
-			if (isDPressed()) System.out.println("D is pressed.");
-			if (isLPressed()) System.out.println("L is pressed.");
+			player[0].tryAction(easyKeyDispatcher(), cells);
 			sleep(50);
 		}
 
@@ -175,6 +173,16 @@ public class Window {
 
 
 	}
+
+	public char easyKeyDispatcher()
+	{
+		if (isWPressed()) { System.out.println("W!"); return 'w'; }
+		if (isAPressed()) return 'a';
+		if (isSPressed()) return 's';
+		if (isDPressed()) return 'd';
+		if (isLPressed()) return 'l';
+		else return ' ';
+	}
 public void redrawAll(Cell cells[][], int size)
 {
 	for (int i = 0; i < size; i++)
@@ -186,7 +194,7 @@ public void redrawAll(Cell cells[][], int size)
 	}
 }
 
-	public void mapGen(int size, Cell[][] cells, GameObject[] terrain, GameObject [] enemyBases, EnemyTank[] enemies, Sprites [] s) {
+	public void mapGen(int size, Cell[][] cells, GameObject[] terrain, GameObject [] enemyBases, EnemyTank[] enemies, Sprites [] s, Player [] player) {
 		int starterX, starterY;
 		int baseX, baseY;
 
@@ -197,7 +205,7 @@ public void redrawAll(Cell cells[][], int size)
 		} while ((starterX > 3 && starterX < size - 3) && (starterY > 3 && starterY < size - 3));
 		// This requirement should ensure that the starting position of the player is close to the map's border.*
 		// *It could crash on maps less than 6x6, but why'd someone use that small map?
-		Player player = new Player("Player", getSpriteByName(s, "Player"), 3, true, cells[starterX][starterY]);
+		player[0] = new Player("Player", getSpriteByName(s, "Player"), 3, true, cells[starterX][starterY]);
 		cells[starterX][starterY].redraw();
 		//System.out.println("Player's coords: "+Arrays.toString(player.linkedCell.getCoordinates()));
 		//System.out.println("LinkedObject:" + cells[starterX][starterY].getLinkedObject().getImage());
