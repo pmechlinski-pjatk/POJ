@@ -166,7 +166,7 @@ public class Window {
 			}
 		}).start();
 
-		System.out.println("(0) Game loop with endgame check");
+		System.out.println("(0) Game loop with endgame check on.");
 		while (true)
 		{
 			sleep(100);
@@ -204,7 +204,7 @@ public class Window {
 
 	public char easyKeyDispatcher() {
 		if (isWPressed()) {
-			System.out.println("W!");
+			//System.out.println("W!");
 			return 'w';
 		}
 		if (isAPressed()) return 'a';

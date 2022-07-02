@@ -111,7 +111,7 @@ public class MovingObject extends GameObject {
         // movement loop
         while (true)
         {
-            System.out.println("k4: "+k4+ "Test: "+test);
+            //System.out.println("k4: "+k4+ "Test: "+test);
             switch(k4)
             {
                 case 0:
@@ -127,7 +127,7 @@ public class MovingObject extends GameObject {
                     test = tryMoveRespond('S', cells);
                     break;
                 default:
-                    System.out.println("(-) Tank AI movement error.");
+                    //System.out.println("(-) Tank AI movement error.");
                     test = 0;
                     break;
 
@@ -135,7 +135,7 @@ public class MovingObject extends GameObject {
                 // If you weren't able to move...
                 if (test == 0)
                 {
-                    System.out.println("Tank can move no more in dis direction!");
+                    //System.out.println("Tank can move no more in dis direction!");
                     // Save in memory a destination that was unavailable.
                     testedDirs[testedCounter] = k4;
                     testedCounter++;
@@ -143,7 +143,7 @@ public class MovingObject extends GameObject {
                     // If you've tested all then wait a bit and start all over.
                     if (testedCounter == 3)
                     {
-                        System.out.println("(0) Nowhere to move for a tank!");
+                        //System.out.println("(0) Nowhere to move for a tank!");
                         sleep(2000);
                         testedCounter = 0;
                         Arrays.fill(testedDirs, -1);
