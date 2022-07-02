@@ -12,7 +12,9 @@ import java.awt.KeyboardFocusManager;
 import java.awt.event.KeyEvent;
 
 
+import static java.lang.System.exit;
 import static java.lang.Thread.sleep;
+import static java.util.Objects.isNull;
 
 public class Window {
 
@@ -164,9 +166,13 @@ public class Window {
 			}
 		}).start();
 
-		while (true) {
+		System.out.println("(0) Game loop with endgame check");
+		while (true)
+		{
 			sleep(100);
 			u.redrawAll(cells, size);
+			//System.out.println("(0) Test for endgame");
+			testForEndgame(enemyBases, player[0]);
 		}
 
 
@@ -177,6 +183,22 @@ public class Window {
 		// (Lose - player's HP is zero)
 		// (Win - there are no more enemy bases)
 
+
+	}
+
+	public void testForEndgame(GameObject [] enemyBases, Player player)
+	{
+		for (GameObject base : enemyBases)
+		{
+			if (!isNull(base)) break;
+			System.out.println("Wygrałeś!");
+			exit(0);
+		}
+		if (isNull(player))
+		{
+			System.out.println("Przegrałeś!");
+			exit(0);
+		}
 
 	}
 

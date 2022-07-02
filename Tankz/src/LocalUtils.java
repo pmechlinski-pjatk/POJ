@@ -1,5 +1,7 @@
 import java.util.concurrent.ThreadLocalRandom;
 
+import static java.lang.Thread.sleep;
+
 public class LocalUtils {
 
     void setNeibers(int size, Cell[][] cells){
@@ -112,8 +114,20 @@ public class LocalUtils {
                 y = ThreadLocalRandom.current().nextInt(size);
             } while (cells[x][y].getLinkedObject() != null || Math.abs(starterX - x) < 5 || Math.abs(starterY - y) < 5);
             enemies[i] = new EnemyTank("EnemyTank", getSpriteByName(s, "EnemyTank"), 1, true, cells[x][y]);
+            enemies[i].setEastStandby("[x]--");
+            enemies[i].setWestStandby("--[x]");
+            enemies[i].setNorthStandby("<html>_|_<br>[x]</html>");
+            enemies[i].setSouthStandby("<html>[x]<br>'|'</html>");
             //System.out.println("Tank neibers are:\n"+(Arrays.deepToString(enemies[i].getNeibers())));
             cells[x][y].redraw();
+            int finalI = i;
+            new Thread(() -> {
+                try {
+                    enemies[finalI].panther(cells);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+            }).start();
             x = y = 0;
         }
         System.out.println("\t(+) Some enemy tanks are approaching.");
