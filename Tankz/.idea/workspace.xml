@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="I getTestNeiber function that returns one neiber based on dir &amp; changes it's tag for &quot;Destructible&quot; if applicable.&#10;The missiles seem to spawn properly, but then they go bonkers - destroying random blocks on the map, blocking at the EOM or flickering in place.">
+    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="Not a big step, but now at least debug logs are displayed properly and it seems that at least starting pos of the missile is computed properly.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tankz/GameObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/GameObject.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tankz/Missile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/Missile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tankz/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Missile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Missile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovingObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovingObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -417,7 +412,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656860472558</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Not a big step, but now at least debug logs are displayed properly and it seems that at least starting pos of the missile is computed properly.">
+      <created>1656862959935</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1656862959935</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -436,7 +438,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="getNeibers method for movables is working - it can be used to detect where one can go." />
     <MESSAGE value="Enemy base colored 4 fun" />
     <MESSAGE value="Key listener seems to work &quot;jakotako&quot;, but it's still unknown if it will block game time loop." />
     <MESSAGE value="Metodą prób i błędów udało mi sie zrobić &quot;ruszający&quot; czołg, który nie rozwala losowo ścian i nie myli kierunków" />
@@ -461,7 +462,8 @@
     <MESSAGE value="Add non-lambda thread handling for player control - it even seemed like improving shooting a bit, but the missile still seem to stop and random and block the map?" />
     <MESSAGE value="I refactored shooting into a few smaller functions. It's not necessarily work better, bc projectiles seem to be created and wrong places at destroys everything, then dangle on the map end etc." />
     <MESSAGE value="I getTestNeiber function that returns one neiber based on dir &amp; changes it's tag for &quot;Destructible&quot; if applicable.&#10;The missiles seem to spawn properly, but then they go bonkers - destroying random blocks on the map, blocking at the EOM or flickering in place." />
-    <option name="LAST_COMMIT_MESSAGE" value="I getTestNeiber function that returns one neiber based on dir &amp; changes it's tag for &quot;Destructible&quot; if applicable.&#10;The missiles seem to spawn properly, but then they go bonkers - destroying random blocks on the map, blocking at the EOM or flickering in place." />
+    <MESSAGE value="Not a big step, but now at least debug logs are displayed properly and it seems that at least starting pos of the missile is computed properly." />
+    <option name="LAST_COMMIT_MESSAGE" value="Not a big step, but now at least debug logs are displayed properly and it seems that at least starting pos of the missile is computed properly." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

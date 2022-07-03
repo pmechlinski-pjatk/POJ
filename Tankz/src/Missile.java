@@ -64,19 +64,23 @@ public class Missile extends MovingObject {
 
     public int missileMove(Cell[][] cells)
     {
-        System.out.println("Test Neiber: "+ getTestNeiber(getDirection()));
+        System.out.println("\t[Missile step]");
+        System.out.println("\tMissile direction: "+this.getDirection());
+        System.out.println("\tMissile coords: ("+this.getLinkedCell().getTiledX()+", "+this.getLinkedCell().getTiledY()+")");
+        System.out.println("\tTest Neiber: "+ getTestNeiber(getDirection()));
+        setImage(MissileVertical);
         switch (getTestNeiber(getDirection()))
         {
             case "0":
-                changeLinkedCell(cells[getRelX(getLinkedCell().getTiledX())][getRelY(getLinkedCell().getTiledX())]);
+                System.out.println("\tMoving to: ("+getRelX(this.getLinkedCell().getTiledX())+", "+getRelY(this.getLinkedCell().getTiledY())+")");
+                changeLinkedCell(cells[getRelX(getLinkedCell().getTiledX())][getRelY(getLinkedCell().getTiledY())]);
+                linkedCell.redraw();
                 return 1;
             case "EOM":
+                System.out.println("\tFound EndOfMap, stopping.");
                 stop();
                 return 0;
-            case "Destructible":
-                cells[getRelX(getLinkedCell().getTiledX())][getRelY(getLinkedCell().getTiledX())].getLinkedObject().setHp(getHp()-1);
-                stop();
-                return 2;
+
             case "Missile":
                 cells[getRelX(getLinkedCell().getTiledX())][getRelY(getLinkedCell().getTiledX())].getLinkedObject().setLinkedCell(null);
                 cells[getRelX(getLinkedCell().getTiledX())][getRelY(getLinkedCell().getTiledX())].setLinkedObject(null);
@@ -84,9 +88,14 @@ public class Missile extends MovingObject {
                 stop();
                 return 3;
             default:
+                System.out.println("\tFound destructible of type "+cells[getRelX(getLinkedCell().getTiledX())][getRelY(getLinkedCell().getTiledX())].getLinkedObject().getName()+" at ("+getRelX(this.getLinkedCell().getTiledX())+", "+this.getLinkedCell().getTiledY()+")");
+                cells[getRelX(getLinkedCell().getTiledX())][getRelY(getLinkedCell().getTiledX())].getLinkedObject().setHp(getHp()-1);
+                System.out.println("\tCollided object current HP is: "+cells[getRelX(getLinkedCell().getTiledX())][getRelY(getLinkedCell().getTiledX())].getLinkedObject().getHp());
                 stop();
-                return -1;
+                return 2;
         }
+        //if (cells[getRelX(getLinkedCell().getTiledX())][getRelY(getLinkedCell().getTiledY())].getLinkedObject().getHp()
+
     }
 
     // Move control flow

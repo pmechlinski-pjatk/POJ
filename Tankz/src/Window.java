@@ -175,6 +175,7 @@ public class Window {
 							int i = getFreeIndex(missileThread);
 							System.out.println("(0) New thread for shooting initialized at index "+i);
 							newShootingThread(easyKeyDispatcher(), cells, size, missileThread, i, player[0]);
+							u.redrawAll(cells, size);
 
 						}
 					} catch (InterruptedException e) {
