@@ -173,7 +173,7 @@ public class Window {
 						else if (cond == 2) // Shooting action is expected - create a new thread
 						{
 							int i = getFreeIndex(missileThread);
-							System.out.println("New thread initialized at index "+i);
+							System.out.println("(0) New thread for shooting initialized at index "+i);
 							newShootingThread(easyKeyDispatcher(), cells, size, missileThread, i, player[0]);
 
 						}
@@ -264,9 +264,9 @@ private int getFreeIndex (Object [] array)
 		}
 	});
 	t[tCount].start();
-	sleep(10000);
-	t[tCount].interrupt();
-	System.out.println("Shooting thread at index " +tCount+" freed." );
+	//sleep(10000);
+	//t[tCount].interrupt();
+	//System.out.println("Shooting thread at index " +tCount+" freed." );
 	}
 }
 //public void redrawAll(Cell cells[][], int size)

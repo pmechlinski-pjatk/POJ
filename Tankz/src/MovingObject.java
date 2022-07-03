@@ -99,6 +99,31 @@ public class MovingObject extends GameObject {
         newCell.redraw();
     }
 
+    //      For getting direction-relative coordinates
+    public int getRelX(int x, char d)
+    {
+        switch (d)
+        {
+            case 'N':
+                return x-1;
+            case 'S':
+                return x+1;
+            default:
+                return x;
+        }
+    }
+    public int getRelY(int y, char d)
+    {
+        switch (d)
+        {
+            case 'W':
+                return y-1;
+            case 'E':
+                return y+1;
+            default:
+                return y;
+        }
+    }
     public void panther(Cell [][] cells) throws InterruptedException // Standard enemy tank moving pattern
     {
         // Random starting direction.
@@ -166,15 +191,20 @@ public class MovingObject extends GameObject {
     // Utility functions
     public String getTestNeiber(char direction) {
         String neibers[][] = getNeibers();
+        for (String[] neib: neibers) {
+            for (String n: neib) {
+                if (n == "Terrain" || n == "EnemyTank" || n == "Player" || n == "EnemyBase") n = "Destructible";
+            }
+        }
         switch (direction) {
             case 'N':
                 return neibers[0][1];
             case 'E':
-                return neibers[1][0];
+                return neibers[1][2];
             case 'S':
                 return neibers[2][1];
             case 'W':
-                return neibers[1][2];
+                return neibers[1][0];
             default:
                 return "EOM";
         }

@@ -39,7 +39,7 @@ public class Missile extends MovingObject {
 
 
 
-    public Missile(char direction, Cell startingTile, Cell[][] cells, int size) {
+    public Missile(char direction, Cell startingTile, Cell[][] cells, int size) throws InterruptedException {
         super();
         this.setDirection(direction);
         this.setLinkedCell(startingTile);
@@ -48,23 +48,23 @@ public class Missile extends MovingObject {
         cells[x][y].setLinkedObject(this);
         this.setImage("*");
         this.linkedCell.redraw();
-//        new Thread(() -> {
-            System.out.println("New thread initialized");
-            if (!isNull(this.getLinkedCell()) && this.getDirection() != '0')
-                {
-                    System.out.println("missileMove initializing");
-                    this.missileMove(cells, size);
-                }
-//        }).start();
+        sleep(500);
+        System.out.println("New missile object created at: ("+x+", "+y+")");
+  //      System.out.println("Starting missileMove");
+ //       missileMove(cells, size);
+
+        int test = 1;
+        while (test > 0)
+        {
+            test = missileMove(cells);
+        }
         System.out.println("Missile stopping");
-        stop();
+
     }
 
     // Move control flow
 
     public void missileMove(Cell[][] cells, int size) {
-        System.out.println("missileMove initialized");
-        if (this.getLinkedCell() == null) stop();
         String neibers[][] = this.getNeibers();
         int x = this.getLinkedCell().getTiledX();
         int y = this.getLinkedCell().getTiledY();
@@ -83,14 +83,14 @@ public class Missile extends MovingObject {
     }
 
     public void controlLoop(char direction, String[][] neibers, Cell[][] cells, int size) {
-        if (direction == 'N' || direction == 'S') setImage(MissileVertical);
-        else if (direction == 'E' || direction == 'W') setImage(MissileHorizontal);
-        else {
-            setImage(" ");
-            stop();
-            return;
-        }
-
+//        if (direction == 'N' || direction == 'S') setImage(MissileVertical);
+//        else if (direction == 'E' || direction == 'W') setImage(MissileHorizontal);
+//        else {
+//            setImage(" ");
+//            stop();
+//            return;
+//        }
+        setImage(MissileVertical);
         int x = this.getLinkedCell().getTiledX();
         int y = this.getLinkedCell().getTiledY();
 
@@ -184,7 +184,41 @@ public class Missile extends MovingObject {
 
 
 
+//    public void changeLinkedCell(Cell newCell)
+//    {
+//        linkedCell.setLinkedObject(null);
+//        linkedCell.redraw();
+//        this.linkedCell = newCell;
+//        newCell.setLinkedObject(this);
+//        newCell.redraw();
+//    }
 
+public int missileMove(Cell[][] cells)
+{
+    System.out.println("Test Neiber: "+ getTestNeiber(getDirection()));
+    switch (getTestNeiber(getDirection()))
+    {
+        case "0":
+            changeLinkedCell(cells[getRelX(getLinkedCell().getTiledX(), getDirection())][getRelY(getLinkedCell().getTiledX(), getDirection())]);
+            return 1;
+        case "EOM":
+            stop();
+            return 0;
+        case "Destructible":
+            cells[getRelX(getLinkedCell().getTiledX(), getDirection())][getRelY(getLinkedCell().getTiledX(), getDirection())].getLinkedObject().setHp(getHp()-1);
+            stop();
+            return 2;
+        case "Missile":
+            cells[getRelX(getLinkedCell().getTiledX(), getDirection())][getRelY(getLinkedCell().getTiledX(), getDirection())].getLinkedObject().setLinkedCell(null);
+            cells[getRelX(getLinkedCell().getTiledX(), getDirection())][getRelY(getLinkedCell().getTiledX(), getDirection())].setLinkedObject(null);
+            cells[getRelX(getLinkedCell().getTiledX(), getDirection())][getRelY(getLinkedCell().getTiledX(), getDirection())].redraw();
+            stop();
+            return 3;
+        default:
+            stop();
+            return -1;
+    }
+}
 
 
     //        switch (getDirection())

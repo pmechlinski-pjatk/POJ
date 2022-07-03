@@ -1,28 +1,13 @@
 import static java.lang.Thread.sleep;
 import static java.util.Objects.isNull;
 public class Player extends MovingObject {
-
-    @Override
-    public char getDirection() {
-        return direction;
+    public Player(String name, String image, int hp, boolean isDestructible, Cell linkedCell) {
+        super(name, image, hp, isDestructible, linkedCell);
     }
-
-    @Override
-    public void setDirection(char direction) {
-        this.direction = direction;
-    }
-
     private char direction = 'N';
     private boolean isReloading;
 
-    public boolean isReloading() {
-        return isReloading;
-    }
-
-    public void setReloading(boolean reloading) {
-        isReloading = reloading;
-    }
-
+    //Player's sprites
     private final String northStandby = "<html>_|_<br/>[+]<br/></html>";
     private final String southStandby = "<html><br/>[+]<br/>`|`</html>";
     private final String westStandby =  "<html><br/>--[+]<br/></html>";
@@ -32,22 +17,83 @@ public class Player extends MovingObject {
     private final String westReload = "<html><br/><font color='red'>--</font>[+]<br/></html>";
     private final String eastReload = "<html><br/>[+]<font color='red'>--</font><br/></html>";
 
-    public Player(String name, String image, int hp, boolean isDestructible, Cell linkedCell) {
-        super(name, image, hp, isDestructible, linkedCell);
+    // Getters & Setters
+    @Override
+    public char getDirection() {
+        return direction;
     }
-public int tryAction(char k, Cell cells[][], int size) throws InterruptedException
-{
-    if (isNull(k)) return -1;
-    else if (k == 'l') return 2;
-    else if (k != ' ') return 1;
-    else return 0;
-}
+    @Override
+    public void setDirection(char direction) {
+        this.direction = direction;
+    }
 
-public void Action(char k, Cell cells[][], int size) throws InterruptedException
-{
-    if (k == 'l') shoot(cells, size);
-    else if (k != ' ') tryMove(k, cells);
-}
+    //      (Standby's are defaulted in MovingObject)
+    public String getNorthReload() {
+        return northReload;
+    }
+    public String getSouthReload() {
+        return southReload;
+    }
+    public String getWestReload() {
+        return westReload;
+    }
+    public String getEastReload() {
+        return eastReload;
+    }
+
+    // Additional util methods
+
+
+    //      For getting direction-relative sprites
+    private String getReloadImage(char d)
+    {
+        switch (d)
+        {
+            case 'N':
+                return getNorthReload();
+            case 'E':
+                return getEastReload();
+            case 'W':
+                return getWestReload();
+            case 'S':
+                return getSouthReload();
+        }
+        return "WTF";
+    }
+    private String getStandbyImage(char d)
+    {
+        switch (d)
+        {
+            case 'N':
+                return getNorthStandby();
+            case 'E':
+                return getEastStandby();
+            case 'W':
+                return getWestStandby();
+            case 'S':
+                return getSouthStandby();
+        }
+        return "WTF";
+    }
+
+    // Control functions
+    //      Test for which action there's need.
+    public int tryAction(char k, Cell cells[][], int size) throws InterruptedException
+    {
+        if (isNull(k)) return -1;
+        else if (k == 'l') return 2;
+        else if (k != ' ') return 1;
+        else return 0;
+    }
+
+    //      Initalize action in regards to key clicked.
+    public void Action(char k, Cell cells[][], int size) throws InterruptedException
+    {
+        if (k == 'l') shoot(cells, size);
+        else if (k != ' ') tryMove(k, cells);
+    }
+
+    //      Move if possible in a given direction.
     public void tryMove(char k, Cell cells[][])
     {
         String neibers[][] = this.getNeibers();
@@ -83,7 +129,24 @@ public void Action(char k, Cell cells[][], int size) throws InterruptedException
               System.out.println("(?)Unknown control error.");
               break;
       }
-    } // Should allow to move player's tank according to the keyboard keys pressed.
+    }
+
+    //      Main shooting control method
+    public void shoot(Cell[][] cells, int size) throws InterruptedException
+    {
+        String neibers[][] = this.getNeibers();
+        char direction = getDirection();
+        int relX = getRelX(getLinkedCell().getTiledX(), direction);
+        int relY = getRelY(getLinkedCell().getTiledY(), direction);
+
+        System.out.println("(0) Shoot() initalized:");
+        System.out.println("\tCurrent player's coords: X0("+getLinkedCell().getTiledX()+"),Y0("+getLinkedCell().getTiledX()+")");
+        System.out.println("\tNext tile code: "+neibers[0][1]);
+        System.out.println("\tCurrent direction: "+getDirection());
+        System.out.println("\tCurrent player's coords: X1("+relX+"),Y1("+relY+")");
+        shootAtDir(cells, size, relX, relY, direction);
+    } // Player should be able to shoot at will / at clicking SPACE or something.
+
     private void shootAtDir(Cell[][] cells, int size, int relX, int relY, char direction) throws InterruptedException
     {
         setImage(getReloadImage(direction));
@@ -93,94 +156,13 @@ public void Action(char k, Cell cells[][], int size) throws InterruptedException
         setImage(getStandbyImage(direction));
     }
 
-    private int getRelX(int x, char d)
-    {
-    switch (d)
-        {
-            case 'N':
-                return x-1;
-            case 'S':
-                return x+1;
-            default:
-                return 0;
-        }
-    }
 
-    private int getRelY(int y, char d)
-    {
-    switch (d)
-        {
-            case 'W':
-                return y-1;
-            case 'E':
-                return y+1;
-            default:
-                return 0;
-        }
-    }
 
-    public String getNorthReload() {
-        return northReload;
-    }
 
-    public String getSouthReload() {
-        return southReload;
-    }
 
-    public String getWestReload() {
-        return westReload;
-    }
 
-    public String getEastReload() {
-        return eastReload;
-    }
 
-    private String getReloadImage(char d)
-    {
-        switch (d)
-        {
-            case 'N':
-                return getNorthReload();
-            case 'E':
-                return getEastReload();
-            case 'W':
-                return getWestReload();
-            case 'S':
-                return getSouthReload();
-        }
-        return "WTF";
-    }
 
-    private String getStandbyImage(char d)
-    {
-        switch (d)
-        {
-            case 'N':
-                return getNorthStandby();
-            case 'E':
-                return getEastStandby();
-            case 'W':
-                return getWestStandby();
-            case 'S':
-                return getSouthStandby();
-        }
-        return "WTF";
-    }
-
-    public void shoot(Cell[][] cells, int size) throws InterruptedException
-    {
-        String neibers[][] = this.getNeibers();
-        int x = this.getLinkedCell().getTiledX();
-        int y = this.getLinkedCell().getTiledY();
-        char direction = getDirection();
-        int relX = getRelX(x, direction);
-        int relY = getRelY(y, direction);
-        // CENTRAL SHOULD BE neibers[1][1]
-        System.out.println("Shoot() initalized:");
-        System.out.println("Next tile code: "+neibers[0][1]);
-        System.out.println("Current direction: "+getDirection());
-        shootAtDir(cells, size, relX, relY, direction);
-    } // Player should be able to shoot at will / at clicking SPACE or something.
 
 }
 
@@ -240,3 +222,14 @@ public void Action(char k, Cell cells[][], int size) throws InterruptedException
 //        break;
 //        }
 
+//
+//
+//
+//
+//    public boolean isReloading() {
+//        return isReloading;
+//    }
+//
+//    public void setReloading(boolean reloading) {
+//        isReloading = reloading;
+//    }

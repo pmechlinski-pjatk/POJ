@@ -20,6 +20,16 @@ public class GameObject {
 
     private boolean isObject = true;
 
+    private boolean isDestructible;
+
+    public boolean isDestructible() {
+        return isDestructible;
+    }
+
+    public void setDestructible(boolean destructible) {
+        isDestructible = destructible;
+    }
+
     Cell linkedCell;
 
     public Cell getLinkedCell() {
@@ -31,7 +41,6 @@ public class GameObject {
         linkedCell.setLinkedObject(this);
     }
 
-    private boolean isDestructible;
 
     public GameObject(String name, String image, int hp, boolean isDestructible, Cell linkedCell) {
         this.image = image;
