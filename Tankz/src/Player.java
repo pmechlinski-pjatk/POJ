@@ -44,37 +44,7 @@ public class Player extends MovingObject {
     // Additional util methods
 
 
-    //      For getting direction-relative sprites
-    private String getReloadImage(char d)
-    {
-        switch (d)
-        {
-            case 'N':
-                return getNorthReload();
-            case 'E':
-                return getEastReload();
-            case 'W':
-                return getWestReload();
-            case 'S':
-                return getSouthReload();
-        }
-        return "WTF";
-    }
-    private String getStandbyImage(char d)
-    {
-        switch (d)
-        {
-            case 'N':
-                return getNorthStandby();
-            case 'E':
-                return getEastStandby();
-            case 'W':
-                return getWestStandby();
-            case 'S':
-                return getSouthStandby();
-        }
-        return "WTF";
-    }
+
 
     // Control functions
     //      Test for which action there's need.
@@ -131,33 +101,7 @@ public class Player extends MovingObject {
       }
     }
 
-    //      Main shooting control method
-    public void shoot(Cell[][] cells, int size) throws InterruptedException
-    {
-        String neibers[][] = this.getNeibers();
-        char direction = getDirection();
-        int relX = getRelX(this.getLinkedCell().getTiledX());
-        int relY = getRelY(this.getLinkedCell().getTiledY());
 
-        // DEBUG LOGS
-
-        System.out.println("(0) Shoot() initalized:");
-        System.out.println("\tCurrent player's coords: X0("+getLinkedCell().getTiledX()+"),Y0("+getLinkedCell().getTiledY()+")");
-        System.out.println("\tNext tile code: "+neibers[0][1]);
-        System.out.println("\tCurrent direction: "+getDirection());
-        System.out.println("\tMissile starting coords: X1("+relX+"),Y1("+relY+")");
-
-        shootAtDir(cells, size, relX, relY, direction);
-    } // Player should be able to shoot at will / at clicking SPACE or something.
-
-    private void shootAtDir(Cell[][] cells, int size, int relX, int relY, char direction) throws InterruptedException
-    {
-        setImage(getReloadImage(direction));
-        this.linkedCell.redraw();
-        Missile m = new Missile(direction, cells[relX][relY], cells, size);
-        sleep(2000);
-        setImage(getStandbyImage(direction));
-    }
 
 
 

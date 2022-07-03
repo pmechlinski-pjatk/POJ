@@ -119,12 +119,16 @@ public class LocalUtils {
             enemies[i].setWestStandby("--[x]");
             enemies[i].setNorthStandby("<html>_|_<br>[x]</html>");
             enemies[i].setSouthStandby("<html>[x]<br>'|'</html>");
+            enemies[i].setEastReload("<html>[x]<font color='red'>--</font></html>");
+            enemies[i].setWestReload("<html><font color='red'>--</font>[x]</html>");
+            enemies[i].setNorthReload("<html>_<font color='red'>|</font>_<br>[x]</html>");
+            enemies[i].setSouthReload("<html>[x]<br>'<font color='red'>|</font>'</html>");
             //System.out.println("Tank neibers are:\n"+(Arrays.deepToString(enemies[i].getNeibers())));
             cells[x][y].redraw();
             int finalI = i;
             new Thread(() -> {
                 try {
-                    enemies[finalI].panther(cells);
+                    enemies[finalI].panther(cells, size);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }

@@ -1,21 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="Shooting is basically working.">
-      <change afterPath="$PROJECT_DIR$/src/baseCounter.java" afterDir="false" />
+    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="Migrate reload sprites vars and shooting functions to movingObject">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tankz/GameObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/GameObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tankz/Missile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/Missile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tankz/LocalUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/LocalUtils.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tankz/MovingObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/MovingObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tankz/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tankz/Window$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/Window$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tankz/Window$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/Window$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tankz/Window.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/Window.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Missile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Missile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LocalUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LocalUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MovingObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovingObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Window.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,20 +85,6 @@
       <workItem from="1656524823269" duration="1229000" />
       <workItem from="1656627687413" duration="2709000" />
       <workItem from="1656700775252" duration="20570000" />
-    </task>
-    <task id="LOCAL-00004" summary="Podstawowy generator mapy">
-      <created>1654959245114</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1654959245114</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Sterowanie work in progress">
-      <created>1654963394154</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1654963394154</updated>
     </task>
     <task id="LOCAL-00006" summary="Sterowanie work in progress">
       <created>1656516138258</created>
@@ -438,7 +415,21 @@
       <option name="project" value="LOCAL" />
       <updated>1656866479318</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Fix for game rules - now player can win.">
+      <created>1656871279014</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1656871279014</updated>
+    </task>
+    <task id="LOCAL-00054" summary="Migrate reload sprites vars and shooting functions to movingObject">
+      <created>1656872574970</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1656872574970</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -457,8 +448,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="After canibalizing reduntant setDirection method, magically it started working.&#10;Now the Player's tank changes sprite &amp; direction on keyboard movement." />
-    <MESSAGE value="Moving is working already pretty well, but shooting seems unstable and missile is not spawning itself yet." />
     <MESSAGE value="Very small improvement regarding shooting - missile seems to spawn, but it flickers. Good thing is that it can actually kill (the player)" />
     <MESSAGE value="Shooting still WIP. Small improvement - missiles seem to destroy walls, but still more doesn't work than do here." />
     <MESSAGE value="At this moment it seems like the projectiles spawn rather properly, but I still have some problems with deleting it and esp. self-destruction after collision." />
@@ -482,7 +471,9 @@
     <MESSAGE value="Missile now self-destruct when colliding with another missile - needed to add setName to missile's constructor." />
     <MESSAGE value="Another success step! Now walls can be both damaged and destroyed, but still there are some dangling missiles afterwards?!" />
     <MESSAGE value="Shooting is basically working." />
-    <option name="LAST_COMMIT_MESSAGE" value="Shooting is basically working." />
+    <MESSAGE value="Fix for game rules - now player can win." />
+    <MESSAGE value="Migrate reload sprites vars and shooting functions to movingObject" />
+    <option name="LAST_COMMIT_MESSAGE" value="Migrate reload sprites vars and shooting functions to movingObject" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
