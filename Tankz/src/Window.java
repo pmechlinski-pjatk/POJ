@@ -170,9 +170,12 @@ public class Window {
 						{
 							player[0].Action(easyKeyDispatcher(), cells, size);
 						}
-						else if (cond == 2)
+						else if (cond == 2) // Shooting action is expected - create a new thread
 						{
-							player[0].Action(easyKeyDispatcher(), cells, size);
+							int i = getFreeIndex(missileThread);
+							System.out.println("New thread initialized at index "+i);
+							newShootingThread(easyKeyDispatcher(), cells, size, missileThread, i, player[0]);
+
 						}
 					} catch (InterruptedException e) {
 						throw new RuntimeException(e);
@@ -207,6 +210,17 @@ public class Window {
 
 
 	}
+private int getFreeIndex (Object [] array)
+{
+	for(int i = 0; i < array.length; i++)
+		if(array[i] == null)
+		{
+			return i;
+		}
+	return -1;
+}
+
+
 
 	public void testForEndgame(GameObject [] enemyBases, Player player)
 	{
@@ -234,6 +248,25 @@ public class Window {
 		if (isDPressed()) return 'd';
 		if (isLPressed()) return 'l';
 		else return ' ';
+	}
+
+
+
+	public void newShootingThread(char k, Cell[][] cells, int size, Thread [] t, int tCount, Player p) throws InterruptedException {
+	t[tCount] = new Thread(new Runnable() {
+		@Override
+		public void run() {
+			try {
+				p.Action(k, cells, size);
+			} catch (InterruptedException e) {
+				throw new RuntimeException(e);
+			}
+		}
+	});
+	t[tCount].start();
+	sleep(10000);
+	t[tCount].interrupt();
+	System.out.println("Shooting thread at index " +tCount+" freed." );
 	}
 }
 //public void redrawAll(Cell cells[][], int size)

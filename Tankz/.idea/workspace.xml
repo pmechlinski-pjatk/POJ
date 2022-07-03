@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="Add variables to control missiles thread handling">
+    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="Add non-lambda thread handling for player control - it even seemed like improving shooting a bit, but the missile still seem to stop and random and block the map?">
+      <change afterPath="$PROJECT_DIR$/out/production/Tankz/Window$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tankz/Window.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/Window.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Window.java" afterDir="false" />
     </list>
@@ -390,7 +393,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656852089538</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Add non-lambda thread handling for player control - it even seemed like improving shooting a bit, but the missile still seem to stop and random and block the map?">
+      <created>1656853297113</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1656853297113</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -409,7 +419,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="I didn't want to write so many constructors so I've created a small function to append new sprites to the sprite array." />
     <MESSAGE value="I didn't want to write so many constructors, so I've created a small function to append new sprites to the sprite array." />
     <MESSAGE value="I've added direction variable for movable class&#10;I've added name variable for to GameObjects which will be needed to ID them in pathfinding." />
     <MESSAGE value="getNeibers method for movables is working - it can be used to detect where one can go." />
@@ -434,7 +443,8 @@
     <MESSAGE value="Commented various debug messages" />
     <MESSAGE value="Fix for wrong sprite sequence in player.shoot()" />
     <MESSAGE value="Add variables to control missiles thread handling" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add variables to control missiles thread handling" />
+    <MESSAGE value="Add non-lambda thread handling for player control - it even seemed like improving shooting a bit, but the missile still seem to stop and random and block the map?" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add non-lambda thread handling for player control - it even seemed like improving shooting a bit, but the missile still seem to stop and random and block the map?" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
