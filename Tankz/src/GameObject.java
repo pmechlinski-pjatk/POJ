@@ -71,7 +71,7 @@ public class GameObject {
     public void setHp(int hp)
     {
         this.hp = hp;
-        if (this.getName()=="Wall" && this.hp == 1)
+        if (this.getName()=="Terrain" && this.hp == 1)
         {
             this.setImage("<html><font color=#A52A2A>%##<br/>##E<br/>_)##</font></html>");
             this.getLinkedCell().redraw();

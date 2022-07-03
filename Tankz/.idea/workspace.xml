@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="Now it's a progress - projectiles spawn properly, move in proper direction and even are able to destroy a wall. The problem is they still dangle and doesn't destroy themself when they found another projectile in a next tile.">
+    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="Missile now self-destruct when colliding with another missile - needed to add setName to missile's constructor.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tankz/Missile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/Missile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Missile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Missile.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,13 +82,6 @@
       <workItem from="1656524823269" duration="1229000" />
       <workItem from="1656627687413" duration="2709000" />
       <workItem from="1656700775252" duration="20570000" />
-    </task>
-    <task id="LOCAL-00001" summary="Pliki z projektu saperowego">
-      <created>1654955760842</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1654955760843</updated>
     </task>
     <task id="LOCAL-00002" summary="Funkcja do rysowania obiektów w grze">
       <created>1654956835686</created>
@@ -427,7 +419,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656864615004</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Missile now self-destruct when colliding with another missile - needed to add setName to missile's constructor.">
+      <created>1656865076384</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1656865076384</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -446,7 +445,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Key listener seems to work &quot;jakotako&quot;, but it's still unknown if it will block game time loop." />
     <MESSAGE value="Metodą prób i błędów udało mi sie zrobić &quot;ruszający&quot; czołg, który nie rozwala losowo ścian i nie myli kierunków" />
     <MESSAGE value="Dodanie asynchronicznej funkcji do obłsugi sterowania czołgiem okazało się wręcz podejrzanie proste..." />
     <MESSAGE value="After canibalizing reduntant setDirection method, magically it started working.&#10;Now the Player's tank changes sprite &amp; direction on keyboard movement." />
@@ -471,7 +469,8 @@
     <MESSAGE value="I getTestNeiber function that returns one neiber based on dir &amp; changes it's tag for &quot;Destructible&quot; if applicable.&#10;The missiles seem to spawn properly, but then they go bonkers - destroying random blocks on the map, blocking at the EOM or flickering in place." />
     <MESSAGE value="Not a big step, but now at least debug logs are displayed properly and it seems that at least starting pos of the missile is computed properly." />
     <MESSAGE value="Now it's a progress - projectiles spawn properly, move in proper direction and even are able to destroy a wall. The problem is they still dangle and doesn't destroy themself when they found another projectile in a next tile." />
-    <option name="LAST_COMMIT_MESSAGE" value="Now it's a progress - projectiles spawn properly, move in proper direction and even are able to destroy a wall. The problem is they still dangle and doesn't destroy themself when they found another projectile in a next tile." />
+    <MESSAGE value="Missile now self-destruct when colliding with another missile - needed to add setName to missile's constructor." />
+    <option name="LAST_COMMIT_MESSAGE" value="Missile now self-destruct when colliding with another missile - needed to add setName to missile's constructor." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

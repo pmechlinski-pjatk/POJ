@@ -12,7 +12,7 @@ public class Missile extends MovingObject {
     private String MissileVertical = "<html><font color='orange'>@</font></html>";
 
     private int hp = 0;
-    private String name = "Missile";
+    private final String name = "Missile";
 
 
 //    @Override
@@ -58,6 +58,7 @@ public class Missile extends MovingObject {
         while (test > 0)
         {
             test = missileMove(cells);
+            sleep(300);
         }
         System.out.println("Missile stopping");
 
@@ -90,9 +91,14 @@ public class Missile extends MovingObject {
                 stop();
                 return 3;
             default:
-                System.out.println("\tFound destructible of type "+cells[getRelX(getLinkedCell().getTiledX())][getRelY(getLinkedCell().getTiledX())].getLinkedObject().getName()+" at ("+getRelX(this.getLinkedCell().getTiledX())+", "+this.getLinkedCell().getTiledY()+")");
-                cells[getRelX(getLinkedCell().getTiledX())][getRelY(getLinkedCell().getTiledX())].getLinkedObject().setHp(getHp()-1);
-                System.out.println("\tCollided object current HP is: "+cells[getRelX(getLinkedCell().getTiledX())][getRelY(getLinkedCell().getTiledX())].getLinkedObject().getHp());
+                int objX = getRelX(getLinkedCell().getTiledX());
+                int objY = getRelY(getLinkedCell().getTiledY());
+                int hp = cells[objX][objY].getLinkedObject().getHp();
+                System.out.println("\tFound destructible of type "+cells[objX][objY].getLinkedObject().getName()+" at ("+objX+", "+objY+")");
+                System.out.println("\tCollided object current HP is: "+hp);
+                System.out.println("\tDeal damage!");
+                cells[objX][objY].getLinkedObject().setHp(hp-1);
+                System.out.println("\tCollided object current HP is: "+cells[objX][objY].getLinkedObject().getHp());
                 stop();
                 return 2;
         }
