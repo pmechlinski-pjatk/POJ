@@ -19,13 +19,16 @@ Pliki/foldery (być może) istotne z perspektywy oceny za repozytorium (branch m
         <br>~~(M) Strzelanie wrogich czołgów~~
         <br>(S) Identyfikacja gracza i atak wyprzedzający dla czołgów sterowanych przez komputer: zamiast randomowego strzelania, albo chociaż obok niego
         <br>(S) Odplątać kod sphagetti i generalnie zrobić porządki
+        <br>
+        <br> (GUI)
+        <br>(C) Menu główne.
+        <br>(C) Liczenie punktów.
+        <br>(C) Wybór mapy / dostrajanie generatora.
+        <br> (Extras)
         <br>(C) Woda: brak przejścia, ale można strzelać.
         <br>(C) Krzewy: jest przejście, ale nie widać czołgu.
         <br>(C) Żelbeton - silniejszy mur zwłaszcza wokół wrogich baz, żeby tak szybko nie ginęły
         <br>(C) Więcej sprite'ów, np. dla podniszczonej bazy.
-        <br>(C) Menu główne.
-        <br>(C) Liczenie punktów.
-        <br>(C) Wybór mapy / dostrajanie generatora.
         
         
 
