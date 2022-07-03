@@ -1,5 +1,5 @@
 import static java.lang.Thread.sleep;
-
+import static java.util.Objects.isNull;
 public class Player extends MovingObject {
 
     @Override
@@ -35,9 +35,18 @@ public class Player extends MovingObject {
     public Player(String name, String image, int hp, boolean isDestructible, Cell linkedCell) {
         super(name, image, hp, isDestructible, linkedCell);
     }
-public void tryAction(char k, Cell cells[][], int size) throws InterruptedException {
+public int tryAction(char k, Cell cells[][], int size) throws InterruptedException
+{
+    if (isNull(k)) return -1;
+    else if (k == 'l') return 2;
+    else if (k != ' ') return 1;
+    else return 0;
+}
+
+public void Action(char k, Cell cells[][], int size) throws InterruptedException
+{
     if (k == 'l') shoot(cells, size);
-else if (k != ' ') tryMove(k, cells);
+    else if (k != ' ') tryMove(k, cells);
 }
     public void tryMove(char k, Cell cells[][])
     {

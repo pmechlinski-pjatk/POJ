@@ -154,20 +154,39 @@ public class Window {
 		System.out.println("(+)Logical map generated & also rendered!\n");
 
 		// Loop to steer the tank
-		new Thread(() -> {
-			while (true) {
-				try {
-					player[0].tryAction(easyKeyDispatcher(), cells, size);
-				} catch (InterruptedException e) {
-					throw new RuntimeException(e);
-				}
-				try {
-					sleep(1000);
-				} catch (InterruptedException e) {
-					throw new RuntimeException(e);
+
+		Thread ControlLoop = new Thread(new Runnable()
+		{
+			@Override
+			public void run()
+			{
+				while (true)
+				{
+					int cond;
+
+					try {
+						cond = player[0].tryAction(easyKeyDispatcher(), cells, size);
+						if (cond == 1)
+						{
+							player[0].Action(easyKeyDispatcher(), cells, size);
+						}
+						else if (cond == 2)
+						{
+							player[0].Action(easyKeyDispatcher(), cells, size);
+						}
+					} catch (InterruptedException e) {
+						throw new RuntimeException(e);
+					} try {
+						sleep(1000);
+					} catch (InterruptedException e) {
+						throw new RuntimeException(e);
+					}
 				}
 			}
-		}).start();
+		});
+
+		ControlLoop.run();
+
 
 		System.out.println("(0) Game loop with endgame check on.");
 		while (true)
