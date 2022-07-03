@@ -43,6 +43,7 @@ public class Missile extends MovingObject {
         //super();
         this.setDirection(direction);
         this.setLinkedCell(startingTile);
+        this.setName("Missile");
         int x = startingTile.getTiledX();
         int y = startingTile.getTiledY();
         cells[x][y].setLinkedObject(this);
@@ -75,16 +76,17 @@ public class Missile extends MovingObject {
                 System.out.println("\tMoving to: ("+getRelX(this.getLinkedCell().getTiledX())+", "+getRelY(this.getLinkedCell().getTiledY())+")");
                 changeLinkedCell(cells[getRelX(getLinkedCell().getTiledX())][getRelY(getLinkedCell().getTiledY())]);
                 linkedCell.redraw();
+                getNeibers();
                 return 1;
             case "EOM":
                 System.out.println("\tFound EndOfMap, stopping.");
                 stop();
                 return 0;
-
             case "Missile":
-                cells[getRelX(getLinkedCell().getTiledX())][getRelY(getLinkedCell().getTiledX())].getLinkedObject().setLinkedCell(null);
-                cells[getRelX(getLinkedCell().getTiledX())][getRelY(getLinkedCell().getTiledX())].setLinkedObject(null);
-                cells[getRelX(getLinkedCell().getTiledX())][getRelY(getLinkedCell().getTiledX())].redraw();
+                System.out.println("\tCollided with another missile - self-destruct.");
+//                cells[getRelX(getLinkedCell().getTiledX())][getRelY(getLinkedCell().getTiledX())].getLinkedObject().setLinkedCell(null);
+//                cells[getRelX(getLinkedCell().getTiledX())][getRelY(getLinkedCell().getTiledX())].setLinkedObject(null);
+//                cells[getRelX(getLinkedCell().getTiledX())][getRelY(getLinkedCell().getTiledX())].redraw();
                 stop();
                 return 3;
             default:

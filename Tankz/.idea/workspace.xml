@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="Not a big step, but now at least debug logs are displayed properly and it seems that at least starting pos of the missile is computed properly.">
+    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="Now it's a progress - projectiles spawn properly, move in proper direction and even are able to destroy a wall. The problem is they still dangle and doesn't destroy themself when they found another projectile in a next tile.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tankz/Missile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/Missile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Missile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Missile.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -419,7 +420,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656862959935</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Now it's a progress - projectiles spawn properly, move in proper direction and even are able to destroy a wall. The problem is they still dangle and doesn't destroy themself when they found another projectile in a next tile.">
+      <created>1656864615003</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1656864615004</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -438,7 +446,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Enemy base colored 4 fun" />
     <MESSAGE value="Key listener seems to work &quot;jakotako&quot;, but it's still unknown if it will block game time loop." />
     <MESSAGE value="Metodą prób i błędów udało mi sie zrobić &quot;ruszający&quot; czołg, który nie rozwala losowo ścian i nie myli kierunków" />
     <MESSAGE value="Dodanie asynchronicznej funkcji do obłsugi sterowania czołgiem okazało się wręcz podejrzanie proste..." />
@@ -463,7 +470,8 @@
     <MESSAGE value="I refactored shooting into a few smaller functions. It's not necessarily work better, bc projectiles seem to be created and wrong places at destroys everything, then dangle on the map end etc." />
     <MESSAGE value="I getTestNeiber function that returns one neiber based on dir &amp; changes it's tag for &quot;Destructible&quot; if applicable.&#10;The missiles seem to spawn properly, but then they go bonkers - destroying random blocks on the map, blocking at the EOM or flickering in place." />
     <MESSAGE value="Not a big step, but now at least debug logs are displayed properly and it seems that at least starting pos of the missile is computed properly." />
-    <option name="LAST_COMMIT_MESSAGE" value="Not a big step, but now at least debug logs are displayed properly and it seems that at least starting pos of the missile is computed properly." />
+    <MESSAGE value="Now it's a progress - projectiles spawn properly, move in proper direction and even are able to destroy a wall. The problem is they still dangle and doesn't destroy themself when they found another projectile in a next tile." />
+    <option name="LAST_COMMIT_MESSAGE" value="Now it's a progress - projectiles spawn properly, move in proper direction and even are able to destroy a wall. The problem is they still dangle and doesn't destroy themself when they found another projectile in a next tile." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
