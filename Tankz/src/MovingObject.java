@@ -21,6 +21,44 @@ public class MovingObject extends GameObject {
     private String eastStandby;
     private String westStandby;
 
+    private String northReload;
+    private String southReload;
+    private String westReload;
+
+    public String getNorthReload() {
+        return northReload;
+    }
+
+    public void setNorthReload(String northReload) {
+        this.northReload = northReload;
+    }
+
+    public String getSouthReload() {
+        return southReload;
+    }
+
+    public void setSouthReload(String southReload) {
+        this.southReload = southReload;
+    }
+
+    public String getWestReload() {
+        return westReload;
+    }
+
+    public void setWestReload(String westReload) {
+        this.westReload = westReload;
+    }
+
+    public String getEastReload() {
+        return eastReload;
+    }
+
+    public void setEastReload(String eastReload) {
+        this.eastReload = eastReload;
+    }
+
+    private String eastReload;
+
     public String getWestStandby() {
         return westStandby;
     }
@@ -348,6 +386,66 @@ public class MovingObject extends GameObject {
         else if (direction == 'd') return 'E';
         else if (direction == 'w') return 'N';
         else return direction;
+    }
+
+    //      Main shooting control method
+    public void shoot(Cell[][] cells, int size) throws InterruptedException
+    {
+        String neibers[][] = this.getNeibers();
+        char direction = getDirection();
+        int relX = getRelX(this.getLinkedCell().getTiledX());
+        int relY = getRelY(this.getLinkedCell().getTiledY());
+
+        // DEBUG LOGS
+
+        System.out.println("(0) Shoot() initalized:");
+        System.out.println("\tCurrent player's coords: X0("+getLinkedCell().getTiledX()+"),Y0("+getLinkedCell().getTiledY()+")");
+        System.out.println("\tNext tile code: "+neibers[0][1]);
+        System.out.println("\tCurrent direction: "+getDirection());
+        System.out.println("\tMissile starting coords: X1("+relX+"),Y1("+relY+")");
+
+        shootAtDir(cells, size, relX, relY, direction);
+    } // Player should be able to shoot at will / at clicking SPACE or something.
+
+    private void shootAtDir(Cell[][] cells, int size, int relX, int relY, char direction) throws InterruptedException
+    {
+        setImage(getReloadImage(direction));
+        this.linkedCell.redraw();
+        Missile m = new Missile(direction, cells[relX][relY], cells, size);
+        sleep(2000);
+        setImage(getStandbyImage(direction));
+    }
+
+    //      For getting direction-relative sprites
+    private String getReloadImage(char d)
+    {
+        switch (d)
+        {
+            case 'N':
+                return getNorthReload();
+            case 'E':
+                return getEastReload();
+            case 'W':
+                return getWestReload();
+            case 'S':
+                return getSouthReload();
+        }
+        return "WTF";
+    }
+    private String getStandbyImage(char d)
+    {
+        switch (d)
+        {
+            case 'N':
+                return getNorthStandby();
+            case 'E':
+                return getEastStandby();
+            case 'W':
+                return getWestStandby();
+            case 'S':
+                return getSouthStandby();
+        }
+        return "WTF";
     }
 }
 
