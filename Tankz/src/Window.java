@@ -125,6 +125,10 @@ public class Window {
 		GameObject[] enemyBases = new GameObject[3];
 		Player[] player = new Player[1];
 		Missile[] missiles = new Missile[200];
+		//		Initialize variables for handling missile threads
+		Thread[] missileThread = new Thread[200];
+		int missileThreadCounter = 0;
+		int baseCounter = 3;
 
 
 		// Init sprites
@@ -151,29 +155,66 @@ public class Window {
 		System.out.println("(+)Logical map generated & also rendered!\n");
 
 		// Loop to steer the tank
-		new Thread(() -> {
-			while (true) {
-				try {
-					player[0].tryAction(easyKeyDispatcher(), cells, size);
-				} catch (InterruptedException e) {
-					throw new RuntimeException(e);
-				}
-				try {
-					sleep(1000);
-				} catch (InterruptedException e) {
-					throw new RuntimeException(e);
+
+		Thread ControlLoop = new Thread(new Runnable()
+		{
+			@Override
+			public void run()
+			{
+				System.out.println("(+) Control loop with keyboard controls is on.");
+				while (true)
+				{
+					int cond;
+
+					try {
+						cond = player[0].tryAction(easyKeyDispatcher(), cells, size);
+						if (cond == 1)
+						{
+							player[0].Action(easyKeyDispatcher(), cells, size);
+						}
+						else if (cond == 2) // Shooting action is expected - create a new thread
+						{
+							int i = getFreeIndex(missileThread);
+							System.out.println("(0) New thread for shooting initialized at index "+i);
+							newShootingThread(easyKeyDispatcher(), cells, size, missileThread, i, player[0]);
+							u.redrawAll(cells, size);
+
+						}
+					} catch (InterruptedException e) {
+						throw new RuntimeException(e);
+					} try {
+						sleep(1000);
+					} catch (InterruptedException e) {
+						throw new RuntimeException(e);
+					}
 				}
 			}
-		}).start();
+		});
+		Thread EndgameCheckLoop = new Thread(new Runnable() {
+			@Override
+			public void run() {
+				System.out.println("(+) Game loop with endgame check on.");
+				while (true) {
+					try {
+						sleep(100);
+					} catch (InterruptedException e) {
+						throw new RuntimeException(e);
+					}
+					u.redrawAll(cells, size);
+					//System.out.println("(0) Test for endgame");
+					try {
+						testForEndgame(enemyBases, player[0]);
+					} catch (InterruptedException e) {
+						throw new RuntimeException(e);
+					}
+				}
+			}
+		});
+		ControlLoop.start();
+		EndgameCheckLoop.run();
 
-		System.out.println("(0) Game loop with endgame check");
-		while (true)
-		{
-			sleep(100);
-			u.redrawAll(cells, size);
-			//System.out.println("(0) Test for endgame");
-			testForEndgame(enemyBases, player[0]);
-		}
+
+
 
 
 		// There should be the main game loops with:
@@ -185,14 +226,26 @@ public class Window {
 
 
 	}
-
-	public void testForEndgame(GameObject [] enemyBases, Player player)
-	{
-		for (GameObject base : enemyBases)
+private int getFreeIndex (Object [] array)
+{
+	for(int i = 0; i < array.length; i++)
+		if(array[i] == null)
 		{
-			if (!isNull(base)) break;
-			System.out.println("Wygrałeś!");
-			exit(0);
+			return i;
+		}
+	return -1;
+}
+
+
+
+	public void testForEndgame(GameObject [] enemyBases, Player player) throws InterruptedException {
+		{
+			for (GameObject base : enemyBases) {
+				if (!isNull(base) && base.isObject()) break;
+				System.out.println("Wygrałeś!");
+				sleep(500);
+				exit(0);
+			}
 		}
 		if (isNull(player))
 		{
@@ -204,7 +257,7 @@ public class Window {
 
 	public char easyKeyDispatcher() {
 		if (isWPressed()) {
-			System.out.println("W!");
+			//System.out.println("W!");
 			return 'w';
 		}
 		if (isAPressed()) return 'a';
@@ -212,6 +265,25 @@ public class Window {
 		if (isDPressed()) return 'd';
 		if (isLPressed()) return 'l';
 		else return ' ';
+	}
+
+
+
+	public void newShootingThread(char k, Cell[][] cells, int size, Thread [] t, int tCount, Player p) throws InterruptedException {
+	t[tCount] = new Thread(new Runnable() {
+		@Override
+		public void run() {
+			try {
+				p.Action(k, cells, size);
+			} catch (InterruptedException e) {
+				throw new RuntimeException(e);
+			}
+		}
+	});
+	t[tCount].start();
+	//sleep(10000);
+	//t[tCount].interrupt();
+	//System.out.println("Shooting thread at index " +tCount+" freed." );
 	}
 }
 //public void redrawAll(Cell cells[][], int size)

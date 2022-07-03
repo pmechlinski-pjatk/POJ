@@ -5,6 +5,7 @@ import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.IntStream;
 
 import static java.lang.Thread.sleep;
+import static java.util.Objects.isNull;
 
 public class MovingObject extends GameObject {
     public MovingObject(String name, String image, int hp, boolean isDestructible, Cell linkedCell) {
@@ -67,6 +68,14 @@ public class MovingObject extends GameObject {
     // TODO: Function to return neibourghs, e.g. "None" For EOM (EndOfMap), "Obstacle" for immovable object like wall, "Friend", "Enemy", "EmptyField".
 
     public String[][] getNeibers() {
+//        if (isNull(getLinkedCell()))
+//        {
+//            String[][] results = new String[3][3];
+//            for (String[] row: results)
+//            Arrays.fill(row, "EOM");
+//            return results;
+//        }
+
         Cell neibers[][] = this.getLinkedCell().neibers;
         String results[][] = new String[3][3];
         for (int i = 0; i < 3; i++) {
@@ -97,8 +106,34 @@ public class MovingObject extends GameObject {
         this.linkedCell = newCell;
         newCell.setLinkedObject(this);
         newCell.redraw();
+
     }
 
+    //      For getting direction-relative coordinates
+    public int getRelX(int x)
+    {
+        switch (getDirection())
+        {
+            case 'N':
+                return x-1;
+            case 'S':
+                return x+1;
+            default:
+                return x;
+        }
+    }
+    public int getRelY(int y)
+    {
+        switch (getDirection())
+        {
+            case 'W':
+                return y-1;
+            case 'E':
+                return y+1;
+            default:
+                return y;
+        }
+    }
     public void panther(Cell [][] cells) throws InterruptedException // Standard enemy tank moving pattern
     {
         // Random starting direction.
@@ -109,9 +144,9 @@ public class MovingObject extends GameObject {
         int test = 0;
 
         // movement loop
-        while (true)
+        while (getHp() > 0)
         {
-            System.out.println("k4: "+k4+ "Test: "+test);
+            //System.out.println("k4: "+k4+ "Test: "+test);
             switch(k4)
             {
                 case 0:
@@ -127,7 +162,7 @@ public class MovingObject extends GameObject {
                     test = tryMoveRespond('S', cells);
                     break;
                 default:
-                    System.out.println("(-) Tank AI movement error.");
+                    //System.out.println("(-) Tank AI movement error.");
                     test = 0;
                     break;
 
@@ -135,7 +170,7 @@ public class MovingObject extends GameObject {
                 // If you weren't able to move...
                 if (test == 0)
                 {
-                    System.out.println("Tank can move no more in dis direction!");
+                    //System.out.println("Tank can move no more in dis direction!");
                     // Save in memory a destination that was unavailable.
                     testedDirs[testedCounter] = k4;
                     testedCounter++;
@@ -143,7 +178,7 @@ public class MovingObject extends GameObject {
                     // If you've tested all then wait a bit and start all over.
                     if (testedCounter == 3)
                     {
-                        System.out.println("(0) Nowhere to move for a tank!");
+                        //System.out.println("(0) Nowhere to move for a tank!");
                         sleep(2000);
                         testedCounter = 0;
                         Arrays.fill(testedDirs, -1);
@@ -157,7 +192,10 @@ public class MovingObject extends GameObject {
 //                if (!Arrays.stream(testedDirs).anyMatch(i -> i == finalK)) test = -2;
                 }
 
-            }
+        return;
+    }
+
+
 
 
 
@@ -166,15 +204,20 @@ public class MovingObject extends GameObject {
     // Utility functions
     public String getTestNeiber(char direction) {
         String neibers[][] = getNeibers();
+        for (String[] neib: neibers) {
+            for (String n: neib) {
+                if (n == "Terrain" || n == "EnemyTank" || n == "Player" || n == "EnemyBase") n = "Destructible";
+            }
+        }
         switch (direction) {
             case 'N':
                 return neibers[0][1];
             case 'E':
-                return neibers[1][0];
+                return neibers[1][2];
             case 'S':
                 return neibers[2][1];
             case 'W':
-                return neibers[1][2];
+                return neibers[1][0];
             default:
                 return "EOM";
         }

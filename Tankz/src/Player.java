@@ -1,28 +1,13 @@
 import static java.lang.Thread.sleep;
-
+import static java.util.Objects.isNull;
 public class Player extends MovingObject {
-
-    @Override
-    public char getDirection() {
-        return direction;
+    public Player(String name, String image, int hp, boolean isDestructible, Cell linkedCell) {
+        super(name, image, hp, isDestructible, linkedCell);
     }
-
-    @Override
-    public void setDirection(char direction) {
-        this.direction = direction;
-    }
-
     private char direction = 'N';
     private boolean isReloading;
 
-    public boolean isReloading() {
-        return isReloading;
-    }
-
-    public void setReloading(boolean reloading) {
-        isReloading = reloading;
-    }
-
+    //Player's sprites
     private final String northStandby = "<html>_|_<br/>[+]<br/></html>";
     private final String southStandby = "<html><br/>[+]<br/>`|`</html>";
     private final String westStandby =  "<html><br/>--[+]<br/></html>";
@@ -32,13 +17,83 @@ public class Player extends MovingObject {
     private final String westReload = "<html><br/><font color='red'>--</font>[+]<br/></html>";
     private final String eastReload = "<html><br/>[+]<font color='red'>--</font><br/></html>";
 
-    public Player(String name, String image, int hp, boolean isDestructible, Cell linkedCell) {
-        super(name, image, hp, isDestructible, linkedCell);
+    // Getters & Setters
+    @Override
+    public char getDirection() {
+        return direction;
     }
-public void tryAction(char k, Cell cells[][], int size) throws InterruptedException {
-    if (k == 'l') shoot(cells, size);
-else if (k != ' ') tryMove(k, cells);
-}
+    @Override
+    public void setDirection(char direction) {
+        this.direction = direction;
+    }
+
+    //      (Standby's are defaulted in MovingObject)
+    public String getNorthReload() {
+        return northReload;
+    }
+    public String getSouthReload() {
+        return southReload;
+    }
+    public String getWestReload() {
+        return westReload;
+    }
+    public String getEastReload() {
+        return eastReload;
+    }
+
+    // Additional util methods
+
+
+    //      For getting direction-relative sprites
+    private String getReloadImage(char d)
+    {
+        switch (d)
+        {
+            case 'N':
+                return getNorthReload();
+            case 'E':
+                return getEastReload();
+            case 'W':
+                return getWestReload();
+            case 'S':
+                return getSouthReload();
+        }
+        return "WTF";
+    }
+    private String getStandbyImage(char d)
+    {
+        switch (d)
+        {
+            case 'N':
+                return getNorthStandby();
+            case 'E':
+                return getEastStandby();
+            case 'W':
+                return getWestStandby();
+            case 'S':
+                return getSouthStandby();
+        }
+        return "WTF";
+    }
+
+    // Control functions
+    //      Test for which action there's need.
+    public int tryAction(char k, Cell cells[][], int size) throws InterruptedException
+    {
+        if (isNull(k)) return -1;
+        else if (k == 'l') return 2;
+        else if (k != ' ') return 1;
+        else return 0;
+    }
+
+    //      Initalize action in regards to key clicked.
+    public void Action(char k, Cell cells[][], int size) throws InterruptedException
+    {
+        if (k == 'l') shoot(cells, size);
+        else if (k != ' ') tryMove(k, cells);
+    }
+
+    //      Move if possible in a given direction.
     public void tryMove(char k, Cell cells[][])
     {
         String neibers[][] = this.getNeibers();
@@ -74,74 +129,110 @@ else if (k != ' ') tryMove(k, cells);
               System.out.println("(?)Unknown control error.");
               break;
       }
-    } // Should allow to move player's tank according to the keyboard keys pressed.
-
-    public void shoot(Cell[][] cells, int size) throws InterruptedException {
-        String neibers[][] = this.getNeibers();
-        int x = this.getLinkedCell().getTiledX();
-        int y = this.getLinkedCell().getTiledY();
-        // CENTRAL SHOULD BE neibers[1][1]
-        System.out.println(neibers[0][1]);
-        System.out.println(getDirection());
-        switch(getDirection()) {
-            case 'N':
-                if (neibers[0][1] == "0")
-                {
-                    setImage(northReload);
-                    this.linkedCell.redraw();
-                    try
-                    {
-                        new Thread(() -> {
-                            Missile m = new Missile('N', cells[x - 1][y], cells, size);
-                        }).start();
-                    } catch (IndexOutOfBoundsException e) { return; }
-                }
-                sleep(2000);
-                setImage(northStandby);
-                break;
-            case 'E':
-                if (neibers[1][0] == "0")
-                {
-                    setImage(eastReload);
-                    this.linkedCell.redraw();
-                    new Thread(() -> {
-                    Missile m = new Missile('E', cells[x][y+1], cells, size);
-                    }).start();
-                }
-                sleep(2000);
-                setImage(westStandby);
-                break;
-            case 'S':
-                if (neibers[1][2] == "0")
-                {
-                    setImage(southReload);
-                    this.linkedCell.redraw();
-                    new Thread(() -> {
-                    Missile m = new Missile('S', cells[x+1][y], cells, size);
-                    }).start();
-                }
-                sleep(2000);
-                setImage(eastStandby);
-                break;
-            case 'W':
-                if (neibers[0][1] == "0")
-                {
-                    setImage(westReload);
-                    this.linkedCell.redraw();
-                    new Thread(() -> {
-                    Missile m = new Missile('W', cells[x][y-1], cells, size);
-                    }).start();
-                }
-                sleep(2000);
-                setImage(southStandby);
-                break;
-            default:
-                System.out.println("(?)Unknown exception at shooting.");
-                break;
-        }
-    } // Player should be able to shoot at will / at clicking SPACE or something.
-
-
-
     }
 
+    //      Main shooting control method
+    public void shoot(Cell[][] cells, int size) throws InterruptedException
+    {
+        String neibers[][] = this.getNeibers();
+        char direction = getDirection();
+        int relX = getRelX(this.getLinkedCell().getTiledX());
+        int relY = getRelY(this.getLinkedCell().getTiledY());
+
+        // DEBUG LOGS
+
+        System.out.println("(0) Shoot() initalized:");
+        System.out.println("\tCurrent player's coords: X0("+getLinkedCell().getTiledX()+"),Y0("+getLinkedCell().getTiledY()+")");
+        System.out.println("\tNext tile code: "+neibers[0][1]);
+        System.out.println("\tCurrent direction: "+getDirection());
+        System.out.println("\tMissile starting coords: X1("+relX+"),Y1("+relY+")");
+
+        shootAtDir(cells, size, relX, relY, direction);
+    } // Player should be able to shoot at will / at clicking SPACE or something.
+
+    private void shootAtDir(Cell[][] cells, int size, int relX, int relY, char direction) throws InterruptedException
+    {
+        setImage(getReloadImage(direction));
+        this.linkedCell.redraw();
+        Missile m = new Missile(direction, cells[relX][relY], cells, size);
+        sleep(2000);
+        setImage(getStandbyImage(direction));
+    }
+
+
+
+
+
+
+
+
+
+}
+
+//        switch(getDirection()) {
+//                case 'N':
+//                if (neibers[0][1] == "0")
+//                {
+//                setImage(northReload);
+//                this.linkedCell.redraw();
+//                try
+//                {
+//                new Thread(() -> {
+//                Missile m = new Missile('N', cells[x - 1][y], cells, size);
+//                }).start();
+//                } catch (IndexOutOfBoundsException e) { return; }
+//                }
+//                sleep(2000);
+//                setImage(northStandby);
+//                break;
+//                case 'E':
+//                if (neibers[1][0] == "0")
+//                {
+//                setImage(eastReload);
+//                this.linkedCell.redraw();
+//                new Thread(() -> {
+//                Missile m = new Missile('E', cells[x][y+1], cells, size);
+//                }).start();
+//                }
+//                sleep(2000);
+//                setImage(eastStandby);
+//                break;
+//                case 'S':
+//                if (neibers[1][2] == "0")
+//                {
+//                setImage(southReload);
+//                this.linkedCell.redraw();
+//                new Thread(() -> {
+//                Missile m = new Missile('S', cells[x+1][y], cells, size);
+//                }).start();
+//                }
+//                sleep(2000);
+//                setImage(southStandby);
+//                break;
+//                case 'W':
+//                if (neibers[0][1] == "0")
+//                {
+//                setImage(westReload);
+//                this.linkedCell.redraw();
+//                Missile m = new Missile('W', cells[x][y-1], cells, size);
+//                sleep(2000);
+//                setImage(westStandby);
+//                }
+//
+//                break;
+//default:
+//        System.out.println("(?)Unknown exception at shooting.");
+//        break;
+//        }
+
+//
+//
+//
+//
+//    public boolean isReloading() {
+//        return isReloading;
+//    }
+//
+//    public void setReloading(boolean reloading) {
+//        isReloading = reloading;
+//    }
