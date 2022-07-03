@@ -10,16 +10,22 @@ Pliki/foldery (być może) istotne z perspektywy oceny za repozytorium (branch m
     Implementacja Conway's Game of Life w Swingu. Zrobiona samodzielnie na bazie kodu sapera z zajęć i opisu algorytmu na wiki.
     
 - /Tankz/
-    Gra inspirowana grą Tanks 1990 na NES, z grafiką ascii (właściwie unicode). WIP, został mi jeszcze do zdebuggowania kontroler strzelania i ~~do napisania 
-    kontrolki dla wrogich czołgów oraz warunki zwycięstwa.~~ *Warunki są zaimplementowane, ~~kontrolki dla wrogich czołgów też, ale nie działają do końca poprawnie i potrzebują łatki.*~~ 
-    PR II:
-        Kontrolki do czołgów "AI" działają już w miarę sensownie
-      
-    TODO:
-        ~~(M) Fix dla strzelania~~
-        ~~(M) QA wygrywania~~
-        (M) Strzelanie wrogich czołgów
-        (S) Identyfikacja gracza i atak wyprzedzający dla czołgów sterowanych przez komputer.
-        (C) Woda.
-        (C) Krzewy.
+    Gra inspirowana grą Tanks 1990 na NES, z grafiką ascii (właściwie *unicode*). 
+    
+    TODO's (M - mustHave, S - shouldHave, C - couldHave):
+        <br> (Główne funkcjonalności)
+        <br> ~~(M) Fix dla strzelania~~
+        <br>~~(M) QA wygrywania~~
+        <br>~~(M) Strzelanie wrogich czołgów~~
+        <br>(S) Identyfikacja gracza i atak wyprzedzający dla czołgów sterowanych przez komputer: zamiast randomowego strzelania, albo chociaż obok niego
+        <br>(S) Odplątać kod sphagetti i generalnie zrobić porządki
+        <br>(C) Woda: brak przejścia, ale można strzelać.
+        <br>(C) Krzewy: jest przejście, ale nie widać czołgu.
+        <br>(C) Żelbeton - silniejszy mur zwłaszcza wokół wrogich baz, żeby tak szybko nie ginęły
+        <br>(C) Więcej sprite'ów, np. dla podniszczonej bazy.
+        <br>(C) Menu główne.
+        <br>(C) Liczenie punktów.
+        <br>(C) Wybór mapy / dostrajanie generatora.
+        
+        
 
