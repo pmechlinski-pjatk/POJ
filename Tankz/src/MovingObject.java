@@ -97,12 +97,13 @@ public class MovingObject extends GameObject {
         this.linkedCell = newCell;
         newCell.setLinkedObject(this);
         newCell.redraw();
+
     }
 
     //      For getting direction-relative coordinates
-    public int getRelX(int x, char d)
+    public int getRelX(int x)
     {
-        switch (d)
+        switch (getDirection())
         {
             case 'N':
                 return x-1;
@@ -112,9 +113,9 @@ public class MovingObject extends GameObject {
                 return x;
         }
     }
-    public int getRelY(int y, char d)
+    public int getRelY(int y)
     {
-        switch (d)
+        switch (getDirection())
         {
             case 'W':
                 return y-1;

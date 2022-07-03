@@ -136,14 +136,16 @@ public class Player extends MovingObject {
     {
         String neibers[][] = this.getNeibers();
         char direction = getDirection();
-        int relX = getRelX(getLinkedCell().getTiledX(), direction);
-        int relY = getRelY(getLinkedCell().getTiledY(), direction);
+        int relX = getRelX(this.getLinkedCell().getTiledX());
+        int relY = getRelY(this.getLinkedCell().getTiledY());
 
+        // DEBUG LOGS
         System.out.println("(0) Shoot() initalized:");
-        System.out.println("\tCurrent player's coords: X0("+getLinkedCell().getTiledX()+"),Y0("+getLinkedCell().getTiledX()+")");
+        System.out.println("\tCurrent player's coords: X0("+getLinkedCell().getTiledX()+"),Y0("+getLinkedCell().getTiledY()+")");
         System.out.println("\tNext tile code: "+neibers[0][1]);
         System.out.println("\tCurrent direction: "+getDirection());
-        System.out.println("\tCurrent player's coords: X1("+relX+"),Y1("+relY+")");
+        System.out.println("\tMissile starting coords: X1("+relX+"),Y1("+relY+")");
+
         shootAtDir(cells, size, relX, relY, direction);
     } // Player should be able to shoot at will / at clicking SPACE or something.
 

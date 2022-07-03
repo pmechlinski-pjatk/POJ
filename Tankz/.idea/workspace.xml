@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="I refactored shooting into a few smaller functions. It's not necessarily work better, bc projectiles seem to be created and wrong places at destroys everything, then dangle on the map end etc.">
-      <change afterPath="$PROJECT_DIR$/out/production/Tankz/Window$3.class" afterDir="false" />
+    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="I getTestNeiber function that returns one neiber based on dir &amp; changes it's tag for &quot;Destructible&quot; if applicable.&#10;The missiles seem to spawn properly, but then they go bonkers - destroying random blocks on the map, blocking at the EOM or flickering in place.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tankz/GameObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/GameObject.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tankz/Missile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/Missile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tankz/MovingObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/MovingObject.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tankz/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tankz/Window$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/Window$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tankz/Window.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/Window.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Missile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Missile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MovingObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovingObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Window.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -413,7 +410,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656856145725</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="I getTestNeiber function that returns one neiber based on dir &amp; changes it's tag for &quot;Destructible&quot; if applicable.&#10;The missiles seem to spawn properly, but then they go bonkers - destroying random blocks on the map, blocking at the EOM or flickering in place.">
+      <created>1656860472558</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1656860472558</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -432,7 +436,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="I've added direction variable for movable class&#10;I've added name variable for to GameObjects which will be needed to ID them in pathfinding." />
     <MESSAGE value="getNeibers method for movables is working - it can be used to detect where one can go." />
     <MESSAGE value="Enemy base colored 4 fun" />
     <MESSAGE value="Key listener seems to work &quot;jakotako&quot;, but it's still unknown if it will block game time loop." />
@@ -457,7 +460,8 @@
     <MESSAGE value="Add variables to control missiles thread handling" />
     <MESSAGE value="Add non-lambda thread handling for player control - it even seemed like improving shooting a bit, but the missile still seem to stop and random and block the map?" />
     <MESSAGE value="I refactored shooting into a few smaller functions. It's not necessarily work better, bc projectiles seem to be created and wrong places at destroys everything, then dangle on the map end etc." />
-    <option name="LAST_COMMIT_MESSAGE" value="I refactored shooting into a few smaller functions. It's not necessarily work better, bc projectiles seem to be created and wrong places at destroys everything, then dangle on the map end etc." />
+    <MESSAGE value="I getTestNeiber function that returns one neiber based on dir &amp; changes it's tag for &quot;Destructible&quot; if applicable.&#10;The missiles seem to spawn properly, but then they go bonkers - destroying random blocks on the map, blocking at the EOM or flickering in place." />
+    <option name="LAST_COMMIT_MESSAGE" value="I getTestNeiber function that returns one neiber based on dir &amp; changes it's tag for &quot;Destructible&quot; if applicable.&#10;The missiles seem to spawn properly, but then they go bonkers - destroying random blocks on the map, blocking at the EOM or flickering in place." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
