@@ -125,6 +125,9 @@ public class Window {
 		GameObject[] enemyBases = new GameObject[3];
 		Player[] player = new Player[1];
 		Missile[] missiles = new Missile[200];
+		//		Initialize variables for handling missile threads
+		Thread[] missileThread = new Thread[200];
+		int missileThreadCounter = 0;
 
 
 		// Init sprites

@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="Commented various debug messages">
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
-    </list>
+    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="Fix for wrong sprite sequence in player.shoot()" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -375,7 +373,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656795776433</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Fix for wrong sprite sequence in player.shoot()">
+      <created>1656796185828</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1656796185828</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -394,7 +399,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Player gen and enemy bases gen are ready for QA" />
     <MESSAGE value="Objects now should render properly as constructor and setter for gameObject also invokes setLinkedObject for linkedCell. &#10;Also, I've overdone it at first and managed to invoke set method loop &amp; StackOverflow error. nice" />
     <MESSAGE value="I didn't want to write so many constructors so I've created a small function to append new sprites to the sprite array." />
     <MESSAGE value="I didn't want to write so many constructors, so I've created a small function to append new sprites to the sprite array." />
@@ -419,7 +423,8 @@
     <MESSAGE value="Enemy tanks lowered to one for debugging purposes" />
     <MESSAGE value="Yay, now the tank &quot;movement AI&quot; looks OK at least. They still seem to glitch a bit, but it's MUCH better than b4. &#10;&#10;They even find new way quickly" />
     <MESSAGE value="Commented various debug messages" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commented various debug messages" />
+    <MESSAGE value="Fix for wrong sprite sequence in player.shoot()" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix for wrong sprite sequence in player.shoot()" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
