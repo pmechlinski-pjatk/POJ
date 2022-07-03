@@ -97,8 +97,12 @@ public class Missile extends MovingObject {
                 System.out.println("\tFound destructible of type "+cells[objX][objY].getLinkedObject().getName()+" at ("+objX+", "+objY+")");
                 System.out.println("\tCollided object current HP is: "+hp);
                 System.out.println("\tDeal damage!");
-                cells[objX][objY].getLinkedObject().setHp(hp-1);
-                System.out.println("\tCollided object current HP is: "+cells[objX][objY].getLinkedObject().getHp());
+                if (!isNull(cells[objX][objY].getLinkedObject()))
+                {
+                    cells[objX][objY].getLinkedObject().setHp(hp-1);
+                    if (!isNull(cells[objX][objY].getLinkedObject())) System.out.println("\tCollided object current HP is: "+cells[objX][objY].getLinkedObject().getHp());
+                    else System.out.println("\tCollided object current is destroyed");
+                }
                 stop();
                 return 2;
         }

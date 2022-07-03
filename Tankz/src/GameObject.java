@@ -1,3 +1,5 @@
+import static java.util.Objects.isNull;
+
 public class GameObject {
 
     private String image;
@@ -80,7 +82,7 @@ public class GameObject {
         {
             linkedCell.setLinkedObject(null);
             linkedCell.redraw();
-            this.setLinkedCell(null);
+            //if (!isNull(this.getLinkedCell())) this.setLinkedCell(null);
             this.isObject = false;
         }
     }
