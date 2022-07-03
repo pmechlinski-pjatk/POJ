@@ -16,7 +16,8 @@ Pliki/foldery (być może) istotne z perspektywy oceny za repozytorium (branch m
         Kontrolki do czołgów "AI" działają już w miarę sensownie
       
     TODO:
-        (M) Fix dla strzelania
+        ~~(M) Fix dla strzelania~~
+        ~~(M) QA wygrywania~~
         (M) Strzelanie wrogich czołgów
         (S) Identyfikacja gracza i atak wyprzedzający dla czołgów sterowanych przez komputer.
         (C) Woda.
