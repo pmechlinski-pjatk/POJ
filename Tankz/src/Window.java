@@ -128,6 +128,7 @@ public class Window {
 		//		Initialize variables for handling missile threads
 		Thread[] missileThread = new Thread[200];
 		int missileThreadCounter = 0;
+		int baseCounter = 3;
 
 
 		// Init sprites
@@ -160,6 +161,7 @@ public class Window {
 			@Override
 			public void run()
 			{
+				System.out.println("(+) Control loop with keyboard controls is on.");
 				while (true)
 				{
 					int cond;
@@ -188,18 +190,31 @@ public class Window {
 				}
 			}
 		});
+		Thread EndgameCheckLoop = new Thread(new Runnable() {
+			@Override
+			public void run() {
+				System.out.println("(+) Game loop with endgame check on.");
+				while (true) {
+					try {
+						sleep(100);
+					} catch (InterruptedException e) {
+						throw new RuntimeException(e);
+					}
+					u.redrawAll(cells, size);
+					//System.out.println("(0) Test for endgame");
+					try {
+						testForEndgame(enemyBases, player[0]);
+					} catch (InterruptedException e) {
+						throw new RuntimeException(e);
+					}
+				}
+			}
+		});
+		ControlLoop.start();
+		EndgameCheckLoop.run();
 
-		ControlLoop.run();
 
 
-		System.out.println("(0) Game loop with endgame check on.");
-		while (true)
-		{
-			sleep(100);
-			u.redrawAll(cells, size);
-			//System.out.println("(0) Test for endgame");
-			testForEndgame(enemyBases, player[0]);
-		}
 
 
 		// There should be the main game loops with:
@@ -223,13 +238,14 @@ private int getFreeIndex (Object [] array)
 
 
 
-	public void testForEndgame(GameObject [] enemyBases, Player player)
-	{
-		for (GameObject base : enemyBases)
+	public void testForEndgame(GameObject [] enemyBases, Player player) throws InterruptedException {
 		{
-			if (!isNull(base)) break;
-			System.out.println("Wygrałeś!");
-			exit(0);
+			for (GameObject base : enemyBases) {
+				if (!isNull(base) && base.isObject()) break;
+				System.out.println("Wygrałeś!");
+				sleep(500);
+				exit(0);
+			}
 		}
 		if (isNull(player))
 		{

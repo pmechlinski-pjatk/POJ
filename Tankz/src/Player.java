@@ -140,6 +140,7 @@ public class Player extends MovingObject {
         int relY = getRelY(this.getLinkedCell().getTiledY());
 
         // DEBUG LOGS
+
         System.out.println("(0) Shoot() initalized:");
         System.out.println("\tCurrent player's coords: X0("+getLinkedCell().getTiledX()+"),Y0("+getLinkedCell().getTiledY()+")");
         System.out.println("\tNext tile code: "+neibers[0][1]);

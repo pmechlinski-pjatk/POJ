@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="Another success step! Now walls can be both damaged and destroyed, but still there are some dangling missiles afterwards?!">
+    <list default="true" id="ead81f70-d5f4-4d60-aa85-25339a6fa7c1" name="Changes" comment="Shooting is basically working.">
+      <change afterPath="$PROJECT_DIR$/src/baseCounter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tankz/GameObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/GameObject.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tankz/Missile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/Missile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tankz/MovingObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/MovingObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tankz/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tankz/Window$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/Window$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tankz/Window$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/Window$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tankz/Window.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tankz/Window.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Missile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Missile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MovingObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovingObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Window.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +26,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Record" />
       </list>
     </option>
   </component>
@@ -84,13 +94,6 @@
       <workItem from="1656524823269" duration="1229000" />
       <workItem from="1656627687413" duration="2709000" />
       <workItem from="1656700775252" duration="20570000" />
-    </task>
-    <task id="LOCAL-00003" summary="Work in progress przy generatorze pola gry">
-      <created>1654958348387</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1654958348387</updated>
     </task>
     <task id="LOCAL-00004" summary="Podstawowy generator mapy">
       <created>1654959245114</created>
@@ -428,7 +431,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656865935193</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Shooting is basically working.">
+      <created>1656866479318</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1656866479318</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -447,7 +457,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Dodanie asynchronicznej funkcji do obłsugi sterowania czołgiem okazało się wręcz podejrzanie proste..." />
     <MESSAGE value="After canibalizing reduntant setDirection method, magically it started working.&#10;Now the Player's tank changes sprite &amp; direction on keyboard movement." />
     <MESSAGE value="Moving is working already pretty well, but shooting seems unstable and missile is not spawning itself yet." />
     <MESSAGE value="Very small improvement regarding shooting - missile seems to spawn, but it flickers. Good thing is that it can actually kill (the player)" />
@@ -472,7 +481,8 @@
     <MESSAGE value="Now it's a progress - projectiles spawn properly, move in proper direction and even are able to destroy a wall. The problem is they still dangle and doesn't destroy themself when they found another projectile in a next tile." />
     <MESSAGE value="Missile now self-destruct when colliding with another missile - needed to add setName to missile's constructor." />
     <MESSAGE value="Another success step! Now walls can be both damaged and destroyed, but still there are some dangling missiles afterwards?!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Another success step! Now walls can be both damaged and destroyed, but still there are some dangling missiles afterwards?!" />
+    <MESSAGE value="Shooting is basically working." />
+    <option name="LAST_COMMIT_MESSAGE" value="Shooting is basically working." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

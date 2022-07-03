@@ -5,6 +5,7 @@ import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.IntStream;
 
 import static java.lang.Thread.sleep;
+import static java.util.Objects.isNull;
 
 public class MovingObject extends GameObject {
     public MovingObject(String name, String image, int hp, boolean isDestructible, Cell linkedCell) {
@@ -67,6 +68,14 @@ public class MovingObject extends GameObject {
     // TODO: Function to return neibourghs, e.g. "None" For EOM (EndOfMap), "Obstacle" for immovable object like wall, "Friend", "Enemy", "EmptyField".
 
     public String[][] getNeibers() {
+//        if (isNull(getLinkedCell()))
+//        {
+//            String[][] results = new String[3][3];
+//            for (String[] row: results)
+//            Arrays.fill(row, "EOM");
+//            return results;
+//        }
+
         Cell neibers[][] = this.getLinkedCell().neibers;
         String results[][] = new String[3][3];
         for (int i = 0; i < 3; i++) {
@@ -135,7 +144,7 @@ public class MovingObject extends GameObject {
         int test = 0;
 
         // movement loop
-        while (true)
+        while (getHp() > 0)
         {
             //System.out.println("k4: "+k4+ "Test: "+test);
             switch(k4)
@@ -183,7 +192,10 @@ public class MovingObject extends GameObject {
 //                if (!Arrays.stream(testedDirs).anyMatch(i -> i == finalK)) test = -2;
                 }
 
-            }
+        return;
+    }
+
+
 
 
 

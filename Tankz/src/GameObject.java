@@ -1,4 +1,6 @@
+import static java.lang.Thread.sleep;
 import static java.util.Objects.isNull;
+
 
 public class GameObject {
 
@@ -44,7 +46,7 @@ public class GameObject {
 
     public void setLinkedCell(Cell linkedCell) {
         this.linkedCell = linkedCell;
-        linkedCell.setLinkedObject(this);
+        if (!isNull(linkedCell)) linkedCell.setLinkedObject(this);
     }
 
 
@@ -70,21 +72,61 @@ public class GameObject {
         return hp;
     }
 
-    public void setHp(int hp)
-    {
+    public void setHp(int hp) throws InterruptedException {
         this.hp = hp;
-        if (this.getName()=="Terrain" && this.hp == 1)
-        {
+
+        // Destroying walls
+        if (this.getName() == "Terrain" && this.hp == 1) {
             this.setImage("<html><font color=#A52A2A>%##<br/>##E<br/>_)##</font></html>");
             this.getLinkedCell().redraw();
-        }
-        if (this.hp <= 0 && this.isDestructible)
+            return;
+        } else if (this.getName() == "Terrain" && this.hp <= 0)
         {
-            linkedCell.setLinkedObject(null);
-            linkedCell.redraw();
+            if (!isNull(getLinkedCell()))
+            {
+                this.getLinkedCell().setLinkedObject(null);
+            }
+            this.getLinkedCell().redraw();
+            setLinkedCell(null);
+        }
+
+        // Destroying tanks and bases
+        if ((this.getName() == "EnemyTank" || this.getName() == "EnemyBase" || this.getName() == "Player") && this.hp <= 0)
+        {
+            // Explosion sprite
+            this.setImage("<html><font color='red'>__\\|/__<br>=@=<br>--/|\\--</font></html>");
+            this.getLinkedCell().redraw();
+            this.setImage(" ");
+
+
+            // Unlink object
+            if (!isNull(getLinkedCell()))
+            {
+                this.getLinkedCell().setLinkedObject(null);
+            }
+
+            // End sprite
+            sleep(100);
+            this.getLinkedCell().redraw();
+
+            // Unlink cell
+            //setLinkedCell(null);
+
+        //if (!isNull(this.getLinkedCell())) this.setLinkedCell(null);
+        this.isObject = false;
+
+        if (!isNull(getLinkedCell()))this.getLinkedCell().redraw();
+        if (this.hp <= 0 && this.isDestructible) {
+            if (!isNull(linkedCell)) {
+                linkedCell.setLinkedObject(null);
+                linkedCell.redraw();
+            }
+        }
+
             //if (!isNull(this.getLinkedCell())) this.setLinkedCell(null);
             this.isObject = false;
         }
+
     }
 
     public void setImage(String image) {

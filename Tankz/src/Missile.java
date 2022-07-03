@@ -64,11 +64,10 @@ public class Missile extends MovingObject {
 
     }
 
-    public int missileMove(Cell[][] cells)
-    {
+    public int missileMove(Cell[][] cells) throws InterruptedException {
         System.out.println("\t[Missile step]");
         System.out.println("\tMissile direction: "+this.getDirection());
-        System.out.println("\tMissile coords: ("+this.getLinkedCell().getTiledX()+", "+this.getLinkedCell().getTiledY()+")");
+        if (!isNull(getLinkedCell())) System.out.println("\tMissile coords: ("+this.getLinkedCell().getTiledX()+", "+this.getLinkedCell().getTiledY()+")");
         System.out.println("\tTest Neiber: "+ getTestNeiber(getDirection()));
         setImage(MissileVertical);
         switch (getTestNeiber(getDirection()))
@@ -219,9 +218,10 @@ public class Missile extends MovingObject {
         this.setDirection('0');
         System.out.println("Missile stopped");
         this.setImage(" ");
-        this.getLinkedCell().redraw();
+
         if (!isNull(getLinkedCell()))
         {
+            this.getLinkedCell().redraw();
             this.getLinkedCell().setLinkedObject(null);
             setLinkedCell(null);
         }
